@@ -2,18 +2,24 @@
 <div class="jumbotron">
     <div class="container">
         <div class="row">
-            <div class="intro-text col-md-7 offset-md-1">
-              <div class="intro-content">
-                <h1>Intro boodschap</h1>
-                <p>Vestibulum ac hendrerit quam. Aliquam accumsan, mauris at pellentesque lobortis,
-                   mi nibh feugiat ante, nec mattis urna libero eu justo.</p>
-                <p>Sed consequat, nisl et volutpat pulvinar, metus augue hendrerit quam, ac tempus ex mi eget dolor. Nunc finibus, felis interdum consequat condimentum, sapien nisl pellentesque neque, a luctus elit lectus sed risus.</p>
-                <p><i class="material-icons">&#xE5C8;</i><a class="more" href="">More about digital Husserl</a></p>  
+            <div class="intro col-md-12">
+              <div class='row'>
+                <div class="intro-image col-md-3 offset-md-3">
+                  <img src="<?php echo img("Edmund_Husserl_1910s.jpg");?>">
+                </div>
+                <div class="intro-content col-md-6">
+                  <div class="">
+                    <p>Vestibulum ac hendrerit quam. Aliquam accumsan, mauris at pellentesque lobortis,
+                       mi nibh feugiat ante, nec mattis urna libero eu justo.</p>
+                    <p>Sed consequat, nisl et volutpat pulvinar, metus augue hendrerit quam, ac tempus ex mi eget dolor. Nunc finibus, felis interdum consequat condimentum.</p>
+                    <p class="more"><i class="material-icons">&#xE5C8;</i><a href="">More about digital Husserl</a></p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="intro-image col-md-3">
+            <!--<div class="intro-image col-md-5">
               <img src="<?php echo img("Edmund_Husserl_1910s.jpg");?>">
-            </div>
+            </div>-->
         </div>
     </div>
 </div>
@@ -23,7 +29,7 @@
         <div class="learn col-md-1 col-xs-12">
           <p>Learn More</p>
         </div>
-        <div class="col-md-11 col-xs-12">
+        <div class="features col-md-11 col-xs-12">
           <div class="card-deck">
               <div class="card card-image">
                   <img class="card-img-cap" src="<?php echo img('ph/bg6.png');?>" alt="Card image">

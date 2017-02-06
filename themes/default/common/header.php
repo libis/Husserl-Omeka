@@ -44,6 +44,7 @@
     <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
         <header role="banner">
             <nav class="navbar public-nav">
+              <div class="container-fluid">
                 <div class="row">
                     <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
                       &#9776;
@@ -59,6 +60,7 @@
                     <?php echo public_nav_main(array('role' => 'navigation')) -> setUlClass('nav navbar-nav'); ?>
                     </div>
                 </div>
+              </div>
             </nav>
             <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
         </header>

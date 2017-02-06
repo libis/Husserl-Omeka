@@ -6335,11 +6335,11 @@ header .container {
 
 .public-nav .row {
   margin: 0;
-  padding: 0rem 2rem 0.2rem;
+  padding-bottom: 0.2rem;
 }
 
 .public-nav .row:first-child {
-  padding: 0.5rem 2rem 0rem;
+  padding-top: 0.5rem;
 }
 
 .public-nav #exCollapsingNavbar2 {
@@ -6477,52 +6477,56 @@ header .container {
   margin: 0;
   padding: 0;
   text-shadow: #444 0 1px 1px;
-  text-align: right;
   width: 100%;
-  background: #eee;
+  background: rgba(36, 36, 36, 0.1);
 }
 
 .jumbotron .row {
   overflow: hidden;
 }
 
+.jumbotron .intro {
+  background: rgba(36, 36, 36, 0.15);
+}
+
+.jumbotron .intro-image {
+  padding: 0;
+  height: 430px;
+}
+
 .jumbotron .intro-content {
-  margin: 3rem 0;
+  text-align: left;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.7);
+  height: 430px;
+}
+
+.jumbotron .intro-content p {
+  font-size: 1.4rem;
+  text-shadow: none;
 }
 
 .jumbotron .intro-content i {
   vertical-align: text-bottom;
-  color: #FFCF0D;
+  color: white;
+  background: rgba(36, 36, 36, 0.7);
   margin-right: 2px;
 }
 
 .jumbotron .intro-content .more {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.jumbotron .intro-content .more a {
+  margin-left: 3px;
   color: rgba(36, 36, 36, 0.6);
   font-weight: 300;
 }
 
-.jumbotron .intro-image img {
-  height: 100%;
-}
-
-.jumbotron h1 {
-  margin-top: 0rem;
-  text-shadow: none;
-  font-weight: 700;
-  font-size: 2rem;
-  z-index: 1;
-}
-
-.jumbotron p {
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-shadow: none;
-}
-
 .jumbotron img {
+  padding: 0;
   width: 100%;
-  border-left: 4px solid #FFCF0D;
-  border-right: 4px solid #FFCF0D;
 }
 
 @media (max-width: 767px) {
@@ -6580,6 +6584,10 @@ header .container {
   padding: 0;
 }
 
+.home .features {
+  border-right: 1px solid rgba(36, 36, 36, 0.2);
+}
+
 .home .card-deck {
   padding: 0;
   border-spacing: 0 0;
@@ -6602,7 +6610,7 @@ header .container {
 
 .home .card .card-block {
   background: none;
-  padding: 1rem 0;
+  padding: 1rem 0 0 0;
 }
 
 .home .card .card-block i {
@@ -6650,7 +6658,6 @@ section.news {
 section.news .news-home {
   border-left: 1px solid #eee;
   padding: 0 0 3rem 0;
-  background: rgba(246, 246, 246, 0.5);
 }
 
 section.news .news-home h2 {
@@ -6676,7 +6683,7 @@ section.news .news-home img {
 }
 
 section.news .news-home .more-news {
-  text-align: center;
+  text-align: right;
   padding: 1rem;
 }
 
@@ -6706,108 +6713,6 @@ section.news .news-home:last-child {
 
 .item-section .image-row {
   overflow: hidden;
-}
-
-.item-section .openlayerszoom-images {
-  background: transparent url("../images/footer_lodyas.png") repeat scroll 0 0;
-}
-
-.item-section .ol-mouse-position {
-  top: 8px;
-  right: 8px;
-  position: absolute;
-}
-
-.item-section .ol-scale-line {
-  background: #95b9e6;
-  background: rgba(0, 60, 136, 0.3);
-  border-radius: 4px;
-  bottom: 8px;
-  left: 8px;
-  padding: 2px;
-  position: absolute;
-}
-
-.item-section .ol-scale-line-inner {
-  border: 1px solid #eee;
-  border-top: none;
-  color: #eee;
-  font-size: 10px;
-  text-align: center;
-  margin: 1px;
-  will-change: contents, width;
-}
-
-.item-section .ol-overlay-container {
-  will-change: left, right, top, bottom;
-}
-
-.item-section .ol-unsupported {
-  display: none;
-}
-
-.item-section .ol-viewport {
-  z-index: 0;
-}
-
-.item-section .ol-viewport .ol-unselectable {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.item-section .ol-control {
-  position: absolute;
-  background-color: #FFCF0D;
-  background-color: rgba(255, 207, 13, 0.4);
-  border-radius: 4px;
-  padding: 2px;
-}
-
-.item-section .ol-control button {
-  background-color: rgba(243, 194, 0, 0.9);
-}
-
-.item-section .ol-control:hover {
-  background-color: rgba(255, 207, 13, 0.6);
-}
-
-.item-section .ol-zoom {
-  bottom: 0.5em;
-  right: 0.5em;
-  left: auto !important;
-  top: auto;
-}
-
-.item-section .ol-rotate {
-  display: none;
-}
-
-.item-section .ol-rotate.ol-hidden {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s linear, visibility 0s linear 0.25s;
-}
-
-.item-section .ol-zoom-extent {
-  display: none;
-}
-
-.item-section .ol-full-screen {
-  right: 0.5em;
-  bottom: 4.5em;
-  top: auto;
-}
-
-.item-section .ol-overviewmap {
-  right: 0.5em;
-  left: auto;
-  bottom: 7em;
-  top: auto;
 }
 
 .metadata-section {

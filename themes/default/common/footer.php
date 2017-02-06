@@ -51,8 +51,8 @@
 
                 </div>
             </div>
-            <hr>
-            <div class="copyright">© test</div> 
+          
+            <div class="copyright">© test</div>
             <?php fire_plugin_hook('public_footer', array('view' => $this)); ?>
         </div>
 
