@@ -9,8 +9,7 @@
                     <div class="col-sm-3">
                         <img src="<?php echo img("KULEUVEN.png");?>">
                     </div>
-                    <div class="col-sm-3">
-                        <h4>Locatie titel</h4>
+                    <div class="col-sm-3">                      
                         <p>Straatstraat 22<br>
                             3000 Leuven<br>
                             016222222<br>

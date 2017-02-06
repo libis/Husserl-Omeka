@@ -6335,6 +6335,7 @@ header .container {
 
 .public-nav .row {
   padding-bottom: 0.2rem;
+  background: rgba(36, 36, 36, 0.5);
 }
 
 .public-nav .row:first-child {
@@ -6419,6 +6420,7 @@ header .container {
 
 .public-nav .form-inline .form-control {
   background: #FFCF0D;
+  background: #FFCF0D;
   border: none;
   padding-left: 10px;
   margin-right: 10px;
@@ -6475,6 +6477,7 @@ header .container {
   border-radius: 0;
   margin: 0;
   padding: 0;
+  background: rgba(36, 36, 36, 0.1);
 }
 
 .jumbotron .row {
@@ -6482,8 +6485,7 @@ header .container {
 }
 
 .jumbotron .intro {
-  border-left: 1px solid rgba(36, 36, 36, 0.1);
-  border-right: 1px solid rgba(36, 36, 36, 0.1);
+  background: rgba(246, 246, 246, 0.3);
 }
 
 .jumbotron .intro-image {
@@ -6551,7 +6553,7 @@ header .container {
 }
 
 .home {
-  padding: 6rem 0 6rem 0;
+  padding: 0;
   z-index: 50;
   position: relative;
   background: rgba(36, 36, 36, 0.7);
@@ -6563,6 +6565,10 @@ header .container {
   }
 }
 
+.home .row {
+  background: rgba(36, 36, 36, 0.1);
+}
+
 .home img {
   width: 100%;
 }
@@ -6572,6 +6578,7 @@ header .container {
   font-weight: 700;
   font-size: 1.2rem;
   padding: 1rem;
+  margin-top: 6rem;
   line-height: 1.2;
   color: white;
   text-align: right;
@@ -6584,7 +6591,8 @@ header .container {
 }
 
 .home .features {
-  padding: 0 1rem;
+  padding: 6rem 1rem;
+  background: rgba(36, 36, 36, 0.1);
 }
 
 .home .features .card-deck {
@@ -6661,7 +6669,7 @@ section.news .news-home {
 section.news .news-home h2 {
   margin: 1rem 0rem 1rem 0;
   padding: 2rem 0rem 2rem 0rem;
-  font-weight: 300;
+  font-weight: 700;
   font-family: "Open Sans", sans-serif;
   font-size: 2.6rem;
   border-bottom: 1px solid rgba(255, 207, 13, 0.5);
@@ -6669,12 +6677,14 @@ section.news .news-home h2 {
 
 section.news .news-home h3 {
   font-size: 1.6rem;
+  color: rgba(36, 36, 36, 0.8);
   font-weight: 900;
 }
 
 section.news .news-home .news-item {
   margin-top: 2rem;
   margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 207, 13, 0.1);
 }
 
 section.news .news-home img {
@@ -6996,7 +7006,7 @@ section.news .news-home:last-child {
 }
 
 footer {
-  background: #eee;
+  background: rgba(36, 36, 36, 0.05);
   padding: 4rem 0;
   color: rgba(36, 36, 36, 0.7);
   font-family: "Open Sans", sans-serif;
@@ -7009,7 +7019,7 @@ footer h4 {
 }
 
 footer p {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 footer img {
@@ -7035,6 +7045,9 @@ footer a {
 footer .copyright {
   font-size: 0.9rem;
   color: rgba(36, 36, 36, 0.4);
+  padding: 1rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(36, 36, 36, 0.1);
 }
 
 @media (min-width: 544px) {
