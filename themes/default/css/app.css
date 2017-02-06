@@ -6507,8 +6507,7 @@ header .container {
 
 .jumbotron .intro-content i {
   vertical-align: text-bottom;
-  color: #242424;
-  background: #FFCF0D;
+  color: #FFCF0D;
   margin-right: 2px;
 }
 
@@ -6657,22 +6656,26 @@ header .container {
 }
 
 section.news {
-  background: white;
+  background: #f6f6f6;
   border-top: 1px solid #eee;
 }
 
 section.news .news-home {
   border-left: 1px solid #eee;
   padding-bottom: 2rem;
+  background: white;
+}
+
+section.news .news-home a {
+  color: #242424;
 }
 
 section.news .news-home h2 {
-  margin: 1rem 0rem 1rem 0;
+  margin: 1rem 0rem 0rem 0;
   padding: 2rem 0rem 2rem 0rem;
-  font-weight: 700;
+  font-weight: 300;
   font-family: "Open Sans", sans-serif;
   font-size: 2.6rem;
-  border-bottom: 1px solid rgba(255, 207, 13, 0.5);
 }
 
 section.news .news-home h3 {
@@ -6682,9 +6685,16 @@ section.news .news-home h3 {
 }
 
 section.news .news-home .news-item {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 207, 13, 0.1);
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid rgba(255, 207, 13, 0.2);
+  transition: all 0.3s ease 0s;
+}
+
+section.news .news-home .news-item:hover {
+  background: rgba(36, 36, 36, 0.05);
 }
 
 section.news .news-home img {
@@ -6694,15 +6704,17 @@ section.news .news-home img {
 section.news .news-home .more-news {
   text-align: right;
   padding: 1rem 0;
+  margin-top: 1rem;
 }
 
 section.news .news-home .more-news a {
   font-family: "Open Sans", sans-serif;
   padding: 10px;
-  border: 2px solid #FFCF0D;
-  border-radius: 5px;
+  border: 1px solid #FFCF0D;
+  border-radius: 1px;
   font-weight: 900;
   transition: all 0.3s ease 0s;
+  color: #FFCF0D;
 }
 
 section.news .news-home .more-news a:hover {

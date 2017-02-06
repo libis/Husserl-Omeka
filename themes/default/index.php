@@ -64,7 +64,21 @@
       <!-- news-->
       <div class="col-md-6 news-home">
         <h2>News</h2>
-        <div class="row news-item">
+        <a href=""><div class="row news-item">
+          <div class="col-md-3">
+            <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
+          </div>
+          <div class="col-md-9">
+            <h3>Sed luctus blandit</h3>
+            <p class="description">
+              Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
+            </p>
+            <!--<p class="leesmeer">
+              <a href="">Read More</a>
+            </p>-->
+          </div>
+        </div></a>
+        <a href=""><div class="row news-item">
           <div class="col-md-3">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
@@ -74,8 +88,8 @@
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
             </p>
           </div>
-        </div>
-        <div class="row news-item">
+        </div></a>
+        <a href=""><div class="row news-item">
           <div class="col-md-3">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
@@ -85,8 +99,8 @@
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
             </p>
           </div>
-        </div>
-        <div class="row news-item">
+        </div></a>
+        <a href=""><div class="row news-item">
           <div class="col-md-3">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
@@ -96,18 +110,7 @@
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
             </p>
           </div>
-        </div>
-        <div class="row news-item">
-          <div class="col-md-3">
-            <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
-          </div>
-          <div class="col-md-9">
-            <h3>Sed luctus blandit</h3>
-            <p class="description">
-              Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-            </p>
-          </div>
-        </div>
+        </div></a>
         <div class="row more-news">
           <div class="col-md-12 col-xs-12">
             <a href="">More news</a>
@@ -118,7 +121,7 @@
         <!-- spotlight-->
       <div class="col-md-6 news-home">
         <h2>Spotlight</h2>
-        <div class="row news-item">
+        <a href=""><div class="row news-item">
           <div class="col-md-3">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
@@ -128,8 +131,8 @@
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
             </p>
           </div>
-        </div>
-        <div class="row news-item">
+        </div></a>
+        <a href=""><div class="row news-item">
           <div class="col-md-3">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
@@ -139,8 +142,8 @@
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
             </p>
           </div>
-        </div>
-        <div class="row news-item">
+        </div></a>
+        <a href=""><div class="row news-item">
           <div class="col-md-3">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
@@ -150,8 +153,8 @@
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
             </p>
           </div>
-        </div>
-        <div class="row news-item">
+        </div></a>
+        <a href=""><div class="row news-item">
           <div class="col-md-3">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
@@ -161,7 +164,7 @@
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
             </p>
           </div>
-        </div>
+        </div></a>
         <div class="row more-news">
           <div class="col-md-12 col-xs-12">
             <a href="">All items</a>
