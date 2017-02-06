@@ -1,5 +1,5 @@
     <footer role="contentinfo">
-        <div class="container">
+        <div class="container-fluid">
             <div id="footer-text">
                 <?php echo get_theme_option('Footer Text'); ?>
                 <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = option('copyright')): ?>
@@ -51,7 +51,7 @@
 
                 </div>
             </div>
-          
+
             <div class="copyright">© test</div>
             <?php fire_plugin_hook('public_footer', array('view' => $this)); ?>
         </div>

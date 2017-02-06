@@ -6294,7 +6294,7 @@ body {
 }
 
 .container-fluid {
-  max-width: 105rem;
+  max-width: 1312px;
 }
 
 p {
@@ -6334,7 +6334,6 @@ header .container {
 }
 
 .public-nav .row {
-  margin: 0;
   padding-bottom: 0.2rem;
 }
 
@@ -6476,9 +6475,6 @@ header .container {
   border-radius: 0;
   margin: 0;
   padding: 0;
-  text-shadow: #444 0 1px 1px;
-  width: 100%;
-  background: rgba(36, 36, 36, 0.1);
 }
 
 .jumbotron .row {
@@ -6486,30 +6482,31 @@ header .container {
 }
 
 .jumbotron .intro {
-  background: rgba(36, 36, 36, 0.15);
+  border-left: 1px solid rgba(36, 36, 36, 0.1);
+  border-right: 1px solid rgba(36, 36, 36, 0.1);
 }
 
 .jumbotron .intro-image {
   padding: 0;
-  height: 430px;
+  height: 450px;
 }
 
 .jumbotron .intro-content {
   text-align: left;
-  padding: 3rem;
-  background: rgba(255, 255, 255, 0.7);
-  height: 430px;
+  padding: 4rem 4rem;
+  height: 450px;
+  background: #f6f6f6;
 }
 
 .jumbotron .intro-content p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-shadow: none;
 }
 
 .jumbotron .intro-content i {
   vertical-align: text-bottom;
-  color: white;
-  background: rgba(36, 36, 36, 0.7);
+  color: #242424;
+  background: #FFCF0D;
   margin-right: 2px;
 }
 
@@ -6527,6 +6524,8 @@ header .container {
 .jumbotron img {
   padding: 0;
   width: 100%;
+  border-left: 1px solid #ffcf0d;
+  border-right: 10px solid rgba(36, 36, 36, 0.5);
 }
 
 @media (max-width: 767px) {
@@ -6552,7 +6551,7 @@ header .container {
 }
 
 .home {
-  padding: 5rem 0 4rem 0;
+  padding: 6rem 0 6rem 0;
   z-index: 50;
   position: relative;
   background: rgba(36, 36, 36, 0.7);
@@ -6585,17 +6584,17 @@ header .container {
 }
 
 .home .features {
-  border-right: 1px solid rgba(36, 36, 36, 0.2);
+  padding: 0 1rem;
 }
 
-.home .card-deck {
+.home .features .card-deck {
   padding: 0;
   border-spacing: 0 0;
   margin-bottom: 0;
   background: none;
 }
 
-.home .card {
+.home .features .card-deck .card {
   border: none;
   padding: 0rem 1rem 0 1rem;
   margin-bottom: 0;
@@ -6603,22 +6602,22 @@ header .container {
   border-radius: 0;
 }
 
-.home .card img {
+.home .features .card-deck .card img {
   margin-bottom: 0rem;
   border-radius: 0;
 }
 
-.home .card .card-block {
+.home .features .card-deck .card .card-block {
   background: none;
   padding: 1rem 0 0 0;
 }
 
-.home .card .card-block i {
+.home .features .card-deck .card .card-block i {
   float: left;
   width: 50px;
 }
 
-.home .card .card-block .title::before {
+.home .features .card-deck .card .card-block .title::before {
   content: "\203A";
   float: left;
   width: 17px;
@@ -6629,7 +6628,7 @@ header .container {
   color: #FFCF0D;
 }
 
-.home .card .card-block h4 {
+.home .features .card-deck .card .card-block h4 {
   font-weight: 900;
   font-size: 1.8rem;
   line-height: 1.1;
@@ -6652,20 +6651,20 @@ header .container {
 section.news {
   background: white;
   border-top: 1px solid #eee;
-  padding: 0;
 }
 
 section.news .news-home {
   border-left: 1px solid #eee;
-  padding: 0 0 3rem 0;
+  padding-bottom: 2rem;
 }
 
 section.news .news-home h2 {
-  margin: 3rem 0rem 3rem 0;
-  padding: 0 1rem 0rem 2rem;
-  font-weight: 700;
+  margin: 1rem 0rem 1rem 0;
+  padding: 2rem 0rem 2rem 0rem;
+  font-weight: 300;
   font-family: "Open Sans", sans-serif;
   font-size: 2.6rem;
+  border-bottom: 1px solid rgba(255, 207, 13, 0.5);
 }
 
 section.news .news-home h3 {
@@ -6674,17 +6673,17 @@ section.news .news-home h3 {
 }
 
 section.news .news-home .news-item {
-  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 section.news .news-home img {
   width: 100%;
-  padding: 0 1rem;
 }
 
 section.news .news-home .more-news {
   text-align: right;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 section.news .news-home .more-news a {

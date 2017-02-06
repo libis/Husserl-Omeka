@@ -46,6 +46,7 @@
             <nav class="navbar public-nav">
               <div class="container-fluid">
                 <div class="row">
+                  <div class="col-md-12">
                     <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
                       &#9776;
                     </button>
@@ -54,11 +55,14 @@
                       <input class="form-control" type="text" placeholder="Search">
                       <button class="btn" type="submit"><i class="material-icons">search</i></button>
                     </form>
+                  </div>
                 </div>
                 <div class="row">
+                  <div class="col-md-12">
                     <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
                     <?php echo public_nav_main(array('role' => 'navigation')) -> setUlClass('nav navbar-nav'); ?>
                     </div>
+                  </div>
                 </div>
               </div>
             </nav>

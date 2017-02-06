@@ -1,13 +1,10 @@
 <?php echo head(array('bodyid'=>'home', 'bodyclass' =>'two-col')); ?>
 <div class="jumbotron">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="intro col-md-12">
               <div class='row'>
-                <div class="intro-image col-md-3 offset-md-3">
-                  <img src="<?php echo img("Edmund_Husserl_1910s.jpg");?>">
-                </div>
-                <div class="intro-content col-md-6">
+                <div class="intro-content col-md-7 offset-md-1">
                   <div class="">
                     <p>Vestibulum ac hendrerit quam. Aliquam accumsan, mauris at pellentesque lobortis,
                        mi nibh feugiat ante, nec mattis urna libero eu justo.</p>
@@ -15,16 +12,17 @@
                     <p class="more"><i class="material-icons">&#xE5C8;</i><a href="">More about digital Husserl</a></p>
                   </div>
                 </div>
+                <div class="intro-image col-md-3">
+                  <img src="<?php echo img("Edmund_Husserl_1910s.jpg");?>">
+                </div>
+
               </div>
             </div>
-            <!--<div class="intro-image col-md-5">
-              <img src="<?php echo img("Edmund_Husserl_1910s.jpg");?>">
-            </div>-->
         </div>
     </div>
 </div>
 <section class="home">
-    <div id="content" class='container' role="main" tabindex="-1">
+    <div id="content" class='container-fluid' role="main" tabindex="-1">
       <div class="row">
         <div class="learn col-md-1 col-xs-12">
           <p>Learn More</p>
