@@ -1,5 +1,5 @@
     <footer role="contentinfo">
-        <div class="container-fluid">
+        <div class="container-fluid footer-container">
             <div id="footer-text">
                 <?php echo get_theme_option('Footer Text'); ?>
                 <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = option('copyright')): ?>
@@ -9,7 +9,7 @@
                     <div class="col-sm-3">
                         <img src="<?php echo img("KULEUVEN.png");?>">
                     </div>
-                    <div class="col-sm-3">                      
+                    <div class="col-sm-3">
                         <p>Straatstraat 22<br>
                             3000 Leuven<br>
                             016222222<br>

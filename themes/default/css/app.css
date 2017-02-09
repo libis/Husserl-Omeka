@@ -6306,10 +6306,6 @@ p {
   border-bottom: none;
 }
 
-.navbar a {
-  color: #aaa;
-}
-
 header {
   margin-left: auto;
   margin-right: auto;
@@ -6343,11 +6339,11 @@ header .container {
 }
 
 .public-nav #exCollapsingNavbar2 {
-  padding: 0.4rem 0;
+  padding: 0.6rem 0;
   margin-top: 0.4rem;
   width: auto;
   font-weight: normal;
-  border-top: 1px solid rgba(255, 207, 13, 0.2);
+  border-top: 1px solid rgba(255, 207, 13, 0.1);
 }
 
 .public-nav #exCollapsingNavbar2 a {
@@ -6390,11 +6386,17 @@ header .container {
 }
 
 .public-nav .navbar-nav li a {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: normal;
   margin: 0 25px 0 0;
   font-size: 0.9rem;
   text-transform: uppercase;
+}
+
+.public-nav .navbar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease 0s;
 }
 
 @media (max-width: 767px) {
@@ -6420,7 +6422,7 @@ header .container {
 
 .public-nav .form-inline .form-control {
   background: #FFCF0D;
-  background: #FFCF0D;
+  font-family: "Open Sans", sans-serif;
   border: none;
   padding-left: 10px;
   margin-right: 10px;
@@ -6433,6 +6435,11 @@ header .container {
     width: 85%;
     display: inline;
   }
+}
+
+.public-nav .form-inline .form-control:hover, .public-nav .form-inline .form-control:focus {
+  background: white;
+  transition: all 0.5s ease 0s;
 }
 
 .public-nav .form-inline *::-webkit-input-placeholder {
@@ -6490,13 +6497,13 @@ header .container {
 
 .jumbotron .intro-image {
   padding: 0;
-  height: 450px;
+  height: 440px;
 }
 
 .jumbotron .intro-content {
   text-align: left;
   padding: 4rem 4rem;
-  height: 450px;
+  height: 440px;
   background: #f6f6f6;
 }
 
@@ -6526,7 +6533,6 @@ header .container {
   padding: 0;
   width: 100%;
   border-left: 1px solid #ffcf0d;
-  border-right: 10px solid rgba(36, 36, 36, 0.5);
 }
 
 @media (max-width: 767px) {
@@ -6573,7 +6579,7 @@ header .container {
 }
 
 .home .learn {
-  background: rgba(36, 36, 36, 0.4);
+  background: rgba(36, 36, 36, 0.2);
   font-weight: 700;
   font-size: 1.2rem;
   padding: 1rem;
@@ -6581,7 +6587,7 @@ header .container {
   line-height: 1.2;
   color: white;
   text-align: right;
-  border-right: 20px solid rgba(36, 36, 36, 0.5);
+  border-right: 20px solid rgba(36, 36, 36, 0.25);
 }
 
 .home .learn p {
@@ -6657,13 +6663,14 @@ header .container {
 
 section.news {
   background: #f6f6f6;
-  border-top: 1px solid #eee;
+}
+
+section.news .row:first-child {
+  background: #eee;
 }
 
 section.news .news-home {
-  border-left: 1px solid #eee;
   padding-bottom: 2rem;
-  background: white;
 }
 
 section.news .news-home a {
@@ -6723,8 +6730,30 @@ section.news .news-home .more-news a:hover {
   text-decoration: none;
 }
 
-section.news .news-home:last-child {
-  border-right: 1px solid #eee;
+section.news .spotlight .news-item {
+  border-top: 1px solid rgba(36, 36, 36, 0.05);
+}
+
+section.news .spotlight .more-news a {
+  color: rgba(36, 36, 36, 0.4);
+  border-color: rgba(36, 36, 36, 0.4);
+}
+
+section.news .news-container {
+  background: white;
+}
+
+section.news .news-container .news-item {
+  background: white;
+}
+
+section.news .news-container .news-item .datum {
+  font-size: 90%;
+  color: rgba(36, 36, 36, 0.5);
+}
+
+section.news .news-container .news-item:hover {
+  background: rgba(255, 207, 13, 0.5);
 }
 
 .item-section {
@@ -7018,10 +7047,16 @@ section.news .news-home:last-child {
 }
 
 footer {
-  background: rgba(36, 36, 36, 0.05);
-  padding: 4rem 0;
+  background: rgba(36, 36, 36, 0.08);
+  padding: 0rem 0;
   color: rgba(36, 36, 36, 0.7);
   font-family: "Open Sans", sans-serif;
+}
+
+footer .footer-container {
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  background: rgba(36, 36, 36, 0.04);
 }
 
 footer h4 {
@@ -7059,7 +7094,7 @@ footer .copyright {
   color: rgba(36, 36, 36, 0.4);
   padding: 1rem 0;
   margin-top: 3rem;
-  border-top: 1px solid rgba(36, 36, 36, 0.1);
+  border-top: 1px solid rgba(36, 36, 36, 0.04);
 }
 
 @media (min-width: 544px) {

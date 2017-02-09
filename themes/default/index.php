@@ -4,7 +4,7 @@
         <div class="row">
             <div class="intro col-md-12">
               <div class='row'>
-                <div class="intro-content col-md-7 offset-md-1">
+                <div class="intro-content col-md-8 offset-md-1">
                   <div class="">
                     <p>Vestibulum ac hendrerit quam. Aliquam accumsan, mauris at pellentesque lobortis,
                        mi nibh feugiat ante, nec mattis urna libero eu justo.</p>
@@ -61,71 +61,14 @@
 <section class="news">
   <div class="container-fluid">
     <div class="row">
-      <!-- news-->
-      <div class="col-md-6 news-home">
-        <h2>News</h2>
-        <a href=""><div class="row news-item">
-          <div class="col-md-3">
-            <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
-          </div>
-          <div class="col-md-9">
-            <h3>Sed luctus blandit</h3>
-            <p class="description">
-              Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-            </p>
-            <!--<p class="leesmeer">
-              <a href="">Read More</a>
-            </p>-->
-          </div>
-        </div></a>
-        <a href=""><div class="row news-item">
-          <div class="col-md-3">
-            <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
-          </div>
-          <div class="col-md-9">
-            <h3>Sed luctus blandit</h3>
-            <p class="description">
-              Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-            </p>
-          </div>
-        </div></a>
-        <a href=""><div class="row news-item">
-          <div class="col-md-3">
-            <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
-          </div>
-          <div class="col-md-9">
-            <h3>Sed luctus blandit</h3>
-            <p class="description">
-              Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-            </p>
-          </div>
-        </div></a>
-        <a href=""><div class="row news-item">
-          <div class="col-md-3">
-            <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
-          </div>
-          <div class="col-md-9">
-            <h3>Sed luctus blandit</h3>
-            <p class="description">
-              Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-            </p>
-          </div>
-        </div></a>
-        <div class="row more-news">
-          <div class="col-md-12 col-xs-12">
-            <a href="">More news</a>
-          </div>
-        </div>
-      </div>
-        <!-- end news -->
-        <!-- spotlight-->
-      <div class="col-md-6 news-home">
+      <!-- spotlight -->
+      <div class="col-md-7 news-home spotlight">
         <h2>Spotlight</h2>
         <a href=""><div class="row news-item">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
-          <div class="col-md-9">
+          <div class="col-md-8">
             <h3>Sed luctus blandit</h3>
             <p class="description">
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
@@ -133,10 +76,10 @@
           </div>
         </div></a>
         <a href=""><div class="row news-item">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
-          <div class="col-md-9">
+          <div class="col-md-8">
             <h3>Sed luctus blandit</h3>
             <p class="description">
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
@@ -144,10 +87,10 @@
           </div>
         </div></a>
         <a href=""><div class="row news-item">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
-          <div class="col-md-9">
+          <div class="col-md-8">
             <h3>Sed luctus blandit</h3>
             <p class="description">
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
@@ -155,10 +98,10 @@
           </div>
         </div></a>
         <a href=""><div class="row news-item">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
           </div>
-          <div class="col-md-9">
+          <div class="col-md-8">
             <h3>Sed luctus blandit</h3>
             <p class="description">
               Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
@@ -171,7 +114,64 @@
           </div>
         </div>
       </div>
-      <!-- end spotlight-->
+
+      <div class="col-md-5 news-home news-container">
+        <h2>News</h2>
+        <a href=""><div class="row news-item">
+          <div class="col-md-3">
+            <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
+          </div>
+          <div class="col-md-9">
+            <h3>Sed luctus blandit</h3>
+            <p class="datum">14-08-2017</p>
+            <p class="description">
+              Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
+            </p>
+          </div>
+        </div></a>
+        <a href=""><div class="row news-item">
+          <div class="col-md-3">
+            <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
+          </div>
+          <div class="col-md-9">
+            <h3>Sed luctus blandit</h3>
+            <p class="datum">14-08-2017</p>
+            <p class="description">
+              Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
+            </p>
+          </div>
+        </div></a>
+        <a href=""><div class="row news-item">
+          <div class="col-md-3">
+            <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
+          </div>
+          <div class="col-md-9">
+            <h3>Sed luctus blandit</h3>
+            <p class="datum">14-08-2017</p>
+            <p class="description">
+              Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
+            </p>
+          </div>
+        </div></a>
+        <a href=""><div class="row news-item">
+          <div class="col-md-3">
+            <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
+          </div>
+          <div class="col-md-9">
+            <h3>Sed luctus blandit</h3>
+            <p class="datum">14-08-2017</p>
+            <p class="description">
+              Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
+            </p>
+          </div>
+        </div></a>
+        <div class="row more-news">
+          <div class="col-md-12 col-xs-12">
+            <a href="">More news</a>
+          </div>
+        </div>
+      </div>
+      <!-- end news-->
     </div>
   </div>
 </section>
