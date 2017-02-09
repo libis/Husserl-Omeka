@@ -6586,16 +6586,16 @@ header .container {
   background: rgba(36, 36, 36, 0.2);
   font-weight: 700;
   font-size: 1.2rem;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   margin-top: 6rem;
   line-height: 1.2;
   color: white;
   text-align: right;
-  border-right: 20px solid rgba(36, 36, 36, 0.25);
+  border-right: 20px solid rgba(36, 36, 36, 0.2);
 }
 
 .home .learn p {
-  margin: 0 0 0 0;
+  margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
 }
@@ -7119,7 +7119,7 @@ footer h4 {
 }
 
 footer p {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 footer img {
