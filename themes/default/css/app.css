@@ -6484,7 +6484,7 @@ header .container {
   border-radius: 0;
   margin: 0;
   padding: 0;
-  background: rgba(36, 36, 36, 0.1);
+  background: rgba(36, 36, 36, 0.05);
 }
 
 .jumbotron p {
@@ -6496,7 +6496,7 @@ header .container {
 }
 
 .jumbotron .intro {
-  background: rgba(246, 246, 246, 0.3);
+  background: #f6f6f6;
 }
 
 .jumbotron .intro-image {
@@ -6508,11 +6508,11 @@ header .container {
   text-align: left;
   padding: 4rem 4rem;
   height: 440px;
-  background: #f6f6f6;
+  background: white;
 }
 
 .jumbotron .intro-content p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-shadow: none;
 }
 

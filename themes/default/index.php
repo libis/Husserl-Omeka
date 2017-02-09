@@ -4,7 +4,7 @@
         <div class="row">
             <div class="intro col-md-12">
               <div class='row'>
-                <div class="intro-content col-md-8 offset-md-1">
+                <div class="intro-content col-md-6 offset-md-1">
                   <div class="">
                     <p>Vestibulum ac hendrerit quam. Aliquam accumsan, mauris at pellentesque lobortis,
                        mi nibh feugiat ante, nec mattis urna libero eu justo.</p>
@@ -12,7 +12,7 @@
                     <p class="more"><i class="material-icons">&#xE5C8;</i><a href="">More about digital Husserl</a></p>
                   </div>
                 </div>
-                <div class="intro-image col-md-3">
+                <div class="intro-image offset-md-1 col-md-3">
                   <img src="<?php echo img("Edmund_Husserl_1910s.jpg");?>">
                 </div>
 
