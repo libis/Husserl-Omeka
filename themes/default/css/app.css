@@ -6298,7 +6298,7 @@ body {
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Frank Ruhl Libre", sans-serif;
 }
 
 .navbar {
@@ -6386,7 +6386,7 @@ header .container {
 }
 
 .public-nav .navbar-nav li a {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: normal;
   margin: 0 25px 0 0;
   font-size: 0.9rem;
@@ -6485,6 +6485,10 @@ header .container {
   margin: 0;
   padding: 0;
   background: rgba(36, 36, 36, 0.1);
+}
+
+.jumbotron p {
+  font-family: "Open Sans", sans-serif;
 }
 
 .jumbotron .row {
@@ -6593,6 +6597,7 @@ header .container {
 .home .learn p {
   margin: 0 0 0 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 .home .features {
@@ -6686,9 +6691,10 @@ section.news .news-home h2 {
 }
 
 section.news .news-home h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: rgba(36, 36, 36, 0.8);
-  font-weight: 900;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
 }
 
 section.news .news-home .news-item {
@@ -6792,6 +6798,11 @@ section.news .news-container .news-item:hover {
   position: relative;
 }
 
+.exhibit-show-section .simple-page-container,
+.simple-page-section .simple-page-container {
+  background: rgba(36, 36, 36, 0.05);
+}
+
 @media (max-width: 767px) {
   .exhibit-show-section,
   .simple-page-section {
@@ -6814,7 +6825,7 @@ section.news .news-container .news-item:hover {
 
 .exhibit-show-section .page .top,
 .simple-page-section .page .top {
-  background: rgba(36, 36, 36, 0.7);
+  background: rgba(36, 36, 36, 0.5);
   padding: 2rem;
   margin: 0;
   height: auto;
@@ -6878,7 +6889,6 @@ section.news .news-container .news-item:hover {
 
 .exhibit-show-section .nav,
 .simple-page-section .nav {
-  padding: 1rem 0;
   margin-top: 2rem;
   font-family: "Open Sans", sans-serif;
   font-size: 1.1rem;
@@ -6914,8 +6924,14 @@ section.news .news-container .news-item:hover {
 
 .solr-section-search {
   z-index: 101;
-  padding: 1.5rem 0;
+  padding: 0;
   background: rgba(36, 36, 36, 0.3);
+}
+
+.solr-section-search .solr-container {
+  background: rgba(36, 36, 36, 0.1);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .solr-section-search h1 {
@@ -6963,6 +6979,11 @@ section.news .news-container .news-item:hover {
   background: #eee;
 }
 
+.solr-section-applied .solr-container {
+  padding: 0;
+  background: rgba(36, 36, 36, 0.05);
+}
+
 .solr-section-applied #solr-applied-facets ul {
   margin: 0;
   padding: 0;
@@ -6974,12 +6995,11 @@ section.news .news-container .news-item:hover {
   background: rgba(36, 36, 36, 0.1);
   width: auto;
   display: inline-block;
-  margin: 0 0px 0px 0;
+  margin: 0;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   vertical-align: middle;
   line-height: 1.2rem;
-  border-right: 2px solid #eee;
 }
 
 .solr-section-applied #solr-applied-facets ul li a {
@@ -6995,16 +7015,24 @@ section.news .news-container .news-item:hover {
 }
 
 .solr-section-results {
-  background: #fff;
   z-index: 101;
   position: relative;
-  padding: 3rem;
+  padding: 0rem;
 }
 
 @media (max-width: 767px) {
   .solr-section-results {
     margin-top: 0px;
   }
+}
+
+.solr-section-results .solr-container {
+  background: #eee;
+}
+
+.solr-section-results .solr-results {
+  padding: 2rem;
+  background: white;
 }
 
 .solr-section-results h1 {
@@ -7022,6 +7050,7 @@ section.news .news-container .news-item:hover {
   font-size: 1.3rem;
   color: rgba(51, 51, 51, 0.8);
   margin-bottom: 15px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .solr-section-results .result {
@@ -7030,20 +7059,44 @@ section.news .news-container .news-item:hover {
   border-bottom: 2px solid #fff;
 }
 
+.solr-section-results .result h2 {
+  font-weight: 800;
+}
+
+.solr-section-results .result img {
+  width: 100%;
+}
+
 .solr-section-results .result .result-title {
   font-size: 1.2rem;
 }
 
+.solr-section-results #solr-facets {
+  padding: 2rem;
+}
+
 .solr-section-results #solr-facets strong {
   font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  color: rgba(36, 36, 36, 0.8);
 }
 
 .solr-section-results #solr-facets ul {
   margin: 5px 0;
+  list-style: none;
+  padding-left: 15px;
 }
 
 .solr-section-results #solr-facets ul li {
   font-size: 1rem;
+}
+
+.solr-section-results #solr-facets ul li a {
+  color: rgba(36, 36, 36, 0.8);
+}
+
+.solr-section-results #solr-facets ul li:before {
+  content: "\203A";
 }
 
 footer {
@@ -7054,7 +7107,7 @@ footer {
 }
 
 footer .footer-container {
-  padding-top: 4rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
   background: rgba(36, 36, 36, 0.04);
 }
@@ -7087,6 +7140,11 @@ footer ul li {
 
 footer a {
   color: rgba(36, 36, 36, 0.6);
+}
+
+footer a:hover {
+  color: rgba(36, 36, 36, 0.4);
+  text-decoration: none;
 }
 
 footer .copyright {

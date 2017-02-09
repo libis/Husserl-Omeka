@@ -9,7 +9,7 @@
 <?php echo head(array('title' => __('Solr Search'))); ?>
 
 <div class="content-wrapper bs-docs-section solr-section-search">
-  <div class="container solr-container">
+  <div class="container-fluid solr-container">
 
     <!-- Search form. -->
     <div class="solr">
@@ -24,7 +24,7 @@
   </div>
 </div>
 <div class="content-wrapper bs-docs-section solr-section-applied">
-  <div class="container solr-container">
+  <div class="container-fluid solr-container">
     <!-- Applied facets. -->
     <div id="solr-applied-facets">
       <ul>
@@ -48,9 +48,9 @@
   </div>
 </div>
 <div class="content-wrapper bs-docs-section solr-section-results">
-    <div class="container solr-container">
+    <div class="container-fluid solr-container">
     <div class="row">
-      <div id="solr-facets" class="col-md-4 col-xs-12">
+      <div id="solr-facets" class="col-md-3 col-xs-12">
           <!-- Facets. -->
           <h2><?php echo __('Limit your search'); ?></h2>
 
@@ -88,7 +88,7 @@
             <?php endforeach; ?>
 
           </div>
-          <div class="solr-results col-md-8 col-xs-12">
+          <div class="solr-results col-md-9 col-xs-12">
             <!-- Results. -->
 
             <!-- Number found. -->
@@ -99,16 +99,28 @@
             <?php foreach ($results->response->docs as $doc) : ?>
 
               <!-- Document. -->
-              <div class="result">
-
+              <div class="row result">
+                <div class="col-xs-12 col-md-3">
+                    <?php
+                    if ($doc->resulttype == 'Item') :
+                        $item = get_db()->getTable($doc->model)->find($doc->modelid);
+                        echo link_to_item(
+                            item_image('square_thumbnail', array('alt' => $doc->title), 0, $item),
+                            array(),
+                            'show',
+                            $item
+                        );
+                    endif;
+                    ?>
+                </div>
                 <!-- Header. -->
-                <div class="result-header">
+                <div class="col-xs-12 col-md-9">
 
                     <!-- Record URL. -->
                     <?php $url = SolrSearch_Helpers_View::getDocumentUrl($doc); ?>
 
                     <!-- Title. -->
-                    <a href="<?php echo $url; ?>" class="result-title">
+                    <h2><a href="<?php echo $url; ?>" class="result-title">
                     <?php
                     $title = is_array($doc->title) ? $doc->title[0] : $doc->title;
                     if (empty($title)) {
@@ -116,35 +128,27 @@
                     }
                     echo $title;
                     ?>
-                    </a>
+                    </a></h2>
 
-                    <!-- Result type.
-                    <span class="result-type">(<?php echo $doc->resulttype; ?>)</span> -->
+                    <?php
+                        if ($doc->resulttype == 'Item') :
+                          $item = get_db()->getTable($doc->model)->find($doc->modelid);
+                          if($text = metadata($item, array('Dublin Core','Description'))):
+                            echo $text;
+                          endif;
+                        endif;
+                    ?>
 
-                </div>
-
-                <!-- Highlighting. -->
-                <?php if (get_option('solr_search_hl')) : ?>
-                  <ul class="hl">
-                    <?php foreach ($results->highlighting->{$doc->id} as $field) : ?>
-                        <?php foreach ($field as $hl) : ?>
-                            <li class="snippet"><?php echo strip_tags($hl, '<em>'); ?></li>
+                    <?php if (get_option('solr_search_hl')) : ?>
+                      <ul class="hl">
+                        <?php foreach ($results->highlighting->{$doc->id} as $field) : ?>
+                            <?php foreach ($field as $hl) : ?>
+                                <li class="snippet"><?php echo strip_tags($hl, '<em>'); ?></li>
+                            <?php endforeach; ?>
                         <?php endforeach; ?>
-                    <?php endforeach; ?>
-                  </ul>
-                <?php endif; ?>
-
-                <?php
-                if ($doc->resulttype == 'item') :
-                    $item = get_db()->getTable($doc->model)->find($doc->modelid);
-                    echo link_to_item(
-                        item_image('square_thumbnail', array('alt' => $doc->title), 0, $item),
-                        array(),
-                        'show',
-                        $item
-                    );
-                endif;
-                ?>
+                      </ul>
+                    <?php endif; ?>
+                </div>
               </div>
 
             <?php endforeach; ?>

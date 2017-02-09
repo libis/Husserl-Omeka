@@ -11,11 +11,11 @@ echo head(array(
 ));
 ?>
 <div class="content-wrapper simple-page-section ">
-<div class="container">
+<div class="container-fluid simple-page-container">
     <!-- Content -->
 
         <div class="row">
-            <div class="col-sm-9 page">
+            <div class="col-sm-9 offset-md-1 page">
                 <div class='top'>
                     <?php if (!$is_home_page): ?>
                     <p id="simple-pages-breadcrumbs"><span><?php echo simple_pages_display_breadcrumbs(); ?></span></p>
