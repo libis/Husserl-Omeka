@@ -100,7 +100,7 @@
 
               <!-- Document. -->
               <div class="row result">
-                <div class="col-xs-12 col-md-3">
+                <div class="col-xs-12 col-md-3 img-column">
                     <?php
                     if ($doc->resulttype == 'Item') :
                         $item = get_db()->getTable($doc->model)->find($doc->modelid);

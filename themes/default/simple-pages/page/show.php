@@ -11,18 +11,18 @@ echo head(array(
 ));
 ?>
 <div class="content-wrapper simple-page-section ">
-<div class="container-fluid simple-page-container">
+  <div class="container-fluid simple-page-container">
     <!-- Content -->
 
         <div class="row">
-            <div class="col-sm-9 offset-md-1 page">
-                <div class='top'>
+            <div class="col-sm-9 page">
+                <div class='row top'>
                     <?php if (!$is_home_page): ?>
                     <p id="simple-pages-breadcrumbs"><span><?php echo simple_pages_display_breadcrumbs(); ?></span></p>
                     <h1><?php echo metadata('simple_pages_page', 'title'); ?></h1>
                     <?php endif; ?>
                 </div>
-                <div class='content'>
+                <div class='row content'>
                     <?php
                         $text = metadata('simple_pages_page', 'text', array('no_escape' => true));
                         echo $this->shortcodes($text);

@@ -6745,6 +6745,11 @@ section.news .spotlight .more-news a {
   border-color: rgba(36, 36, 36, 0.4);
 }
 
+section.news .spotlight .more-news a:hover {
+  background: rgba(36, 36, 36, 0.4);
+  border-color: none;
+}
+
 section.news .news-container {
   background: white;
 }
@@ -6825,12 +6830,10 @@ section.news .news-container .news-item:hover {
 
 .exhibit-show-section .page .top,
 .simple-page-section .page .top {
-  background: rgba(36, 36, 36, 0.5);
+  background: rgba(36, 36, 36, 0.05);
   padding: 2rem;
-  margin: 0;
   height: auto;
   overflow: hidden;
-  color: #fff;
 }
 
 .exhibit-show-section .page .top h1,
@@ -6842,7 +6845,6 @@ section.news .news-container .news-item:hover {
 .simple-page-section .page .top #simple-pages-breadcrumbs {
   margin: 0;
   height: 50px;
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .exhibit-show-section .page .top #simple-pages-breadcrumbs span,
