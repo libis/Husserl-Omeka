@@ -105,7 +105,7 @@
                     if ($doc->resulttype == 'Item') :
                         $item = get_db()->getTable($doc->model)->find($doc->modelid);
                         echo link_to_item(
-                            item_image('square_thumbnail', array('alt' => $doc->title), 0, $item),
+                            item_image('thumbnail', array('alt' => $doc->title), 0, $item),
                             array(),
                             'show',
                             $item
