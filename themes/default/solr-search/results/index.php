@@ -10,7 +10,6 @@
 
 <div class="content-wrapper bs-docs-section solr-section-search">
   <div class="container-fluid solr-container">
-
     <!-- Search form. -->
     <div class="solr">
       <form id="solr-search-form">

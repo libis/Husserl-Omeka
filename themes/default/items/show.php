@@ -2,26 +2,21 @@
 <section class="item-section general-section">
     <div class="container-fluid">
         <div class="row image-row">
-            <?php echo $this->openLayersZoom()->zoom(get_current_record('Item')); ?>
-
+          <!-- The following returns all of the files associated with an item. -->
+          <?php if (metadata('item', 'has files')): ?>
+          <div id="itemfiles" class="element">
+              <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'col-sm-2 col-xs-12')),'thumbnail'); ?></div>
+          </div>
+          <?php endif; ?>
         </div>
     </div>
 </section>
 <section class="metadata-section general-section">
-    <div id="content" class='container' role="main" tabindex="-1">
-        <div class="row">            
-            <div class="offset-sm-2 col-sm-8 page">
-                <div class='content'>
+    <div id="content" class='container-fluid' role="main" tabindex="-1">
+        <div class="row content">
+            <div class="col-sm-12 page">
                     <h1 class="section-title projecten-title"><span><?php echo metadata('item', array('Dublin Core', 'Title')); ?></span></h1>
                     <?php echo all_element_texts('item'); ?>
-
-                    <!-- The following returns all of the files associated with an item. -->
-                    <?php if (metadata('item', 'has files') && (get_theme_option('Item FileGallery') == 1)): ?>
-                    <div id="itemfiles" class="element">
-                        <h3><?php echo __('Files'); ?></h3>
-                        <div class="element-text"><?php echo item_image_gallery(); ?></div>
-                    </div>
-                    <?php endif; ?>
 
                     <!-- If the item belongs to a collection, the following creates a link to that collection. -->
                     <?php if (metadata('item', 'Collection Name')): ?>
@@ -51,13 +46,10 @@
                     <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
                 </ul>
                 </nav>
-            </div>
+
         </div>
     </div>
 
 </section>
-<?php //fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
-
-
 
 <?php echo foot(); ?>
