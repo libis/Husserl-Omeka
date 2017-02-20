@@ -7043,6 +7043,12 @@ section.news .news-container .news-item:hover {
   padding-bottom: 1.5rem;
 }
 
+@media (max-width: 767px) {
+  .solr-section-search .solr-container {
+    padding: 1rem;
+  }
+}
+
 .solr-section-search h1 {
   margin-bottom: 2rem;
   font-size: 1.8rem;
@@ -7082,6 +7088,13 @@ section.news .news-container .news-item:hover {
   width: 100%;
   max-width: 600px;
   border-bottom: 2px solid rgba(36, 36, 36, 0.6);
+}
+
+@media (max-width: 767px) {
+  .solr-section-search #solr-search-form input[type="text"] {
+    width: 80%;
+    min-width: 200px;
+  }
 }
 
 .solr-section-applied {
@@ -7144,6 +7157,12 @@ section.news .news-container .news-item:hover {
   background: white;
 }
 
+@media (max-width: 767px) {
+  .solr-section-results .solr-results {
+    padding: 1rem;
+  }
+}
+
 .solr-section-results h1 {
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -7174,6 +7193,7 @@ section.news .news-container .news-item:hover {
 
 .solr-section-results .result img {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .solr-section-results .result .result-title {
@@ -7182,6 +7202,12 @@ section.news .news-container .news-item:hover {
 
 .solr-section-results #solr-facets {
   padding: 2rem;
+}
+
+@media (max-width: 767px) {
+  .solr-section-results #solr-facets {
+    padding: 1rem;
+  }
 }
 
 .solr-section-results #solr-facets strong {
