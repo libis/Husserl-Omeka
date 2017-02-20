@@ -6845,7 +6845,7 @@ section.news .news-container .news-item:hover {
 
 .exhibit-show-section .simple-page-container,
 .simple-page-section .simple-page-container {
-  background: rgba(36, 36, 36, 0.05);
+  background: rgba(36, 36, 36, 0.4);
 }
 
 @media (max-width: 767px) {
@@ -6868,9 +6868,33 @@ section.news .news-container .news-item:hover {
   margin-bottom: 2rem;
 }
 
+.exhibit-show-section .page .breadcrumbs,
+.simple-page-section .page .breadcrumbs {
+  background: rgba(238, 238, 238, 0.5);
+  padding-left: 1rem;
+}
+
+.exhibit-show-section .page .breadcrumbs #simple-pages-breadcrumbs,
+.simple-page-section .page .breadcrumbs #simple-pages-breadcrumbs {
+  margin: 0;
+  height: 50px;
+}
+
+.exhibit-show-section .page .breadcrumbs #simple-pages-breadcrumbs span,
+.simple-page-section .page .breadcrumbs #simple-pages-breadcrumbs span {
+  padding: 16px 0;
+  line-height: 50px;
+}
+
+.exhibit-show-section .page .breadcrumbs #simple-pages-breadcrumbs a,
+.simple-page-section .page .breadcrumbs #simple-pages-breadcrumbs a {
+  color: white;
+  font-weight: bold;
+}
+
 .exhibit-show-section .page .top,
 .simple-page-section .page .top {
-  background: rgba(36, 36, 36, 0.05);
+  background: #eeeeee;
   padding: 2rem;
   height: auto;
   overflow: hidden;
@@ -6878,25 +6902,8 @@ section.news .news-container .news-item:hover {
 
 .exhibit-show-section .page .top h1,
 .simple-page-section .page .top h1 {
-  font-weight: 700;
-}
-
-.exhibit-show-section .page .top #simple-pages-breadcrumbs,
-.simple-page-section .page .top #simple-pages-breadcrumbs {
-  margin: 0;
-  height: 50px;
-}
-
-.exhibit-show-section .page .top #simple-pages-breadcrumbs span,
-.simple-page-section .page .top #simple-pages-breadcrumbs span {
-  padding: 16px 0;
-  line-height: 50px;
-}
-
-.exhibit-show-section .page .top #simple-pages-breadcrumbs a,
-.simple-page-section .page .top #simple-pages-breadcrumbs a {
-  color: #FFCF0D;
-  font-weight: bold;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
 }
 
 .exhibit-show-section .page .exhibit-item-caption,
@@ -6925,8 +6932,8 @@ section.news .news-container .news-item:hover {
 
 .exhibit-show-section .content,
 .simple-page-section .content {
-  background: #fff;
-  padding: 3rem;
+  background: white;
+  padding: 2rem;
 }
 
 .exhibit-show-section .nav,
@@ -6934,6 +6941,7 @@ section.news .news-container .news-item:hover {
   margin-top: 2rem;
   font-family: "Open Sans", sans-serif;
   font-size: 1.1rem;
+  padding-left: 25px;
 }
 
 .exhibit-show-section .nav ul,

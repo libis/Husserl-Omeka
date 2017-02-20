@@ -16,11 +16,11 @@ echo head(array(
 
         <div class="row">
             <div class="col-sm-9 page">
-                <div class='row top'>
-                    <?php if (!$is_home_page): ?>
+                <div class='row breadcrumbs'>
                     <p id="simple-pages-breadcrumbs"><span><?php echo simple_pages_display_breadcrumbs(); ?></span></p>
+                </div>
+                <div class='row top'>
                     <h1><?php echo metadata('simple_pages_page', 'title'); ?></h1>
-                    <?php endif; ?>
                 </div>
                 <div class='row content'>
                     <?php
@@ -29,7 +29,7 @@ echo head(array(
                     ?>
                 </div>
             </div>
-            <div class="col-sm-2 nav"><?php echo simple_nav();?></div>
+            <div class="col-sm-3 nav"><?php echo simple_nav();?></div>
         </div>
     </div>
 </div>
