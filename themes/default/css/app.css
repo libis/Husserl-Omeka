@@ -6950,6 +6950,13 @@ section.news .news-container .news-item:hover {
   font-family: "Open Sans", sans-serif;
 }
 
+@media (max-width: 767px) {
+  .exhibit-show-section .page .top,
+  .simple-page-section .page .top {
+    padding: 1rem;
+  }
+}
+
 .exhibit-show-section .page .exhibit-item-caption,
 .simple-page-section .page .exhibit-item-caption {
   border-top: 1px solid #fff7d9;
@@ -6978,6 +6985,13 @@ section.news .news-container .news-item:hover {
 .simple-page-section .content {
   background: white;
   padding: 2rem;
+}
+
+@media (max-width: 767px) {
+  .exhibit-show-section .content,
+  .simple-page-section .content {
+    padding: 1rem;
+  }
 }
 
 .exhibit-show-section .nav,
@@ -7011,7 +7025,8 @@ section.news .news-container .news-item:hover {
 @media (max-width: 767px) {
   .exhibit-show-section .nav,
   .simple-page-section .nav {
-    padding: 0 2rem 2rem;
+    padding: 1rem;
+    margin: 0;
     text-align: center;
   }
 }

@@ -15,21 +15,27 @@ echo head(array(
     <!-- Content -->
 
         <div class="row">
-            <div class="col-sm-9 page">
+            <div class="col-sm-9 col-xs-12 page">
                 <div class='row breadcrumbs'>
+                  <div class="col-xs-12">
                     <p id="simple-pages-breadcrumbs"><span><?php echo simple_pages_display_breadcrumbs(); ?></span></p>
+                  </div>
                 </div>
                 <div class='row top'>
+                  <div class="col-xs-12">
                     <h1><?php echo metadata('simple_pages_page', 'title'); ?></h1>
+                  </div>
                 </div>
                 <div class='row content'>
+                  <div class="col-xs-12">
                     <?php
                         $text = metadata('simple_pages_page', 'text', array('no_escape' => true));
                         echo $this->shortcodes($text);
                     ?>
+                  </div>  
                 </div>
             </div>
-            <div class="col-sm-3 nav"><?php echo simple_nav();?></div>
+            <div class="col-sm-3 col-xs-12 nav"><?php echo simple_nav();?></div>
         </div>
     </div>
 </div>
