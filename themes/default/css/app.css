@@ -6350,11 +6350,18 @@ header .container {
   font-family: "Open Sans", sans-serif;
 }
 
+@media (max-width: 767px) {
+  .public-nav #exCollapsingNavbar2 {
+    margin-top: 0rem;
+  }
+}
+
 .public-nav .navbar-brand {
   color: #FFCF0D;
   font-weight: bold;
   font-size: 2.5rem;
   margin-left: 0;
+  margin-right: 0;
   line-height: 1;
   height: 46px;
   vertical-align: top;
@@ -6370,15 +6377,10 @@ header .container {
   border: none;
   border-radius: 0px;
   height: 46px;
-  padding: 0rem 0;
+  padding: 0;
   z-index: 1000;
   color: #FFCF0D;
-  font-size: 2rem;
   vertical-align: top;
-}
-
-.public-nav .navbar-toggler i {
-  font-size: 1.2rem;
 }
 
 .public-nav .navbar-nav li {
@@ -6407,16 +6409,16 @@ header .container {
 
 .public-nav .form-inline {
   margin: 0.2rem 0 0 0;
-  padding: 0  0  0 1rem;
+  padding: 0 10px;
+  background: #FFCF0D;
 }
 
 @media (max-width: 767px) {
   .public-nav .form-inline {
-    float: none !important;
     height: auto;
     display: block;
     clear: both;
-    padding-top: 10px;
+    margin: 10px 0;
   }
 }
 
@@ -6426,8 +6428,12 @@ header .container {
   border: none;
   padding-left: 10px;
   margin-right: 10px;
+  padding: 6px 10px 6px 0px;
   line-height: 1.1;
+  height: 40px;
   width: 250px;
+  vertical-align: top;
+  color: rgba(36, 36, 36, 0.6);
 }
 
 @media (max-width: 767px) {
@@ -6435,11 +6441,6 @@ header .container {
     width: 85%;
     display: inline;
   }
-}
-
-.public-nav .form-inline .form-control:hover, .public-nav .form-inline .form-control:focus {
-  background: white;
-  transition: all 0.5s ease 0s;
 }
 
 .public-nav .form-inline *::-webkit-input-placeholder {
@@ -6462,15 +6463,15 @@ header .container {
 
 .public-nav .btn {
   background: none;
-  padding: 6px 0px;
+  padding: 0px;
   margin-left: -4px;
   border: none;
-  color: #FFCF0D;
+  height: 40px;
 }
 
 @media (max-width: 767px) {
   .public-nav .btn {
-    width: 15%;
+    width: auto;
   }
 }
 
@@ -6501,13 +6502,19 @@ header .container {
 
 .jumbotron .intro-image {
   padding: 0;
-  height: 440px;
+  height: 420px;
+}
+
+@media (max-width: 767px) {
+  .jumbotron .intro-image {
+    display: none;
+  }
 }
 
 .jumbotron .intro-content {
   text-align: left;
-  padding: 4rem 4rem;
-  height: 440px;
+  padding: 3rem 4rem;
+  height: 420px;
   background: white;
 }
 
@@ -6533,6 +6540,20 @@ header .container {
   font-weight: 300;
 }
 
+@media (max-width: 767px) {
+  .jumbotron .intro-content {
+    padding: 2rem 1rem 2rem 1rem;
+    height: auto;
+  }
+  .jumbotron .intro-content p {
+    font-size: 1rem;
+    text-shadow: none;
+  }
+  .jumbotron .intro-content .more {
+    font-size: 1rem;
+  }
+}
+
 .jumbotron img {
   padding: 0;
   width: 100%;
@@ -6545,13 +6566,7 @@ header .container {
     height: auto;
     display: block;
     clear: both;
-    padding: 1rem 1rem 0 1rem;
-  }
-  .jumbotron h1 {
-    font-size: 2rem;
-  }
-  .jumbotron p {
-    font-size: 1.3rem;
+    padding: 0rem 1rem 0 1rem;
   }
 }
 
@@ -6600,9 +6615,24 @@ header .container {
   font-family: "Open Sans", sans-serif;
 }
 
+@media (max-width: 767px) {
+  .home .learn {
+    margin-top: 0rem;
+    text-align: left;
+    border-right: none;
+    border-left: 1rem solid rgba(36, 36, 36, 0.2);
+  }
+}
+
 .home .features {
-  padding: 6rem 1rem;
+  padding: 6rem 1rem 4rem 1rem;
   background: rgba(36, 36, 36, 0.1);
+}
+
+@media (max-width: 767px) {
+  .home .features {
+    padding: 1rem 1rem;
+  }
 }
 
 .home .features .card-deck {
@@ -6614,7 +6644,7 @@ header .container {
 
 .home .features .card-deck .card {
   border: none;
-  padding: 0rem 1rem 0 1rem;
+  padding: 0rem 1rem 2rem 1rem;
   margin-bottom: 0;
   background: none;
   border-radius: 0;
@@ -6658,6 +6688,19 @@ header .container {
   overflow: hidden;
 }
 
+@media (max-width: 767px) {
+  .home .features .card-deck .card .card-block {
+    background: rgba(36, 36, 36, 0.1);
+    padding: 1rem 1rem;
+  }
+  .home .features .card-deck .card .card-block h4 {
+    font-size: 1.5rem;
+  }
+  .home .features .card-deck .card .card-block .title::before {
+    line-height: 1.5rem;
+  }
+}
+
 .home .card:last-child {
   border: none;
 }
@@ -6683,7 +6726,7 @@ section.news .news-home a {
 }
 
 section.news .news-home h2 {
-  margin: 1rem 0rem 0rem 0;
+  margin: 0;
   padding: 2rem 0rem 2rem 0rem;
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
@@ -6712,6 +6755,7 @@ section.news .news-home .news-item:hover {
 
 section.news .news-home img {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 section.news .news-home .more-news {
@@ -7175,6 +7219,7 @@ footer p {
 footer img {
   width: 100%;
   max-width: 200px;
+  margin-bottom: 1rem;
 }
 
 footer ul {
