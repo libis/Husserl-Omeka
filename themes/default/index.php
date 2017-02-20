@@ -6,9 +6,7 @@
               <div class='row'>
                 <div class="intro-content col-md-6 offset-md-1">
                   <div class="">
-                    <p>Vestibulum ac hendrerit quam. Aliquam accumsan, mauris at pellentesque lobortis,
-                       mi nibh feugiat ante, nec mattis urna libero eu justo.</p>
-                    <p>Sed consequat, nisl et volutpat pulvinar, metus augue hendrerit quam, ac tempus ex mi eget dolor. Nunc finibus, felis interdum consequat condimentum.</p>
+                    <?php echo libis_get_simple_page_content("homepage-info");?>
                     <p class="more"><i class="material-icons">&#xE5C8;</i><a href="">More about digital Husserl</a></p>
                   </div>
                 </div>

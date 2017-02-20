@@ -7040,7 +7040,7 @@ section.news .news-container .news-item:hover {
 .solr-section-search .solr-container {
   background: rgba(36, 36, 36, 0.1);
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  color: white;
 }
 
 @media (max-width: 767px) {
@@ -7049,19 +7049,25 @@ section.news .news-container .news-item:hover {
   }
 }
 
-.solr-section-search h1 {
+.solr-section-search .solr-container h1 {
   margin-bottom: 2rem;
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  font-weight: 300;
+  font-weight: 100;
   font-family: "Open Sans", sans-serif;
 }
 
-.solr-section-search #solr-search-form {
+.solr-section-search .search-bar-solr {
+  background: rgba(36, 36, 36, 0.05);
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.solr-section-search .search-bar-solr #solr-search-form {
   padding-bottom: 0rem;
 }
 
-.solr-section-search #solr-search-form button {
+.solr-section-search .search-bar-solr #solr-search-form button {
   background: none;
   text-transform: uppercase;
   color: white;
@@ -7071,12 +7077,12 @@ section.news .news-container .news-item:hover {
   display: inline-block;
 }
 
-.solr-section-search #solr-search-form button i {
+.solr-section-search .search-bar-solr #solr-search-form button i {
   vertical-align: middle;
   font-size: 2.5rem;
 }
 
-.solr-section-search #solr-search-form input[type="text"] {
+.solr-section-search .search-bar-solr #solr-search-form input[type="text"] {
   border: none;
   padding: 0 20px;
   height: 3rem;
@@ -7091,7 +7097,7 @@ section.news .news-container .news-item:hover {
 }
 
 @media (max-width: 767px) {
-  .solr-section-search #solr-search-form input[type="text"] {
+  .solr-section-search .search-bar-solr #solr-search-form input[type="text"] {
     width: 80%;
     min-width: 200px;
   }
@@ -7193,7 +7199,12 @@ section.news .news-container .news-item:hover {
 
 .solr-section-results .result img {
   width: 100%;
-  margin-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+  .solr-section-results .result img {
+    margin-bottom: 1rem;
+  }
 }
 
 .solr-section-results .result .result-title {
