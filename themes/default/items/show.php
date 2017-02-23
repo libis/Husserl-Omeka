@@ -1,16 +1,16 @@
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'item show')); ?>
-<section class="item-section general-section">
-    <div class="container-fluid">
-        <div class="row image-row">
-          <!-- The following returns all of the files associated with an item. -->
-          <?php if (metadata('item', 'has files')): ?>
-          <div id="itemfiles" class="element">
-              <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'col-sm-2 col-xs-12')),'thumbnail'); ?></div>
+<?php if (metadata('item', 'has files')): ?>
+  <section class="item-section general-section">
+      <div class="container-fluid">
+          <div class="row image-row">
+            <!-- The following returns all of the files associated with an item. -->
+            <div id="itemfiles" class="element">
+                <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'col-sm-2 col-xs-12 image')),'thumbnail'); ?></div>
+            </div>
           </div>
-          <?php endif; ?>
-        </div>
-    </div>
-</section>
+      </div>
+  </section>
+<?php endif; ?>
 <section class="metadata-section general-section">
     <div id="content" class='container-fluid' role="main" tabindex="-1">
         <div class="row content">
@@ -42,8 +42,8 @@
                 </div>
                 <nav>
                 <ul class="item-pagination navigation">
-                    <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
-                    <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
+                    <li id="previous-item" class="previous"><?php echo link_to_previous_item_show("&#8249; Previous"); ?></li>
+                    <li id="next-item" class="next"><?php echo link_to_next_item_show('Next &#8250;'); ?></li>
                 </ul>
                 </nav>
 

@@ -6819,12 +6819,16 @@ section.news .news-container .news-item:hover {
 
 .item-section .image-row {
   overflow: hidden;
-  padding: 2rem;
+  padding: 3rem 1rem;
   background: rgba(36, 36, 36, 0.05);
 }
 
 .item-section .image-row img {
   width: 100%;
+}
+
+.item-section .image-row .image {
+  padding: 1rem;
 }
 
 .metadata-section {
@@ -6871,6 +6875,15 @@ section.news .news-container .news-item:hover {
   overflow: hidden;
 }
 
+.metadata-section .item-pagination {
+  clear: both;
+  padding: 1rem 2rem;
+}
+
+.metadata-section .item-pagination .next {
+  float: right;
+}
+
 .metadata-section .item-pagination li {
   list-style: none;
   display: inline;
@@ -6879,6 +6892,10 @@ section.news .news-container .news-item:hover {
 .metadata-section .item-pagination li a {
   font-family: "Open Sans", sans-serif;
   font-weight: 900;
+}
+
+.metadata-section .item-pagination li a:hover {
+  text-decoration: none;
 }
 
 .exhibit-show-section,
