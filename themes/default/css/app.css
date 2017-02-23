@@ -6868,7 +6868,15 @@ section.news .news-container .news-item:hover {
   font-weight: bold;
   text-align: right;
   margin-right: 20px;
-  line-height: 1.3;
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .metadata-section .element h3 {
+    float: none;
+    width: auto;
+    text-align: left;
+  }
 }
 
 .metadata-section .element .element-text {
