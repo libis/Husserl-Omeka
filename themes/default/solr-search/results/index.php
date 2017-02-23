@@ -10,15 +10,12 @@
 
 <div class="content-wrapper bs-docs-section solr-section-search">
   <div class="container-fluid solr-container">
-    <div  class="row">
-        <div class="col-md-8 col-xs-12">
-          <h1>Overview of Husserl’s lectures</h1>
-          <?php echo libis_get_simple_page_content("lecture-info");?>
-        </div>
-    </div>
+
     <div  class="row search-bar-solr">
     <!-- Search form. -->
-      <div class="solr col-md-12 col-xs-12">
+      <div class="solr col-md-7 col-xs-12">
+        <h1>Overview of Husserl’s lectures</h1>
+
         <form id="solr-search-form">
             <input type="text" title="<?php echo __('Search keywords') ?>" name="q" placeholder="<?php echo __('Search the Collection'); ?>" value="<?php
               echo array_key_exists('q', $_GET) ? $_GET['q'] : '';
@@ -27,7 +24,15 @@
           <button type="submit" /><i class="material-icons">&#xE8B6;</i></button>
         </form>
       </div>
+      <div class="col-xs-12 col-md-5 lecture-info">
+          <?php echo libis_get_simple_page_content("lecture-info");?>
+      </div>
     </div>
+    <!--<div class="row">
+        <div class="col-xs-12 col-md-7 offset-md-5 lecture-info">
+            <?php echo libis_get_simple_page_content("lecture-info");?>
+        </div>
+    </div>-->
   </div>
 </div>
 <div class="content-wrapper bs-docs-section solr-section-applied">
