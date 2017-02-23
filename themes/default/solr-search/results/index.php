@@ -150,16 +150,6 @@
                           endif;
                         endif;
                     ?>
-
-                    <?php if (get_option('solr_search_hl')) : ?>
-                      <ul class="hl">
-                        <?php foreach ($results->highlighting->{$doc->id} as $field) : ?>
-                            <?php foreach ($field as $hl) : ?>
-                                <li class="snippet"><?php echo strip_tags($hl, '<em>'); ?></li>
-                            <?php endforeach; ?>
-                        <?php endforeach; ?>
-                      </ul>
-                    <?php endif; ?>
                 </div>
               </div>
 

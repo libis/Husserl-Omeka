@@ -6985,6 +6985,7 @@ section.news .news-container .news-item:hover {
 .simple-page-section .content {
   background: white;
   padding: 2rem;
+  min-height: 300px;
 }
 
 @media (max-width: 767px) {
