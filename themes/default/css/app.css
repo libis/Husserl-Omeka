@@ -6844,7 +6844,7 @@ section.news .news-container .news-item:hover {
 .metadata-section h1 {
   font-weight: 100;
   text-transform: uppercase;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -6852,8 +6852,11 @@ section.news .news-container .news-item:hover {
   display: none;
 }
 
-.metadata-section h3 {
-  font-family: "Open Sans", sans-serif;
+.metadata-section .type-title {
+  font-weight: 900;
+  color: rgba(36, 36, 36, 0.7);
+  margin-bottom: 0.2rem;
+  font-size: 1.7rem;
 }
 
 .metadata-section .element {
@@ -6862,6 +6865,7 @@ section.news .news-container .news-item:hover {
 }
 
 .metadata-section .element h3 {
+  font-family: "Open Sans", sans-serif;
   width: 200px;
   float: left;
   font-size: 1rem;
@@ -6881,6 +6885,10 @@ section.news .news-container .news-item:hover {
 
 .metadata-section .element .element-text {
   overflow: hidden;
+}
+
+.metadata-section .date {
+  color: rgba(36, 36, 36, 0.5);
 }
 
 .metadata-section .item-pagination {
