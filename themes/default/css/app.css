@@ -6889,9 +6889,10 @@ section.news .news-container .news-item .datum {
   position: relative;
 }
 
-.exhibit-show-section .simple-page-container,
-.simple-page-section .simple-page-container {
-  background: rgba(36, 36, 36, 0.4);
+.exhibit-show-section .simple-page-container, .exhibit-show-section .exhibit-container,
+.simple-page-section .simple-page-container,
+.simple-page-section .exhibit-container {
+  background: rgba(36, 36, 36, 0.15);
 }
 
 @media (max-width: 767px) {
@@ -6916,7 +6917,7 @@ section.news .news-container .news-item .datum {
 
 .exhibit-show-section .page .breadcrumbs,
 .simple-page-section .page .breadcrumbs {
-  background: rgba(238, 238, 238, 0.5);
+  background: rgba(36, 36, 36, 0.3);
   padding-left: 1rem;
 }
 
@@ -6938,6 +6939,22 @@ section.news .news-container .news-item .datum {
   font-weight: bold;
 }
 
+.exhibit-show-section .page .image,
+.simple-page-section .page .image {
+  background: rgba(36, 36, 36, 0.2);
+}
+
+.exhibit-show-section .page .image .cover-container,
+.simple-page-section .page .image .cover-container {
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+.exhibit-show-section .page .image .cover-container img,
+.simple-page-section .page .image .cover-container img {
+  max-width: 100%;
+}
+
 .exhibit-show-section .page .top,
 .simple-page-section .page .top {
   background: white;
@@ -6949,7 +6966,20 @@ section.news .news-container .news-item .datum {
 .exhibit-show-section .page .top h1,
 .simple-page-section .page .top h1 {
   font-weight: 300;
+  margin-bottom: 0;
   font-family: "Open Sans", sans-serif;
+}
+
+.exhibit-show-section .page .top h6,
+.simple-page-section .page .top h6 {
+  font-size: 1.5rem;
+  font-family: "Frank Ruhl Libre", sans-serif;
+}
+
+.exhibit-show-section .page .top h6 a,
+.simple-page-section .page .top h6 a {
+  color: rgba(36, 36, 36, 0.7);
+  font-weight: 100;
 }
 
 @media (max-width: 767px) {
@@ -7007,7 +7037,7 @@ section.news .news-container .news-item .datum {
 
 .exhibit-show-section .nav ul,
 .simple-page-section .nav ul {
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   border-left: 15px solid rgba(36, 36, 36, 0.6);
 }

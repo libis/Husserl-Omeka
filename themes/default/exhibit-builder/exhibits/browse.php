@@ -3,21 +3,21 @@ $title = __('Browse Exhibits');
 echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
 ?>
 <section class="metadata-section general-section exhibit-show-section">
-  <div id="content" class='container' role="main" tabindex="-1">
+  <div id="content" class='container exhibit-container' role="main" tabindex="-1">
       <div class="row">
-        <div class="offset-sm-1 col-sm-10 page">
+        <div class="col-sm-12 col-xs-12 page">
           <div class='content'>
             <h1><?php echo $title; ?> <?php echo __('(%s total)', $total_results); ?></h1>
             <?php if (count($exhibits) > 0): ?>
 
-            <nav class="navigation secondary-nav">
+            <!--<nav class="navigation secondary-nav">
                 <?php echo nav(array(
                     array(
                         'label' => __('Browse All'),
                         'uri' => url('exhibits')
                     )
                 )); ?>
-            </nav>
+            </nav>-->
 
             <?php echo pagination_links(); ?>
 
