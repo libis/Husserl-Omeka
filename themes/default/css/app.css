@@ -6331,7 +6331,7 @@ header .container {
 
 .public-nav .row {
   padding-bottom: 0.2rem;
-  background: rgba(36, 36, 36, 0.5);
+  background: rgba(36, 36, 36, 0.4);
 }
 
 .public-nav .row:first-child {
@@ -6485,7 +6485,6 @@ header .container {
   border-radius: 0;
   margin: 0;
   padding: 0;
-  background: rgba(36, 36, 36, 0.05);
 }
 
 .jumbotron p {
@@ -6709,12 +6708,8 @@ header .container {
   overflow: auto;
 }
 
-section.news {
-  background: #f6f6f6;
-}
-
 section.news .row:first-child {
-  background: #eee;
+  background: white;
 }
 
 section.news .news-home {
@@ -6750,7 +6745,7 @@ section.news .news-home .news-item {
 }
 
 section.news .news-home .news-item:hover {
-  background: rgba(36, 36, 36, 0.05);
+  background: rgba(36, 36, 36, 0.1);
 }
 
 section.news .news-home img {
@@ -6780,35 +6775,9 @@ section.news .news-home .more-news a:hover {
   text-decoration: none;
 }
 
-section.news .spotlight .news-item {
-  border-top: 1px solid rgba(36, 36, 36, 0.05);
-}
-
-section.news .spotlight .more-news a {
-  color: rgba(36, 36, 36, 0.4);
-  border-color: rgba(36, 36, 36, 0.4);
-}
-
-section.news .spotlight .more-news a:hover {
-  background: rgba(36, 36, 36, 0.4);
-  border-color: none;
-}
-
-section.news .news-container {
-  background: white;
-}
-
-section.news .news-container .news-item {
-  background: white;
-}
-
 section.news .news-container .news-item .datum {
   font-size: 90%;
   color: rgba(36, 36, 36, 0.5);
-}
-
-section.news .news-container .news-item:hover {
-  background: rgba(255, 207, 13, 0.5);
 }
 
 .item-section {
@@ -6971,8 +6940,8 @@ section.news .news-container .news-item:hover {
 
 .exhibit-show-section .page .top,
 .simple-page-section .page .top {
-  background: #eeeeee;
-  padding: 2rem;
+  background: white;
+  padding: 2rem 2rem 0 2rem;
   height: auto;
   overflow: hidden;
 }
