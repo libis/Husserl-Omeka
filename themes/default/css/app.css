@@ -6408,8 +6408,8 @@ header .container {
 }
 
 .public-nav .form-inline {
-  margin: 0.2rem 0 0 0;
-  padding: 2px 10px;
+  margin: 7px 0 0 0;
+  padding: 0px 10px;
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -6430,7 +6430,7 @@ header .container {
   margin-right: 10px;
   padding: 6px 10px 6px 0px;
   line-height: 1.1;
-  height: 46px;
+  height: 40px;
   width: 250px;
   vertical-align: top;
   color: #FFCF0D;
@@ -6466,7 +6466,7 @@ header .container {
   padding: 0px;
   margin-left: -4px;
   border: none;
-  height: 46px;
+  height: 40px;
   color: #FFCF0D;
 }
 
