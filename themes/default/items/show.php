@@ -3,6 +3,15 @@
 <?php if (metadata('item', 'has files') && $type != 'News'): ?>
   <section class="item-section general-section">
       <div class="container-fluid">
+        <div class='row breadcrumbs'>
+          <div class="col-xs-12">
+              <p id="simple-pages-breadcrumbs">
+                <span><a href="<?php echo url('/');?>">Home</a></span>
+                 > <span><a href="<?php echo $type;?>"><?php echo $type;?></a></span>
+                 > <?php echo metadata('item', array('Dublin Core', 'Title')); ?>
+               </p>
+           </div>
+        </div>
           <div class="row image-row">
             <!-- The following returns all of the files associated with an item. -->
             <div id="itemfiles" class="element">
@@ -14,6 +23,17 @@
 <?php endif; ?>
 <section class="metadata-section general-section">
     <div id="content" class='container-fluid' role="main" tabindex="-1">
+        <?php if ($type == 'News'): ?>
+          <div class='row breadcrumbs'>
+            <div class="col-xs-12">
+                <p id="simple-pages-breadcrumbs">
+                  <span><a href="<?php echo url('/');?>">Home</a></span>
+                   > <span><a href="<?php echo $type;?>"><?php echo $type;?></a></span>
+                   > <?php echo metadata('item', array('Dublin Core', 'Title')); ?>
+                 </p>
+             </div>
+          </div>
+        <?php endif; ?>
         <div class="row content">
             <?php if (metadata('item', 'has files') && $type == 'News'): ?>
               <div class="col-sm-3 col-xs-12 page">
@@ -26,7 +46,7 @@
               <div class="col-sm-12 col-xs-12 page">
             <?php endif; ?>
                     <?php if ($type != ''): ?>
-                      <h3 class="type-title"><?php echo $type;?></h3>
+                      <!--<h3 class="type-title"><?php echo $type;?></h3>-->
                     <?php endif; ?>
                     <h1 class="section-title projecten-title"><span><?php echo metadata('item', array('Dublin Core', 'Title')); ?></span></h1>
 

@@ -6781,6 +6781,26 @@ section.news .news-container .news-item .datum {
   color: rgba(36, 36, 36, 0.5);
 }
 
+.breadcrumbs {
+  background: rgba(36, 36, 36, 0.3);
+  padding-left: 1rem;
+}
+
+.breadcrumbs #simple-pages-breadcrumbs {
+  margin: 0;
+  height: 50px;
+}
+
+.breadcrumbs #simple-pages-breadcrumbs span {
+  padding: 16px 0;
+  line-height: 50px;
+}
+
+.breadcrumbs #simple-pages-breadcrumbs a {
+  color: white;
+  font-weight: bold;
+}
+
 .item-section {
   z-index: -3;
   padding-top: 0;
@@ -6823,10 +6843,12 @@ section.news .news-container .news-item .datum {
 }
 
 .metadata-section .type-title {
-  font-weight: 900;
+  font-weight: 100;
   color: rgba(36, 36, 36, 0.7);
   margin-bottom: 0.2rem;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+  text-transform: lowercase;
 }
 
 .metadata-section .element {
