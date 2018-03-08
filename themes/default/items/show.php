@@ -102,16 +102,16 @@
 
             $relations = $metadata[$type.' Item Type Metadata']["Relation"];
             $relations = get_related($relations);
-
-            foreach($relations as $label=>$record_type):?>
-              <?php if(!in_array($label,$dontshow)):?>
-              <div class="element">
-                  <h3>Related <span><?php echo $label;?></span></h3>
-                  <div class="text"><?php echo implode(", ",$record_type['links']);?></div>
-              </div>
-              <?php endif;?>
-            <?php endforeach;?>
-
+            if($relations):
+              foreach($relations as $label=>$record_type):?>
+                <?php if(!in_array($label,$dontshow)):?>
+                <div class="element">
+                    <h3>Related <span><?php echo $label;?></span></h3>
+                    <div class="text"><?php echo implode(", ",$record_type['links']);?></div>
+                </div>
+                <?php endif;?>
+              <?php endforeach;?>
+            <?php endif;?>  
             <?php if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
               <div class="element">
                 <h3><i class="material-icons">&#xE3B6;</i><a href="http://resolver.libis.be/<?php echo $metadata[$type.' Item Type Metadata']["Representation"][0];?>/representation">View online</a></h3>
