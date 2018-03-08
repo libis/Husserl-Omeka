@@ -73,8 +73,7 @@ function related_html($items){
   $relation_array = array();
 
   foreach($items as $item):
-    //var_dump($item[0]);die();
-    $item = $item[0];
+
 
     $relation_array[metadata($item,'item_type_name')]["links"][] = link_to_item(metadata($item, array("Dublin Core","Title")),array(),"show",$item);
     $relation_array[metadata($item,'item_type_name')]["records"][] = $item;
