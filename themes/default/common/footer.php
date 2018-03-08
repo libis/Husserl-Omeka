@@ -1,5 +1,5 @@
     <footer role="contentinfo">
-        <div class="container-fluid footer-container">
+        <div class="container">
             <div id="footer-text">
                 <?php echo get_theme_option('Footer Text'); ?>
                 <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = option('copyright')): ?>
@@ -59,10 +59,8 @@
 
 </body>
 <script>
-jQuery('.grid').masonry({
-  itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
-  columnWidth: '.grid-sizer',
-  percentPosition: true
+jQuery(".toggle").on("click", function() {
+  jQuery(".toggle").parent().toggleClass('active');
 });
 
 </script>

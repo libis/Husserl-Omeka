@@ -8,60 +8,57 @@
 <?php queue_css_file('results'); ?>
 <?php echo head(array('title' => __('Solr Search'))); ?>
 
-<div class="content-wrapper bs-docs-section solr-section-search">
-  <div class="container-fluid solr-container">
+<div class="solr-section-search">
+  <div class="container">
+    <div class="search">
+      <div  class="row no-gutters">
+        <!-- Search form. -->
+        <div class="solr-top col-md-7 col-xs-12">
+            <h1>Overview of Husserl’s lectures</h1>
 
-    <div  class="row search-bar-solr">
-    <!-- Search form. -->
-      <div class="solr col-md-7 col-xs-12">
-        <h1>Overview of Husserl’s lectures</h1>
-
-        <form id="solr-search-form">
-            <input type="text" title="<?php echo __('Search keywords') ?>" name="q" placeholder="<?php echo __('Search the Collection'); ?>" value="<?php
-              echo array_key_exists('q', $_GET) ? $_GET['q'] : '';
-              ?>"
-            />
-          <button type="submit" /><i class="material-icons">&#xE8B6;</i></button>
-        </form>
-      </div>
-      <div class="col-xs-12 col-md-5 lecture-info">
-          <?php echo libis_get_simple_page_content("lecture-info");?>
-      </div>
-    </div>
-    <!--<div class="row">
-        <div class="col-xs-12 col-md-7 offset-md-5 lecture-info">
+            <form id="solr-search-form">
+              <div class="inputs">
+                <input type="text" title="<?php echo __('Search keywords') ?>" name="q" placeholder="<?php echo __('Search the Collection'); ?>" value="<?php
+                  echo array_key_exists('q', $_GET) ? $_GET['q'] : '';
+                  ?>"
+                />
+              </div>
+              <div class="buttons">
+                <button type="submit" /><i class="material-icons">&#xE8B6;</i></button>
+              </div>
+            </form>
+        </div>
+        <div class="lecture-info col-xs-12 col-md-5">
             <?php echo libis_get_simple_page_content("lecture-info");?>
         </div>
-    </div>-->
+      </div>
+    </div>
   </div>
 </div>
-<div class="content-wrapper bs-docs-section solr-section-applied">
-  <div class="container-fluid solr-container">
+<div class="solr-section-applied">
+  <div class="container solr-container">
     <!-- Applied facets. -->
     <div id="solr-applied-facets">
       <ul>
         <!-- Get the applied facets. -->
         <?php foreach (SolrSearch_Helpers_Facet::parseFacets() as $f) : ?>
           <li>
-
             <!-- Facet label. -->
             <?php $label = SolrSearch_Helpers_Facet::keyToLabel($f[0]); ?>
             <span class="applied-facet-label"><?php echo $label; ?></span> >
             <span class="applied-facet-value"><?php echo $f[1]; ?></span>
-
             <!-- Remove link. -->
             <?php $url = SolrSearch_Helpers_Facet::removeFacet($f[0], $f[1]); ?>
             <a href="<?php echo $url; ?>"><i class="material-icons">&#xE14C;</i></a>
-
           </li>
         <?php endforeach; ?>
       </ul>
     </div>
   </div>
 </div>
-<div class="content-wrapper bs-docs-section solr-section-results">
-    <div class="container-fluid solr-container">
-    <div class="row">
+<div class="solr-section-results">
+    <div class="container results-container">
+    <div class="row no-gutters">
       <div id="solr-facets" class="col-md-3 col-xs-12">
           <!-- Facets. -->
           <h2><?php echo __('Limit your search'); ?></h2>
@@ -112,7 +109,7 @@
 
               <!-- Document. -->
               <div class="row result">
-                <div class="col-xs-12 col-md-3 img-column">
+                <div class="col-xs-12 col-sm-3 col-md-3 img-column">
                     <?php
                     if ($doc->resulttype == 'Item') :
                         $item = get_db()->getTable($doc->model)->find($doc->modelid);
@@ -126,7 +123,7 @@
                     ?>
                 </div>
                 <!-- Header. -->
-                <div class="col-xs-12 col-md-9">
+                <div class="col-xs-12 col-sm-9 col-md-9">
 
                     <!-- Record URL. -->
                     <?php $url = SolrSearch_Helpers_View::getDocumentUrl($doc); ?>
@@ -145,9 +142,18 @@
                     <?php
                         if ($doc->resulttype == 'Item') :
                           $item = get_db()->getTable($doc->model)->find($doc->modelid);
-                          if($text = metadata($item, array('Dublin Core','Description'))):
-                            echo $text;
-                          endif;
+                          if($text = metadata($item, array('Dublin Core','Date'))):?>
+                            <h3>Date</h3>
+                            <div class="text"><?php echo $text;?></div>
+                          <?php endif;?>
+                          <?php if($text = metadata($item, array('Dublin Core','Description'),array('snippet'=>'200'))):?>
+                            <h3>Description</h3>
+                            <div class="text"><?php echo $text;?></div>
+                          <?php endif;?>
+                          <?php if($text = metadata($item, array('Item Type Metadata','Transcription'),array('snippet'=>'200'))):?>
+                            <h3>Transcription</h3>
+                            <div class="text"><?php echo $text;?></div>
+                          <?php endif;
                         endif;
                     ?>
                 </div>

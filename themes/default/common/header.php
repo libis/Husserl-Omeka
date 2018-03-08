@@ -28,13 +28,10 @@
     ?>
 
     <?php
-      queue_js_file('masonry');
       echo head_js();
     ?>
 
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
@@ -43,39 +40,24 @@
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
         <header role="banner">
-            <nav class="navbar public-nav">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-12">
-                    <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-                      &#9776;
-                    </button>
-                    <a class="navbar-brand" href="<?php echo WEB_ROOT;?>"><span>digital</span>Husserl</a>
-                    <form class="form-inline pull-xs-right">
-                      <input class="form-control" type="text" placeholder="Search">
-                      <button class="btn" type="submit"><i class="material-icons">search</i></button>
-                    </form>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-                    <?php echo public_nav_main(array('role' => 'navigation')) -> setUlClass('nav navbar-nav'); ?>
-                    </div>
-                  </div>
-                </div>
+          <div class="container nav-container">
+            <nav class="navbar">
+              <button class="toggle" type="button">
+                &#9776;
+              </button>
+              <a class="brand" href="<?php echo WEB_ROOT;?>"><span>digital</span>Husserl</a>
+              <div class="left">
+                <?php echo public_nav_main(array('role' => 'navigation')) -> setUlClass('nav navbar-nav'); ?>
+              </div>
+              <div class="right">
+                <form class="form-inline" action="<?php echo url("solr-search");?>">
+                  <input class="form-control" name="q" type="text" placeholder="Search">
+                  <button class="btn" type="submit"><i class="material-icons">search</i></button>
+                </form>
               </div>
             </nav>
-            <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
+          </div>
+
         </header>
-        <div class="collapse full-menu" id="exCollapsingNavbar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <h4>Collapsed content</h4>
-                        <span class="text-muted"> <?php echo public_nav_main(array('role' => 'navigation')); ?></span>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <?php //echo search_form();?>

@@ -31,3 +31,53 @@ function libis_get_simple_page_content($title) {
         return false;
     endif;
 }
+
+function get_related($relations){
+  $types = array("Lecture page",
+            "Archival folder",
+            "Manuscript collection",
+            "Participants list",
+            "Person",
+            "Lecture event",
+            "Publication",
+            "Photograph",
+            "Lecture announcement"
+          );
+    $element = get_db()->getTable('Element')->findByElementSetNameAndElementName('Item Type Metadata', 'CA');
+    $id = $element->id;
+    $items = array();
+    foreach($relations as $relation):
+      $items[] = get_records(
+        'Item',
+        array(
+            'advanced' => array(
+                array(
+                    'element_id' => $id,
+                    'type' => 'is exactly',
+                    'terms' => $relation,
+                )
+            )
+        )
+      );
+    endforeach;
+
+    if(sizeof($items)):
+      return related_html($items);
+    else:
+      return false;
+    endif;
+}
+
+function related_html($items){
+  $html = "";
+  $relation_array = array();
+
+  foreach($items as $item):
+    //var_dump($item[0]);die();
+    $item = $item[0];
+    $relation_array[metadata($item,'item_type_name')]["links"][] = link_to_item(metadata($item, array("Dublin Core","Title")),array(),"show",$item);
+    $relation_array[metadata($item,'item_type_name')]["records"][] = $item;
+  endforeach;
+
+  return $relation_array;
+}
