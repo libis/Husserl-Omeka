@@ -2124,21 +2124,6 @@ html {
 
 /*# sourceMappingURL=bootstrap-grid.css.map */
 /* main: app.scss */
-.card-deck {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-gap: 2rem;
-}
-
-@media (min-width: 992px) {
-  .card-deck {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* main: app.scss */
 * {
   box-sizing: border-box;
 }
@@ -2231,9 +2216,9 @@ header {
   font-family: "Open Sans", sans-serif;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .navbar .left {
-    margin-top: 0rem;
+    padding-left: 0rem;
   }
 }
 
@@ -2264,6 +2249,19 @@ header {
   font-size: 1.5rem;
 }
 
+@media (max-width: 992px) {
+  .navbar .navbar-nav {
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .navbar-nav {
+    padding: 0.5rem 1rem;
+    background: #333;
+  }
+}
+
 .navbar .navbar-nav li {
   display: inline-block;
 }
@@ -2284,16 +2282,6 @@ header {
 
 @media (max-width: 768px) {
   .navbar .navbar-nav li {
-    float: none;
-  }
-}
-
-.navbar .form-inline {
-  padding-left: 10px;
-}
-
-@media (max-width: 768px) {
-  .navbar .form-inline {
     height: auto;
     display: block;
     clear: both;
@@ -2301,24 +2289,40 @@ header {
   }
 }
 
+.navbar .form-inline {
+  padding-left: 10px;
+  min-width: 320px;
+  display: flex;
+}
+
+@media (max-width: 992px) {
+  .navbar .form-inline {
+    height: auto;
+    clear: both;
+    margin: 10px 0;
+    padding: 0;
+  }
+}
+
+.navbar .form-inline .inputs {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.navbar .form-inline .buttons {
+  flex: 0;
+}
+
 .navbar .form-inline .form-control {
   font-family: "Open Sans", sans-serif;
   border: none;
-  margin-right: 10px;
   padding: 6px 10px 6px 10px;
   line-height: 1.1;
   height: 40px;
-  width: 250px;
   vertical-align: top;
   color: #FFCF0D;
   background: rgba(255, 255, 255, 0.05);
-}
-
-@media (max-width: 768px) {
-  .navbar .form-inline .form-control {
-    width: 85%;
-    display: inline;
-  }
+  width: 100%;
 }
 
 .navbar .form-inline *::-webkit-input-placeholder {
@@ -2346,6 +2350,7 @@ header {
   border: none;
   height: 40px;
   color: #FFCF0D;
+  flex: 0;
 }
 
 @media (max-width: 768px) {
@@ -2360,7 +2365,7 @@ header {
   float: right;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 992px) {
   .navbar {
     display: flex;
   }
@@ -2383,13 +2388,13 @@ header {
   display: none;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 992px) {
   .navbar div {
     display: flex;
   }
 }
 
-@media (max-width: 48em) {
+@media (max-width: 992px) {
   .navbar.active div {
     display: block;
   }
@@ -2410,6 +2415,12 @@ header {
 .jumbotron .intro {
   text-align: left;
   background: #f6f6f6;
+}
+
+@media (max-width: 992px) {
+  .jumbotron .intro .bar {
+    display: none;
+  }
 }
 
 .jumbotron .intro .intro-text {
@@ -2486,15 +2497,7 @@ header {
 
 .home {
   padding: 0;
-  z-index: 50;
-  position: relative;
   background: rgba(36, 36, 36, 0.7);
-}
-
-@media (max-width: 768px) {
-  .home {
-    padding: 0;
-  }
 }
 
 .home img {
@@ -2523,7 +2526,7 @@ header {
   font-family: "Open Sans", sans-serif;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .home .learn-row .learn {
     margin-top: 0rem;
     text-align: left;
@@ -2533,26 +2536,34 @@ header {
 }
 
 .home .features {
-  padding: 5rem 2rem 4rem 2rem;
+  padding: 5rem 0 4rem 0;
   background: rgba(36, 36, 36, 0.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .home .features {
-    padding: 1rem 1rem;
+    padding: 2rem 0;
   }
 }
 
 .home .features .card-deck {
-  padding: 0;
-  border-spacing: 0 0;
-  margin-bottom: 0;
-  background: none;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+.home .features .card-deck .card {
+  padding: 0 1rem;
 }
 
 .home .features .card-deck .card img {
   margin-bottom: 0rem;
   border-radius: 0;
+}
+
+@media (max-width: 992px) {
+  .home .features .card-deck .card {
+    margin-bottom: 2rem;
+  }
 }
 
 .home .features .card-deck .card .card-block {
@@ -2571,14 +2582,14 @@ header {
   width: 17px;
   font-weight: 900;
   font-size: 1.4rem;
-  line-height: 1.2;
+  line-height: 1.1;
   color: rgba(36, 36, 36, 0.7);
   color: #FFCF0D;
 }
 
 .home .features .card-deck .card .card-block h4 {
   font-weight: 900;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 1.1;
   font-family: "Frank Ruhl Libre", sans-serif;
   color: white;
@@ -2588,13 +2599,14 @@ header {
   overflow: hidden;
 }
 
+.home .features .card-deck .card .card-block h4 a {
+  color: white;
+}
+
 @media (max-width: 768px) {
   .home .features .card-deck .card .card-block {
     background: rgba(36, 36, 36, 0.1);
     padding: 1rem 1rem;
-  }
-  .home .features .card-deck .card .card-block h4 {
-    font-size: 1.5rem;
   }
   .home .features .card-deck .card .card-block .title::before {
     line-height: 1.5rem;

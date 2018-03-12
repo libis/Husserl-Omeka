@@ -24,11 +24,7 @@
     queue_css_file(array('iconfonts', 'app'));
     queue_css_url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,700,900|Open+Sans:300,400,700');
     echo head_css();
-    echo theme_header_background();
-    ?>
-
-    <?php
-      echo head_js();
+    echo head_js();
     ?>
 
     <!-- JavaScripts -->
@@ -51,8 +47,12 @@
               </div>
               <div class="right">
                 <form class="form-inline" action="<?php echo url("solr-search");?>">
-                  <input class="form-control" name="q" type="text" placeholder="Search">
-                  <button class="btn" type="submit"><i class="material-icons">search</i></button>
+                  <div class="inputs">
+                    <input class="form-control" name="q" type="text" placeholder="Search">
+                  </div>
+                  <div class="buttons">
+                    <button class="btn" type="submit"><i class="material-icons">search</i></button>
+                  </div>
                 </form>
               </div>
             </nav>
