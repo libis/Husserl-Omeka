@@ -2692,7 +2692,7 @@ section.news .item-container .news-container .news-item .datum {
 }
 
 .breadcrumbs {
-  background: rgba(36, 36, 36, 0.3);
+  background: rgba(36, 36, 36, 0.1);
   padding-left: 1rem;
   margin-left: -25px;
   margin-right: -25px;
@@ -2946,7 +2946,7 @@ section.news .item-container .news-container .news-item .datum {
 .content-section .breadcrumbs,
 .exhibit-show-section .breadcrumbs,
 .simple-page-section .breadcrumbs {
-  background: rgba(36, 36, 36, 0.5);
+  background: rgba(36, 36, 36, 0.4);
 }
 
 .content-section .breadcrumbs p,
@@ -3077,7 +3077,7 @@ section.news .item-container .news-container .news-item .datum {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   padding: 25px;
-  background: rgba(36, 36, 36, 0.3);
+  background: rgba(36, 36, 36, 0.1);
 }
 
 .content-section .nav ul,
@@ -3091,7 +3091,6 @@ section.news .item-container .news-container .news-item .datum {
 .exhibit-show-section .nav ul li,
 .simple-page-section .nav ul li {
   list-style: none;
-  font-weight: bold;
   padding: 0.7rem 0;
   border-bottom: 1px solid rgba(36, 36, 36, 0.2);
 }
@@ -3099,7 +3098,7 @@ section.news .item-container .news-container .news-item .datum {
 .content-section .nav ul li a,
 .exhibit-show-section .nav ul li a,
 .simple-page-section .nav ul li a {
-  color: white;
+  color: rgba(36, 36, 36, 0.6);
 }
 
 .content-section .nav ul li:last-of-type,
@@ -3119,13 +3118,13 @@ section.news .item-container .news-container .news-item .datum {
 }
 
 .solr-section-search {
-  background: rgba(36, 36, 36, 0.8);
+  background: rgba(36, 36, 36, 0.3);
   color: white;
 }
 
 .solr-section-search .search .solr-top {
   padding: 2rem 25px;
-  background: rgba(36, 36, 36, 0.1);
+  background: rgba(36, 36, 36, 0.3);
 }
 
 .solr-section-search .search .solr-top h1 {
@@ -3182,7 +3181,7 @@ section.news .item-container .news-container .news-item .datum {
 }
 
 .solr-section-search .lecture-info {
-  background: rgba(36, 36, 36, 0.2);
+  background: rgba(36, 36, 36, 0.1);
   padding: 2rem;
 }
 
@@ -3220,7 +3219,7 @@ section.news .item-container .news-container .news-item .datum {
 }
 
 .solr-section-applied #solr-applied-facets ul li {
-  background: rgba(36, 36, 36, 0.4);
+  background: rgba(36, 36, 36, 0.3);
   width: auto;
   display: inline-block;
   margin: 0;
