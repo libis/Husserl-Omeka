@@ -2135,7 +2135,7 @@ html {
 body {
   height: 100%;
   font-family: "Frank Ruhl Libre", sans-serif;
-  background: #f6f6f6;
+  background: #eee;
   font-size: 1.0rem;
   line-height: 1.3;
 }
@@ -2186,7 +2186,7 @@ header {
 }
 
 .navbar {
-  padding: 1rem;
+  padding: 1rem 25px;
   margin: 0 -25px;
   background: rgba(36, 36, 36, 0.6);
   align-items: center;
@@ -2401,7 +2401,7 @@ header {
 }
 
 .jumbotron {
-  background: #eee;
+  background: #f6f6f6;
 }
 
 .jumbotron p {
@@ -2414,7 +2414,7 @@ header {
 
 .jumbotron .intro {
   text-align: left;
-  background: #f6f6f6;
+  background: rgba(238, 238, 238, 0.8);
 }
 
 @media (max-width: 992px) {
@@ -2430,6 +2430,7 @@ header {
 
 .jumbotron .intro .intro-text p {
   font-size: 1.4rem;
+  color: rgba(36, 36, 36, 0.9);
   text-shadow: none;
 }
 
@@ -2511,7 +2512,7 @@ header {
 .home .learn-row .learn {
   background: rgba(36, 36, 36, 0.2);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 1.5rem 1rem;
   margin-top: 5rem;
   line-height: 1.2;
@@ -2568,7 +2569,7 @@ header {
 
 .home .features .card-deck .card .card-block {
   background: none;
-  padding: 1rem 0 0 0;
+  padding: 0.8rem 0 0 0;
 }
 
 .home .features .card-deck .card .card-block i {
@@ -2578,9 +2579,9 @@ header {
 
 .home .features .card-deck .card .card-block .title::before {
   content: "\203A";
-  float: left;
   width: 17px;
   font-weight: 900;
+  float: left;
   font-size: 1.4rem;
   line-height: 1.1;
   color: rgba(36, 36, 36, 0.7);
@@ -2589,13 +2590,12 @@ header {
 
 .home .features .card-deck .card .card-block h4 {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1.1;
   font-family: "Frank Ruhl Libre", sans-serif;
   color: white;
   padding: 0;
   margin: 0;
-  height: auto;
   overflow: hidden;
 }
 
@@ -2617,8 +2617,8 @@ header {
   border: none;
 }
 
-.home .card-image {
-  overflow: auto;
+section.news {
+  background: #f6f6f6;
 }
 
 section.news .item-container {
@@ -2686,6 +2686,10 @@ section.news .item-container .news-home .more-news a:hover {
   text-decoration: none;
 }
 
+section.news .item-container .news-container h3 {
+  margin-bottom: 0.2rem;
+}
+
 section.news .item-container .news-container .news-item .datum {
   font-size: 90%;
   color: rgba(36, 36, 36, 0.5);
@@ -2693,7 +2697,7 @@ section.news .item-container .news-container .news-item .datum {
 
 .breadcrumbs {
   background: rgba(36, 36, 36, 0.1);
-  padding-left: 1rem;
+  padding: 0 25px;
   margin-left: -25px;
   margin-right: -25px;
 }
@@ -2701,6 +2705,7 @@ section.news .item-container .news-container .news-item .datum {
 .breadcrumbs #simple-pages-breadcrumbs {
   margin: 0;
   height: 50px;
+  font-weight: bold;
 }
 
 .breadcrumbs #simple-pages-breadcrumbs span {
@@ -2711,6 +2716,10 @@ section.news .item-container .news-container .news-item .datum {
 .breadcrumbs #simple-pages-breadcrumbs a {
   color: white;
   font-weight: bold;
+}
+
+.metadata-section {
+  background: #f6f6f6;
 }
 
 .metadata-section .content {
@@ -2935,6 +2944,12 @@ section.news .item-container .news-container .news-item .datum {
   font-weight: 100;
 }
 
+.content-section,
+.exhibit-show-section,
+.simple-page-section {
+  background: #f6f6f6;
+}
+
 @media (max-width: 768px) {
   .content-section,
   .exhibit-show-section,
@@ -2946,7 +2961,7 @@ section.news .item-container .news-container .news-item .datum {
 .content-section .breadcrumbs,
 .exhibit-show-section .breadcrumbs,
 .simple-page-section .breadcrumbs {
-  background: rgba(36, 36, 36, 0.4);
+  background: rgba(36, 36, 36, 0.3);
 }
 
 .content-section .breadcrumbs p,
@@ -3077,7 +3092,7 @@ section.news .item-container .news-container .news-item .datum {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   padding: 25px;
-  background: rgba(36, 36, 36, 0.1);
+  background: rgba(36, 36, 36, 0.05);
 }
 
 .content-section .nav ul,
@@ -3249,6 +3264,10 @@ section.news .item-container .news-container .news-item .datum {
   margin-left: 4px;
 }
 
+.solr-section-results {
+  background: #f6f6f6;
+}
+
 .solr-section-results .solr-results {
   padding: 25px;
   background: white;
@@ -3325,7 +3344,7 @@ section.news .item-container .news-container .news-item .datum {
 
 .solr-section-results #solr-facets {
   padding: 25px 25px 10px 25px;
-  background: #eee;
+  background: rgba(36, 36, 36, 0.05);
 }
 
 .solr-section-results #solr-facets strong {
@@ -3349,19 +3368,71 @@ section.news .item-container .news-container .news-item .datum {
   color: rgba(36, 36, 36, 0.8);
 }
 
+.solr-section-results #solr-facets ul li a:hover {
+  color: #242424;
+}
+
 .solr-section-results #solr-facets ul li:before {
   content: "\203A";
 }
 
 footer {
-  background: rgba(36, 36, 36, 0.08);
   color: rgba(36, 36, 36, 0.7);
   font-family: "Open Sans", sans-serif;
 }
 
 footer #footer-text {
-  padding-top: 3rem;
   padding-bottom: 1rem;
+  padding-top: 3rem;
+}
+
+footer #footer-text a {
+  color: rgba(36, 36, 36, 0.6);
+}
+
+footer #footer-text a:hover {
+  color: rgba(36, 36, 36, 0.4);
+  text-decoration: none;
+}
+
+footer #footer-text .footer-brand {
+  margin-top: 2rem;
+}
+
+footer #footer-text .footer-brand .footer-logo {
+  font-size: 1.2rem;
+  margin-bottom: 1.1rem;
+  color: rgba(36, 36, 36, 0.7);
+  margin-right: 10px;
+  line-height: 1;
+}
+
+footer #footer-text .footer-brand .footer-logo span {
+  font-family: "Frank Ruhl Libre", sans-serif;
+  font-weight: bold;
+}
+
+footer #footer-text .footer-brand ul {
+  padding-left: 0;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+
+footer #footer-text .footer-brand ul li {
+  list-style: none;
+  font-size: 1rem;
+  display: inline;
+  margin-right: 10px;
+}
+
+footer #footer-text .footer-brand ul li a {
+  border-bottom: 1px solid rgba(36, 36, 36, 0.1);
+  font-size: 0.9rem;
+}
+
+footer #footer-text .footer-content {
+  text-align: left;
+  color: #eee;
 }
 
 footer h4 {
@@ -3371,41 +3442,21 @@ footer h4 {
 }
 
 footer p {
-  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(36, 36, 36, 0.6);
+  font-family: "Open Sans", sans-serif;
 }
 
 footer img {
-  max-width: 200px;
-  max-height: 50px;
-  margin-bottom: 1rem;
-}
-
-footer ul {
-  padding-left: 0;
-  margin-top: 0rem;
-}
-
-footer ul li {
-  list-style: none;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-footer a {
-  color: rgba(36, 36, 36, 0.6);
-}
-
-footer a:hover {
-  color: rgba(36, 36, 36, 0.4);
-  text-decoration: none;
+  height: 40px;
+  margin-right: 8px;
+  margin-bottom: 0.5rem;
 }
 
 footer .copyright {
   font-size: 0.9rem;
   color: rgba(36, 36, 36, 0.4);
-  padding: 1rem 0;
-  margin-top: 3rem;
-  border-top: 1px solid rgba(36, 36, 36, 0.04);
 }
 
 @media (min-width: 544px) {

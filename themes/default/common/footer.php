@@ -2,56 +2,29 @@
         <div class="container">
             <div id="footer-text">
                 <?php echo get_theme_option('Footer Text'); ?>
-                <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = option('copyright')): ?>
-                    <p><?php echo $copyright; ?></p>
-                <?php endif; ?>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <img src="<?php echo img("KULEUVEN.png");?>">
-                    </div>
-                    <div class="col-sm-3">
-                        <p>Straatstraat 22<br>
-                            3000 Leuven<br>
-                            016222222<br>
-                        .....</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <ul>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-2">
-                        <ul>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-2">
-                        <ul>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
-                            <li><a href="">Menu item 1</a></li>
+                <div class="row no-gutters">
 
-                        </ul>
-                    </div>
+                  <div class="col-xs-12">
+                        <div>
+                            <a href="http://kuleuven.be"><img src="<?php echo img("KULEUVEN.png");?>"></a>
+                            <a href="http://libis.be"><img src="<?php echo img("libis_gray.png");?>"></a>
+                        </div>
+                        <div class="footer-brand">
 
+
+                          <div class="footer-content">
+                            <p><a class="footer-logo" href="<?php echo url("/");?>">digital<span>Husserl</span></a> Straatstraat 22 | 3000 Leuven | +3216222222</p>
+                            <ul>
+                                <li><a href="">Menu item 1</a></li>
+                                <li><a href="">Menu item 1</a></li>
+                                <li><a href="">Menu item 1</a></li>
+                                <li><a href="">Menu item 1</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                  </div>
                 </div>
             </div>
-
-            <div class="copyright">© test</div>
             <?php fire_plugin_hook('public_footer', array('view' => $this)); ?>
         </div>
 
