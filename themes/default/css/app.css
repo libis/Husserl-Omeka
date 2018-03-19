@@ -3395,10 +3395,6 @@ footer #footer-text a:hover {
   text-decoration: none;
 }
 
-footer #footer-text .footer-brand {
-  margin-top: 2rem;
-}
-
 footer #footer-text .footer-brand .footer-logo {
   font-size: 1.2rem;
   margin-bottom: 1.1rem;
@@ -3415,7 +3411,7 @@ footer #footer-text .footer-brand .footer-logo span {
 footer #footer-text .footer-brand ul {
   padding-left: 0;
   margin-top: 0rem;
-  margin-bottom: 1.5rem;
+  padding: 0.5rem 0 0.5rem 0;
 }
 
 footer #footer-text .footer-brand ul li {
@@ -3426,8 +3422,8 @@ footer #footer-text .footer-brand ul li {
 }
 
 footer #footer-text .footer-brand ul li a {
-  border-bottom: 1px solid rgba(36, 36, 36, 0.1);
   font-size: 0.9rem;
+  border-bottom: 1px solid rgba(36, 36, 36, 0.1);
 }
 
 footer #footer-text .footer-content {
@@ -3455,8 +3451,9 @@ footer img {
 }
 
 footer .copyright {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: rgba(36, 36, 36, 0.4);
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 544px) {
