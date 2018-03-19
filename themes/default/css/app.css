@@ -2225,7 +2225,7 @@ header {
 .navbar .brand {
   color: #FFCF0D;
   font-weight: bold;
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   margin-left: 0;
   margin-right: 1rem;
   line-height: 1;
@@ -2240,12 +2240,10 @@ header {
 .navbar .toggle {
   border: none;
   border-radius: 0px;
-  height: 46px;
   padding: 0 0.4rem 0 0;
   z-index: 1000;
   color: #FFCF0D;
   background: none;
-  vertical-align: top;
   font-size: 1.5rem;
 }
 
@@ -2453,7 +2451,7 @@ header {
 
 @media (max-width: 768px) {
   .jumbotron .intro .intro-text {
-    padding: 2rem 1rem 2rem 1rem;
+    padding: 25px;
     height: auto;
   }
   .jumbotron .intro .intro-text p {
@@ -2477,16 +2475,6 @@ header {
 @media (max-width: 768px) {
   .jumbotron .intro .intro-image {
     display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .jumbotron {
-    position: static;
-    height: auto;
-    display: block;
-    clear: both;
-    padding: 0rem 1rem 0 1rem;
   }
 }
 
@@ -3384,6 +3372,7 @@ footer {
 footer #footer-text {
   padding-bottom: 1rem;
   padding-top: 3rem;
+  text-align: center;
 }
 
 footer #footer-text a {
@@ -3419,6 +3408,7 @@ footer #footer-text .footer-brand ul li {
   font-size: 1rem;
   display: inline;
   margin-right: 10px;
+  line-height: 1.4;
 }
 
 footer #footer-text .footer-brand ul li a {
@@ -3427,7 +3417,7 @@ footer #footer-text .footer-brand ul li a {
 }
 
 footer #footer-text .footer-content {
-  text-align: left;
+  text-align: center;
   color: #eee;
 }
 
