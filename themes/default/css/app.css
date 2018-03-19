@@ -3092,7 +3092,7 @@ section.news .item-container .news-container .news-item .datum {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   padding: 25px;
-  background: rgba(36, 36, 36, 0.05);
+  background: rgba(36, 36, 36, 0.08);
 }
 
 .content-section .nav ul,
@@ -3344,7 +3344,7 @@ section.news .item-container .news-container .news-item .datum {
 
 .solr-section-results #solr-facets {
   padding: 25px 25px 10px 25px;
-  background: rgba(36, 36, 36, 0.05);
+  background: rgba(36, 36, 36, 0.08);
 }
 
 .solr-section-results #solr-facets strong {
@@ -3411,7 +3411,7 @@ footer #footer-text .footer-brand .footer-logo span {
 footer #footer-text .footer-brand ul {
   padding-left: 0;
   margin-top: 0rem;
-  padding: 0.5rem 0 0.5rem 0;
+  padding: 0.5rem 0 1.5rem 0;
 }
 
 footer #footer-text .footer-brand ul li {
