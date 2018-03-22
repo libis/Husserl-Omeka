@@ -3107,6 +3107,12 @@ section.news .item-container .news-container .news-item .datum {
   color: rgba(36, 36, 36, 0.6);
 }
 
+.content-section .nav ul li a:hover,
+.exhibit-show-section .nav ul li a:hover,
+.simple-page-section .nav ul li a:hover {
+  color: rgba(36, 36, 36, 0.8);
+}
+
 .content-section .nav ul li:last-of-type,
 .exhibit-show-section .nav ul li:last-of-type,
 .simple-page-section .nav ul li:last-of-type {
