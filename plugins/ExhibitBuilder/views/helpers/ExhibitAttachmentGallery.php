@@ -2,7 +2,7 @@
 
 /**
  * Exhibit gallery view helper.
- * 
+ *
  * @package ExhibitBuilder\View\Helper
  */
 class ExhibitBuilder_View_Helper_ExhibitAttachmentGallery extends Zend_View_Helper_Abstract
@@ -21,14 +21,14 @@ class ExhibitBuilder_View_Helper_ExhibitAttachmentGallery extends Zend_View_Help
         if (!isset($fileOptions['imageSize'])) {
             $fileOptions['imageSize'] = 'square_thumbnail';
         }
-        
+
         $html = '';
         foreach  ($attachments as $attachment) {
-            $html .= '<div class="exhibit-item exhibit-gallery-item">';
+            $html .= '<div class="card exhibit-item exhibit-gallery-item">';
             $html .= $this->view->exhibitAttachment($attachment, $fileOptions, $linkProps, true);
             $html .= '</div>';
         }
-    
+
         return apply_filters('exhibit_attachment_gallery_markup', $html,
             compact('attachments', 'fileOptions', 'linkProps'));
     }

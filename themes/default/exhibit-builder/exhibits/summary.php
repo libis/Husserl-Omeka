@@ -1,64 +1,64 @@
-<?php echo head(array('title' => metadata('exhibit', 'title'), 'bodyclass'=>'exhibits summary')); ?>
-<section class="metadata-section general-section exhibit-show-section">
-  <div id="content" class='container exhibit-container' role="main" tabindex="-1">
-      <div class="row">
-        <div class="col-sm-9 col-xs-12 page">
-          <div class='row breadcrumbs'>
-            <div class="col-xs-12">
-                <p id="simple-pages-breadcrumbs">
-                  <span><a href="<?php echo url('/');?>">Home</a></span>
-                   > <span><a href="<?php echo url('browse/exhibits');?>">Exhibits</a></span>
-                   > <?php echo metadata('exhibit', 'title'); ?>
-                 </p>
-             </div>
-          </div>
-          <div class='row image'>
-            <div class="col-xs-12">
-              <?php if (($exhibit->cover_image_file_id)): ?>
-                  <?php
-                    $file = get_record_by_id('File',$exhibit->cover_image_file_id);
-                    $cover_url = $file->getWebPath('fullsize');
-                  ?>
-                  <div class="cover-container"><img class="cover" src="<?php echo $cover_url ?>"></div>
-              <?php elseif ($exhibitImage = record_image($exhibit, 'fullsize')): ?>
-                  <div class="cover-container"><?php echo $exhibitImage ?></div>
-              <?php endif; ?>
-            </div>
-          </div>
-          <div class='row top'>
-            <div class="col-xs-12">
-                <h1><?php echo metadata('exhibit', 'title'); ?></h1>
-                <?php if (($exhibitCredits = metadata('exhibit', 'credits'))): ?>
-                <div class="exhibit-credits">
-                      <h3><?php echo $exhibitCredits; ?></h3>
-                </div>
-                <?php endif; ?>
-            </div>
-          </div>
-          <div class='row content'>
-            <div class="col-xs-12">
+<?php
+$title = metadata('exhibit', 'title');
+echo head(array('title' => $title, 'bodyclass'=>'exhibits summary')); ?>
+
+<section class="exhibit-section exhibit-show-section">
+  <div class='container'>
+      <div class='row'>
+        <div class='col-md-9 col-12'>
+          <h1><?php echo metadata('exhibit', 'title'); ?></h1>
+          <div class="row">
+          <?php if ($exhibit->cover_image_file_id): ?>
+              <div class="col-12 col-sm-6 col-lg-7">
+          <?php else:?>
+              <div class="col-12 col-sm-12">
+          <?php endif; ?>
+            <div class="summary-text">
+              <h2><?php echo __("Introduction");?></h2>
 
                 <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
-                <div class="exhibit-description">
-                    <?php echo $exhibitDescription; ?>
-                </div>
+                    <div class="exhibit-description">
+                        <?php echo $exhibitDescription; ?>
+                    </div>
                 <?php endif; ?>
-
-
+                <?php if (($exhibitCredits = metadata('exhibit', 'credits'))): ?>
+                    <h4><?php echo $exhibitCredits; ?></h4>
+                <?php endif; ?>
+                <div class="start">
+                  <a href="<?php echo $exhibit->getFirstTopPage()->getRecordUrl();?>"><?php echo __("Start exhibit");?></a>
+                </div>
+              </div>
             </div>
+          <?php if ($exhibit->cover_image_file_id): ?>
+              <div class="col-12 col-sm-6 col-lg-5">
+                    <?php
+                      $file = get_record_by_id('File',$exhibit->cover_image_file_id);
+                      $cover_url = $file->getWebPath('fullsize');
+                    ?>
+                    <div class="cover"><img src="<?php echo $cover_url ?>"></div>
+              </div>
+          <?php endif; ?>
         </div>
       </div>
-      <div class="col-md-3 nav">
-        <?php echo exhibit_builder_page_nav(); ?>
-        <?php
-        $pageTree = exhibit_builder_page_tree();
-        if ($pageTree):
-        ?>
-        <nav id="exhibit-pages">
-            <?php echo $pageTree; ?>
-        </nav>
-        <?php endif; ?>
+      <div class='col-md-3 col-12 nav'>
+            <h4><?php echo __("Table of contents");?></h4>
+            <?php echo exhibit_builder_page_nav(); ?>
+            <?php
+            $pageTree = exhibit_builder_page_tree();
+            if ($pageTree):
+            ?>
+            <nav id="exhibit-pages">
+                <?php echo $pageTree; ?>
+            </nav>
+          <?php endif; ?>
+        <div class="plugins">
+          <?php
+            $url = absolute_url();
+            $title = strip_formatting(metadata($exhibit, 'title'));
+            $description = strip_formatting(metadata($exhibit, 'description', array('no_escape' => true)));
+          ?>
+        </div>
       </div>
-    </div>
   </div>
+</section>
 <?php echo foot(); ?>

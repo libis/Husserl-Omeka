@@ -11,7 +11,7 @@
 <div class="solr-section-search">
   <div class="container">
     <div class="search">
-      <div  class="row no-gutters">
+      <div  class="row">
         <!-- Search form. -->
         <div class="solr-top col-md-7 col-xs-12">
             <h1>Overview of Husserl’s lectures</h1>
@@ -58,76 +58,41 @@
 </div>
 <div class="solr-section-results">
     <div class="container results-container">
-    <div class="row no-gutters">
-      <div id="solr-facets" class="col-md-3 col-xs-12">
-          <!-- Facets. -->
-          <h2><?php echo __('Limit your search'); ?></h2>
-
-            <?php foreach ($results->facet_counts->facet_fields as $name => $facets) : ?>
-
-            <!-- Does the facet have any hits? -->
-            <?php if (count(get_object_vars($facets))) : ?>
-
-                <!-- Facet label. -->
-                <?php $label = SolrSearch_Helpers_Facet::keyToLabel($name); ?>
-                <strong><?php echo $label; ?></strong>
-
-              <ul>
-              <!-- Facets. -->
-                <?php foreach ($facets as $value => $count) : ?>
-                  <li class="<?php echo $value; ?>">
-
-                    <!-- Facet URL. -->
-                    <?php $url = SolrSearch_Helpers_Facet::addFacet($name, $value); ?>
-
-                    <!-- Facet link. -->
-                    <a href="<?php echo $url; ?>" class="facet-value">
-                        <?php echo $value; ?>
-                    </a>
-
-                    <!-- Facet count. -->
-                    (<span class="facet-count"><?php echo $count; ?></span>)
-
-                  </li>
-                <?php endforeach; ?>
-              </ul>
-
-            <?php endif; ?>
-
-            <?php endforeach; ?>
-
-          </div>
-          <div class="solr-results col-md-9 col-xs-12">
+    <div class="row">
+        <div class="solr-results col-md-9 col-12">
             <!-- Results. -->
-
             <!-- Number found. -->
-            <h2 id="num-found">
+            <h1 id="num-found">
                 <?php echo $results->response->numFound; ?> results
-            </h2>
-
+            </h1>
+            <?php echo pagination_links(); ?>
             <?php foreach ($results->response->docs as $doc) : ?>
-
               <!-- Document. -->
               <div class="row result">
-                <div class="col-xs-12 col-sm-3 col-md-3 img-column">
-                    <?php
-                    if ($doc->resulttype == 'Item') :
-                        $item = get_db()->getTable($doc->model)->find($doc->modelid);
-                        echo link_to_item(
-                            item_image('thumbnail', array('alt' => $doc->title), 0, $item),
-                            array(),
-                            'show',
-                            $item
-                        );
-                    endif;
-                    ?>
-                </div>
+                <?php if ($doc->resulttype == 'Item') :?>
+                    <?php $item = get_db()->getTable($doc->model)->find($doc->modelid);?>
+                    <?php if (metadata($item, 'has files')): ?>
+                        <div class="col-12 col-sm-3 col-md-3 img-column">
+                          <?php echo link_to_item(
+                              item_image('thumbnail', array('alt' => $doc->title), 0, $item),
+                              array(),
+                              'show',
+                              $item
+                          );?>
+                        </div>
+                        <div class="col-12 col-sm-9">
+                    <?php else:?>
+                        <div class="col-12">
+                    <?php endif;?>
+                <?php else:?>
+                    <div class="col-12">
+                <?php endif;?>
+
                 <!-- Header. -->
-                <div class="col-xs-12 col-sm-9 col-md-9">
+                <!-- Record URL. -->
+                <?php $url = SolrSearch_Helpers_View::getDocumentUrl($doc); ?>
 
-                    <!-- Record URL. -->
-                    <?php $url = SolrSearch_Helpers_View::getDocumentUrl($doc); ?>
-
+                  <div class="text-block">
                     <!-- Title. -->
                     <h2><a href="<?php echo $url; ?>" class="result-title">
                     <?php
@@ -143,27 +108,68 @@
                         if ($doc->resulttype == 'Item') :
                           $item = get_db()->getTable($doc->model)->find($doc->modelid);
                           if($text = metadata($item, array('Dublin Core','Date'))):?>
-                            <h3>Date</h3>
-                            <div class="text"><?php echo $text;?></div>
+                            <div class="solr-element">
+                              <h3>Date</h3>
+                              <div class="text"><?php echo $text;?></div>
+                            </div>
                           <?php endif;?>
                           <?php if($text = metadata($item, array('Dublin Core','Description'),array('snippet'=>'200'))):?>
-                            <h3>Description</h3>
-                            <div class="text"><?php echo $text;?></div>
+                            <div class="solr-element">
+                              <h3>Description</h3>
+                              <div class="text"><?php echo $text;?></div>
+                            </div>
                           <?php endif;?>
                           <?php if($text = metadata($item, array('Item Type Metadata','Transcription'),array('snippet'=>'200'))):?>
-                            <h3>Transcription</h3>
-                            <div class="text"><?php echo $text;?></div>
-                          <?php endif;
-                        endif;
-                    ?>
+                            <div class="solr-element">
+                              <h3>Transcription</h3>
+                              <div class="text"><?php echo $text;?></div>
+                            </div>
+                          <?php endif;?>
+                      <?php endif;?>
+                  </div>
                 </div>
               </div>
-
             <?php endforeach; ?>
-        </div>
-    </div>
 
-    <?php echo pagination_links(); ?>
+            <?php echo pagination_links(); ?>
+        </div>
+        <div id="solr-facets" class="col-md-3 col-12">
+            <!-- Facets. -->
+            <h2><?php echo __('Limit your search'); ?></h2>
+
+              <?php foreach ($results->facet_counts->facet_fields as $name => $facets) : ?>
+
+              <!-- Does the facet have any hits? -->
+              <?php if (count(get_object_vars($facets))) : ?>
+
+                  <!-- Facet label. -->
+                  <?php $label = SolrSearch_Helpers_Facet::keyToLabel($name); ?>
+                  <strong><?php echo $label; ?></strong>
+
+                <ul>
+                <!-- Facets. -->
+                  <?php foreach ($facets as $value => $count) : ?>
+                    <li class="<?php echo $value; ?>">
+
+                      <!-- Facet URL. -->
+                      <?php $url = SolrSearch_Helpers_Facet::addFacet($name, $value); ?>
+
+                      <!-- Facet link. -->
+                      <a href="<?php echo $url; ?>" class="facet-value">
+                          <?php echo $value; ?>
+                      </a>
+
+                      <!-- Facet count. -->
+                      (<span class="facet-count"><?php echo $count; ?></span>)
+
+                    </li>
+                  <?php endforeach; ?>
+                </ul>
+              <?php endif; ?>
+
+              <?php endforeach; ?>
+          </div>
+    </div>
   </div>
 </div>
 <?php echo foot();
