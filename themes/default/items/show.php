@@ -36,7 +36,7 @@
           ?>
           <?php if(isset($metadata['Dublin Core']["Identifier"])):?>
             <div class="element">
-              <h3>Object number</h3>
+              <h3>Identifier</h3>
               <div class="text"><?php echo implode(", ",$metadata['Dublin Core']["Identifier"]);?></div>
             </div>
           <?php endif;?>
