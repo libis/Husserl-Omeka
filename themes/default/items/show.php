@@ -30,7 +30,7 @@
               $dontshow[] = "Manuscript collection";
             endif;
             if($type == "Manuscript collection"):
-              $dontshow[] = "Lecture page";
+              $dontshow[] = "Document";
             endif;
             //var_dump($metadata);
           ?>
@@ -171,11 +171,11 @@
             <?php endif;?>
 
             <!-- Lecture pages -->
-            <?php if(isset($relations["Lecture page"]) && $type == "Manuscript collection"):?>
+            <?php if(isset($relations["Document"]) && $type == "Manuscript collection"):?>
               <div class="highlight">
-                <h3>Related lecture pages</h3>
+                <h3>Related documents</h3>
                 <div class="text">
-                  <?php foreach($relations["Lecture page"]["records"] as $record):?>
+                  <?php foreach($relations["Document"]["records"] as $record):?>
                     <div class="item">
                       <div class="sub-image">
                       <?php

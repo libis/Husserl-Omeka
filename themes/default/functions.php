@@ -33,7 +33,7 @@ function libis_get_simple_page_content($title) {
 }
 
 function get_related($relations){
-  $types = array("Lecture page",
+  $types = array("Document",
             "Archival folder",
             "Manuscript collection",
             "Participants list",
@@ -76,7 +76,7 @@ function related_html($items){
   $relation_array = array();
 
   foreach($items as $item):
-  
+
     $relation_array[metadata($item,'item_type_name')]["links"][] = link_to_item(metadata($item, array("Dublin Core","Title")),array(),"show",$item);
     $relation_array[metadata($item,'item_type_name')]["records"][] = $item;
   endforeach;

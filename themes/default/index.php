@@ -48,7 +48,7 @@
                 <div class="card card-image">
                     <img class="card-img-cap" src="<?php echo img('ph/bg6.png');?>" alt="Card image">
                     <div class="card-block">
-                        <div class="title"><h4 class="card-title"><span><a href="<?php echo url('solr-search?q=&facet=itemtype:%22Lecture+page%22');?>">Lecture pages</a></span></h4></div>
+                        <div class="title"><h4 class="card-title"><span><a href="<?php echo url('solr-search?q=&facet=itemtype:%22Document%22');?>">Documents</a></span></h4></div>
                     </div>
                 </div>
               </div>
