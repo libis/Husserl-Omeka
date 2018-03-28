@@ -2882,6 +2882,13 @@ section.news .item-container .news-container .news-item .datum {
 .metadata-section .highlight .text .item .sub-metadata h4 {
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.metadata-section .highlight .text .item .sub-metadata h5 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  color: rgba(36, 36, 36, 0.5);
 }
 
 .metadata-section .highlight .text .item .sub-metadata .more-info {

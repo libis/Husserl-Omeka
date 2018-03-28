@@ -175,7 +175,7 @@
               <div class="highlight">
                 <h3>Related lecture pages</h3>
                 <div class="text">
-                  <?php foreach($relations["Manuscript collection"]["records"] as $record):?>
+                  <?php foreach($relations["Lecture page"]["records"] as $record):?>
                     <div class="item">
                       <div class="sub-image">
                       <?php
@@ -189,7 +189,7 @@
                       </div>
                       <div class="sub-metadata">
                         <h4><?php echo link_to_item(metadata($record, array("Dublin Core","Title")),array(),"show",$record);?></h4>
-                        <h3>Transcription</h3>
+                        <h5>Transcription</h5>
                         <p><?php echo metadata($record, array("Item Type Metadata","Transcription"));?></p>
                         <p class="more-info"><?php echo link_to_item("More info",array(),"show",$record);?></p>
                       </div>
