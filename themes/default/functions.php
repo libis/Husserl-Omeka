@@ -47,7 +47,7 @@ function get_related($relations){
     $id = $element->id;
     $items = "";
     foreach($relations as $relation):
-      $items[] = get_records(
+      $result = get_records(
         'Item',
         array(
             'advanced' => array(
@@ -59,6 +59,9 @@ function get_related($relations){
             )
         )
       );
+      foreach($result as $item):
+        $items[]=$item;
+      endforeach;
     endforeach;
 
     if(sizeof($items)):
@@ -73,7 +76,7 @@ function related_html($items){
   $relation_array = array();
 
   foreach($items as $item):
-    $item = $item[0];
+  
     $relation_array[metadata($item,'item_type_name')]["links"][] = link_to_item(metadata($item, array("Dublin Core","Title")),array(),"show",$item);
     $relation_array[metadata($item,'item_type_name')]["records"][] = $item;
   endforeach;
