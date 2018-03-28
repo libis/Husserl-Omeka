@@ -151,7 +151,7 @@
                       <div class="sub-image">
                       <?php
                         echo link_to_item(
-                            item_image('thumbnail', array(), 0, $item),
+                            item_image('thumbnail', array(), 0, $record),
                             array(),
                             'show',
                             $record
@@ -180,7 +180,7 @@
                       <div class="sub-image">
                       <?php
                         echo link_to_item(
-                            item_image('thumbnail', array(), 0, $item),
+                            item_image('thumbnail', array(), 0, $record),
                             array(),
                             'show',
                             $record
