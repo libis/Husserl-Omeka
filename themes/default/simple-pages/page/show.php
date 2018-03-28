@@ -14,7 +14,6 @@ echo head(array(
   <div class="container simple-page-container">
     <div class='breadcrumbs'>
         <p id="simple-pages-breadcrumbs"><span><?php echo simple_pages_display_breadcrumbs(); ?></span></p>
-
     </div>
     <!-- Content -->
     <div class="row no-gutters">

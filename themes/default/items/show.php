@@ -25,7 +25,7 @@
           <div class="metadata-bg">
           <?php
             $metadata = all_element_texts('item',array("return_type"=>"array"));
-            $dontshow = array("Title","Transcription","CA","Relation","Representation");
+            $dontshow = array("Title","Transcription","CA","Relation","Representation","Secondary notes","Transcriber");
             if($type == "Archival folder"):
               $dontshow[] = "Manuscript collection";
             endif;
@@ -111,7 +111,7 @@
                 </div>
                 <?php endif;?>
               <?php endforeach;?>
-            <?php endif;?>  
+            <?php endif;?>
             <?php if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
               <div class="element">
                 <h3><i class="material-icons">&#xE3B6;</i><a href="http://resolver.libis.be/<?php echo $metadata[$type.' Item Type Metadata']["Representation"][0];?>/representation">View online</a></h3>
@@ -123,7 +123,21 @@
             <?php if(isset($metadata[$type.' Item Type Metadata']["Transcription"])):?>
               <div class="highlight">
                 <h3>Transcription</h3>
-                <div class="text"><?php echo implode("<br>",$metadata[$type.' Item Type Metadata']["Transcription"]);?></div>
+                <div class="text">
+                  <?php echo implode("<br>",$metadata[$type.' Item Type Metadata']["Transcription"]);?>
+                  <?php if(isset($metadata[$type.' Item Type Metadata']["Secondary notes"])):?>
+                    <div class="transcription-element">
+                      <h4>Secondary notes</h4>
+                      <p><?php echo implode(', ',$metadata[$type.' Item Type Metadata']["Secondary notes"]);?></p>
+                    </div>
+                  <?php endif;?>
+                  <?php if(isset($metadata[$type.' Item Type Metadata']["Transcriber"])):?>
+                    <div class="transcription-element">
+                      <h4>Transcriber</h4>
+                      <p><?php echo implode(', ',$metadata[$type.' Item Type Metadata']["Transcriber"]);?></p>
+                    </div>
+                  <?php endif;?>
+                </div>
               </div>
             <?php endif;?>
 

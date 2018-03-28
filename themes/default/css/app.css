@@ -2835,8 +2835,20 @@ section.news .item-container .news-container .news-item .datum {
   color: white;
 }
 
+.metadata-section .highlight .transcription-element h4 {
+  font-weight: bold;
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 1rem;
+  color: rgba(36, 36, 36, 0.8);
+}
+
+.metadata-section .highlight .transcription-element p:last-of-type {
+  margin-bottom: 0;
+}
+
 .metadata-section .highlight .text {
-  padding: 1rem;
+  padding: 2rem;
   color: rgba(36, 36, 36, 0.9);
 }
 
