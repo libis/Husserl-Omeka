@@ -14,6 +14,16 @@ function simple_nav(){
         $links = simple_pages_get_links_for_children_pages($page->parent_id);
     endif;
 
+    $links_filtered = array();
+
+    foreach($links as $link):
+      if (!strpos($link['label'], '-info')) {
+        $links_filtered[] = $link;
+      }
+    endforeach;
+
+    $links = $links_filtered;
+
     $html="<ul class='simple-nav'>";
     foreach($links as $link):
         $html .= "<li><a href='".$link['uri']."'>".$link['label']."</a></li>";
