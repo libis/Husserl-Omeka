@@ -74,8 +74,6 @@ function get_related($relations){
       endforeach;
     endforeach;
 
-    var_dump($items);
-
     if(sizeof($items)> 0):
       return related_html($items);
     else:
