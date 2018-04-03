@@ -53,9 +53,9 @@ function get_related($relations){
             "Photograph",
             "Lecture announcement"
           );
-    $element = get_db()->getTable('Element')->findByElementSetNameAndElementName('Item Type Metadata', 'CA');
+    $element = get_db()->getTable('Element')->findByElementSetNameAndElementName('Dublin Core', 'Identifier');
     $id = $element->id;
-    $items = "";
+    $items = array();
     foreach($relations as $relation):
       $result = get_records(
         'Item',
@@ -70,11 +70,13 @@ function get_related($relations){
         )
       );
       foreach($result as $item):
-        $items[]=$item;
+          $items[]=$item;
       endforeach;
     endforeach;
 
-    if(sizeof($items)):
+    var_dump($items);
+
+    if(sizeof($items)> 0):
       return related_html($items);
     else:
       return false;
