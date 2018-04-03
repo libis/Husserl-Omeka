@@ -208,7 +208,7 @@
       <div class="col-sm-4 col-md-3 col-xs-12 image-col">
         <?php if (metadata('item', 'has files')): ?>
             <div id="itemfiles">
-                <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'image')),'thumbnail'); ?></div>
+                <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'image  lightgallery')),'thumbnail'); ?></div>
             </div>
             <?php if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
               <div class="view-link">

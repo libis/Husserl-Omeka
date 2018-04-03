@@ -28,6 +28,9 @@
 jQuery(".toggle").on("click", function() {
   jQuery(".toggle").parent().toggleClass('active');
 });
+jQuery(document).ready(function() {
+    jQuery(".lightgallery").lightGallery(); 
+});
 
 </script>
 </html>

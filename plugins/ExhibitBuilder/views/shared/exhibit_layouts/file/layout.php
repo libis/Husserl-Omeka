@@ -14,7 +14,7 @@ $captionPosition = isset($options['captions-position'])
   <div class="col-12 offset-md-1 col-md-10">
     <div class="exhibit-items <?php echo $position; ?> <?php echo $size; ?> captions-<?php echo $captionPosition; ?>">
         <?php foreach ($attachments as $attachment): ?>
-          <div class="exhibit-file-item">
+          <div class="exhibit-file-item lightgallery">
             <?php echo $this->exhibitAttachment($attachment, array('imageSize' => $size)); ?>
           </div>
         <?php endforeach; ?>
@@ -32,7 +32,7 @@ $captionPosition = isset($options['captions-position'])
     <div class="col-12 col-md-10">
       <div class="exhibit-items <?php echo $position; ?> <?php echo $size; ?> captions-<?php echo $captionPosition; ?>">
           <?php foreach ($attachments as $attachment): ?>
-            <div class="exhibit-file-item">
+            <div class="exhibit-file-item lightgallery">
               <?php echo $this->exhibitAttachment($attachment, array('imageSize' => $size)); ?>
             </div>
           <?php endforeach; ?>
@@ -50,7 +50,7 @@ $captionPosition = isset($options['captions-position'])
     <div class="col-12 offset-md-2 col-md-10">
       <div class="exhibit-items <?php echo $position; ?> <?php echo $size; ?> captions-<?php echo $captionPosition; ?>">
           <?php foreach ($attachments as $attachment): ?>
-            <div class="exhibit-file-item">
+            <div class="exhibit-file-item lightgallery">
               <?php echo $this->exhibitAttachment($attachment, array('imageSize' => $size)); ?>
             </div>
           <?php endforeach; ?>
