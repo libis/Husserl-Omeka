@@ -30,7 +30,7 @@
             <div class="row card-deck no-gutters">
               <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="card card-image">
-                    <img class="card-img-cap" src="<?php echo img('ph/bg6.png');?>" alt="Card image">
+                    <img class="card-img-cap" src="<?php echo img('bg1.png');?>" alt="Card image">
                     <div class="card-block">
                         <div class="title"><h4 class="card-title"><span><a href="<?php echo url('solr-search?q=&facet=itemtype:%22Archival+folder%22');?>">Archival folders</a></span></h4></div>
                     </div>
@@ -38,7 +38,7 @@
               </div>
               <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="card card-image">
-                    <img class="card-img-top" src="<?php echo img('ph/bg6.png');?>" alt="Card image">
+                    <img class="card-img-top" src="<?php echo img('bg2.png');?>" alt="Card image">
                     <div class="card-block">
                         <div class="title"><h4 class="card-title"><span><a href="<?php echo url('solr-search?q=&facet=itemtype:%22Manuscript+collection%22');?>">Manuscript collections</a></span></h4></div>
                     </div>
@@ -46,7 +46,7 @@
               </div>
               <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="card card-image">
-                    <img class="card-img-cap" src="<?php echo img('ph/bg6.png');?>" alt="Card image">
+                    <img class="card-img-cap" src="<?php echo img('bg3.png');?>" alt="Card image">
                     <div class="card-block">
                         <div class="title"><h4 class="card-title"><span><a href="<?php echo url('solr-search?q=&facet=itemtype:%22Document%22');?>">Documents</a></span></h4></div>
                     </div>
@@ -54,7 +54,7 @@
               </div>
               <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="card card-image">
-                    <img class="card-img-top" src="<?php echo img('ph/bg6.png');?>" alt="Card image">
+                    <img class="card-img-top" src="<?php echo img('bg4.png');?>" alt="Card image">
                     <div class="card-block">
                         <div class="title"><h4 class="card-title"><span><a href="<?php echo url('solr-search?q=&facet=itemtype:%22Lecture+event%22');?>">Lecture events</a></span></h4></div>
                     </div>
