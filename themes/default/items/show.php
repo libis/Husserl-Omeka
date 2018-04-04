@@ -100,19 +100,87 @@
               <?php endif;
             endforeach;
 
-            $relations = $metadata[$type.' Item Type Metadata']["Relation"];
-            $relations = get_related($relations);
-            if($relations):
-              foreach($relations as $label=>$record_type):?>
-                <?php if(!in_array($label,$dontshow)):?>
-                <div class="element">
-                    <h3>Related <span><?php echo $label;?></span></h3>
-                    <div class="text"><?php echo implode(", ",$record_type['links']);?></div>
-                </div>
-                <?php endif;?>
-              <?php endforeach;?>
-            <?php endif;?>
-            <?php if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
+            $labels = array(
+              "Photograph" => array("creator"=>"Photographer"),
+              "Publication" => array("creator"=>"Author"),
+              "Lecture event" => array("creator"=>"Lecturer")
+            );
+
+            $creators="";$contributors="";$relations="";$participants="";$depictedpersons="";
+
+            //creators
+            if(isset($metadata['Dublin Core']["Creator"])):
+              $creators = $metadata['Dublin Core']["Creator"];
+              $creators = get_related($creators);
+              if($creators):
+                foreach($creators as $label=>$record_type):?>
+                  <div class="element">
+                      <h3><?php echo $labels[$type]["creator"];?></h3>
+                      <div class="text"><?php echo implode(", ",$record_type['links']);?></div>
+                  </div>
+                <?php endforeach;
+              endif;
+            endif;
+
+            //contributor
+            if(isset($metadata['Dublin Core']["Contributor"])):
+              $contributors = $metadata['Dublin Core']["Contributor"];
+              $contributors = get_related($contributors);
+              if($contributors):
+                foreach($contributors as $label=>$record_type):?>
+                  <div class="element">
+                      <h3>Contributor</h3>
+                      <div class="text"><?php echo implode(", ",$record_type['links']);?></div>
+                  </div>
+                <?php endforeach;
+              endif;
+            endif;
+
+            //participants
+            if(isset($metadata[$type.' Item Type Metadata']["Participants in lecture"])):
+              $participants = $metadata[$type.' Item Type Metadata']["Participants in lecture"];
+              $participants = get_related($participants);
+              if($participants):
+                foreach($participants as $label=>$record_type):?>
+                  <div class="element">
+                      <h3>Participants in lecture</h3>
+                      <div class="text"><?php echo implode(", ",$record_type['links']);?></div>
+                  </div>
+                <?php endforeach;
+              endif;
+            endif;
+
+            //depicted persons
+            if(isset($metadata[$type.' Item Type Metadata']["Depicted persons"])):
+              $depictedpersons = $metadata[$type.' Item Type Metadata']["Depicted persons"];
+              $depictedpersons = get_related($depictedpersons);
+              if($depictedpersons):
+                foreach($depictedpersons as $label=>$record_type):?>
+                  <div class="element">
+                      <h3>Depicted Persons</h3>
+                      <div class="text"><?php echo implode(", ",$record_type['links']);?></div>
+                  </div>
+                <?php endforeach;
+              endif;
+            endif;
+
+            //other relations
+            if(isset($metadata[$type.' Item Type Metadata']["Relation"])):
+              $relations = $metadata[$type.' Item Type Metadata']["Relation"];
+              $relations = get_related($relations);
+              if($relations):
+                foreach($relations as $label=>$record_type):?>
+                  <?php if(!in_array($label,$dontshow)):?>
+                  <div class="element">
+                      <h3>Related <span><?php echo $label;?></span></h3>
+                      <div class="text"><?php echo implode(", ",$record_type['links']);?></div>
+                  </div>
+                  <?php endif;
+                endforeach;
+              endif;
+            endif;
+
+            if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
               <div class="element">
                 <h3><i class="material-icons">&#xE3B6;</i><a href="http://resolver.libis.be/<?php echo $metadata[$type.' Item Type Metadata']["Representation"][0];?>/representation">View online</a></h3>
               </div>
