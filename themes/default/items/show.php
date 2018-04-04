@@ -25,7 +25,7 @@
           <div class="metadata-bg">
           <?php
             $metadata = all_element_texts('item',array("return_type"=>"array"));
-            $dontshow = array("Title","Transcription","CA","Relation","Representation","Secondary notes","Transcriber");
+            $dontshow = array("Title","Transcription","Participants in lecture", "Contributors","Authors","Depicted persons","CA","Relation","Representation","Secondary notes","Transcriber");
             if($type == "Archival folder"):
               $dontshow[] = "Manuscript collection";
             endif;
