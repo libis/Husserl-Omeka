@@ -111,15 +111,13 @@
             //hierarchy
             if(isset($metadata[$type.' Item Type Metadata']["Hierarchy"])):
               $hierarchy = $metadata[$type.' Item Type Metadata']["Hierarchy"];
-              $hierarchy = get_related($hierarchy);
-              if($hierarchy):
-                foreach($hierarchy as $label=>$record_type):?>
+              $hierarchy = get_hierarchy($hierarchy);
+              if($hierarchy):?>
                   <div class="element">
                       <h3>Hierarchy</h3>
-                      <div class="text"><?php echo implode("<strong>></strong> ",$record_type['links']);?></div>
+                      <div class="text"><?php echo implode(" &#8250; ",$hierarchy['links']);?></div>
                   </div>
-                <?php endforeach;
-              endif;
+              <?php endif;
             endif;
 
             //creators

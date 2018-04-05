@@ -43,16 +43,6 @@ function libis_get_simple_page_content($title) {
 }
 
 function get_related($relations){
-  $types = array("Document",
-            "Archival folder",
-            "Manuscript collection",
-            "Participants list",
-            "Person",
-            "Lecture event",
-            "Publication",
-            "Photograph",
-            "Lecture announcement"
-          );
     $element = get_db()->getTable('Element')->findByElementSetNameAndElementName('Dublin Core', 'Identifier');
     $id = $element->id;
     $items = array();
@@ -81,12 +71,11 @@ function get_related($relations){
     endif;
 }
 
-function get_hierarchy($item_ids){
-
+function get_hierarchy($relations){
     $element = get_db()->getTable('Element')->findByElementSetNameAndElementName('Dublin Core', 'Identifier');
     $id = $element->id;
     $items = array();
-    foreach($item_ids as $item_id):
+    foreach($relations as $relation):
       $result = get_records(
         'Item',
         array(
@@ -105,18 +94,26 @@ function get_hierarchy($item_ids){
     endforeach;
 
     if(sizeof($items)> 0):
-      return related_html($items);
+      $html = "";
+      $relation_array = array();
+
+      foreach($items as $item):
+        $relation_array["links"][] = link_to_item(metadata($item, array("Dublin Core","Title")),array(),"show",$item);
+      endforeach;
+
+      return $relation_array;
     else:
       return false;
     endif;
 }
+
+
 
 function related_html($items){
   $html = "";
   $relation_array = array();
 
   foreach($items as $item):
-
     $relation_array[metadata($item,'item_type_name')]["links"][] = link_to_item(metadata($item, array("Dublin Core","Title")),array(),"show",$item);
     $relation_array[metadata($item,'item_type_name')]["records"][] = $item;
   endforeach;
