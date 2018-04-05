@@ -81,6 +81,36 @@ function get_related($relations){
     endif;
 }
 
+function get_hierarchy($item_ids){
+
+    $element = get_db()->getTable('Element')->findByElementSetNameAndElementName('Dublin Core', 'Identifier');
+    $id = $element->id;
+    $items = array();
+    foreach($item_ids as $item_id):
+      $result = get_records(
+        'Item',
+        array(
+            'advanced' => array(
+                array(
+                    'element_id' => $id,
+                    'type' => 'is exactly',
+                    'terms' => $relation,
+                )
+            )
+        )
+      );
+      foreach($result as $item):
+          $items[]=$item;
+      endforeach;
+    endforeach;
+
+    if(sizeof($items)> 0):
+      return related_html($items);
+    else:
+      return false;
+    endif;
+}
+
 function related_html($items){
   $html = "";
   $relation_array = array();

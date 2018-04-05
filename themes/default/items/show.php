@@ -25,7 +25,7 @@
           <div class="metadata-bg">
           <?php
             $metadata = all_element_texts('item',array("return_type"=>"array"));
-            $dontshow = array("Title","Transcription","Participants in lecture", "Contributors","Authors","Depicted persons","CA","Relation","Representation","Secondary notes","Transcriber");
+            $dontshow = array("Title","Hierarchy","Transcription","Participants in lecture", "Contributors","Authors","Depicted persons","CA","Relation","Representation","Secondary notes","Transcriber");
             if($type == "Archival folder"):
               $dontshow[] = "Manuscript collection";
             endif;
@@ -107,6 +107,20 @@
             );
 
             $creators="";$contributors="";$relations="";$participants="";$depictedpersons="";
+
+            //hierarchy
+            if(isset($metadata[$type.' Item Type Metadata']["Hierarchy"])):
+              $hierarchy = $metadata[$type.' Item Type Metadata']["Hierarchy"];
+              $hierarchy = get_related($hierarchy);
+              if($hierarchy):
+                foreach($hierarchy as $label=>$record_type):?>
+                  <div class="element">
+                      <h3>Hierarchy</h3>
+                      <div class="text"><?php echo implode("<strong>></strong> ",$record_type['links']);?></div>
+                  </div>
+                <?php endforeach;
+              endif;
+            endif;
 
             //creators
             if(isset($metadata['Dublin Core']["Creator"])):
