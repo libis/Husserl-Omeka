@@ -32,6 +32,9 @@
             if($type == "Manuscript collection"):
               $dontshow[] = "Document";
             endif;
+            if($type == "Lecture event"):
+              $dontshow[] = "Creator";
+            endif;
             //var_dump($metadata);
           ?>
           <?php if(isset($metadata['Dublin Core']["Identifier"])):?>
@@ -55,7 +58,7 @@
             </div>
           <?php endif;?>
 
-          <?php if(isset($metadata['Dublin Core']["Creator"])):?>
+          <?php if(!in_array('Creator',$dontshow) && isset($metadata['Dublin Core']["Creator"])):?>
             <div class="element">
               <h3>Authors</h3>
               <div class="text"><?php echo implode(", ",$metadata['Dublin Core']["Creator"]);?></div>
