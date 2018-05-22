@@ -41,10 +41,10 @@
             </div>
           <?php endif;?>
 
-          <?php if(isset($metadata['Dublin Core']["Alternative Tite"])):?>
+          <?php if(isset($metadata['Dublin Core']["Alternative Title"])):?>
             <div class="element">
               <h3>Alternative title</h3>
-              <div class="text"><?php echo implode(", ",$metadata['Dublin Core']["Alternative Tite"]);?></div>
+              <div class="text"><?php echo implode(", ",$metadata['Dublin Core']["Alternative Title"]);?></div>
             </div>
           <?php endif;?>
 
