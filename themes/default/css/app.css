@@ -3096,6 +3096,28 @@ section.news .item-container .news-container .news-item .datum {
   font-weight: 100;
 }
 
+.content-section .content .shortcode,
+.exhibit-show-section .content .shortcode,
+.simple-page-section .content .shortcode {
+  border-bottom: 1px solid rgba(255, 207, 13, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.content-section .content .shortcode h2,
+.exhibit-show-section .content .shortcode h2,
+.simple-page-section .content .shortcode h2 {
+  font-size: 1.2rem;
+  font-weight: 100;
+  font-family: "Open Sans", sans-serif;
+}
+
+.content-section .content .shortcode .item-date,
+.exhibit-show-section .content .shortcode .item-date,
+.simple-page-section .content .shortcode .item-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
 .content-section .nav,
 .exhibit-show-section .nav,
 .simple-page-section .nav {

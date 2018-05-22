@@ -71,76 +71,44 @@
         <!-- spotlight -->
         <div class="col-md-7 news-home spotlight">
           <h2>Spotlight</h2>
-          <a href="">
-            <div class="news-item">
-              <div class="row">
-                <div class="col-md-4">
-                  <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
+          <?php $spotlights = get_records('item',array("featured"=>"1",'sort_field' => 'added', 'sort_dir' => 'd'),3);?>
+          <?php foreach($spotlights as $record):?>
+            <a href="<?php echo record_url($record);?>">
+              <div class="news-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <?php echo record_image($record,'thumbnail');?>
+                  </div>
+                  <div class="col-md-8">
+                    <h3><?php echo metadata($record, array('Dublin Core', 'Title'));?></h3>
+                    <p class="description">
+                      <?php echo metadata($record, array('Dublin Core', 'Description'));?>
+                    </p>
+                  </div>
                 </div>
-                <div class="col-md-8">
-                  <h3>Sed luctus blandit</h3>
-                  <p class="description">
-                    Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-                  </p>
-                </div>
-              </div>
-          </div></a>
-          <a href=""><div class="news-item">
-            <div class="row">
-            <div class="col-md-4">
-              <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
-            </div>
-            <div class="col-md-8">
-              <h3>Sed luctus blandit</h3>
-              <p class="description">
-                Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-              </p>
-            </div></div>
-          </div></a>
-          <a href=""><div class="news-item">
-            <div class="row">
-            <div class="col-md-4">
-              <img class="" src="<?php echo img('ph/bg4.jpg');?>" alt="Card image">
-            </div>
-            <div class="col-md-8">
-              <h3>Sed luctus blandit</h3>
-              <p class="description">
-                Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-              </p>
-            </div></div>
-          </div></a>
+            </div></a>
+          <?php endforeach;?>
 
           <div class="more-news">
-                <a href="">All items</a>
+                <a href="<?php echo url("solr-search");?>">Explore collections</a>
           </div>
         </div>
 
         <div class="col-md-5 news-home news-container">
           <h2>News</h2>
-          <a href=""><div class="news-item">
-                <h3>Sed luctus blandit</h3>
-                <p class="datum">14-08-2017</p>
-                <p class="description">
-                  Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-                </p>
-          </div></a>
-          <a href=""><div class="news-item">
-                <h3>Sed luctus blandit</h3>
-                <p class="datum">14-08-2017</p>
-                <p class="description">
-                  Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-                </p>
-          </div></a>
-          <a href=""><div class="news-item">
-                <h3>Sed luctus blandit</h3>
-                <p class="datum">14-08-2017</p>
-                <p class="description">
-                  Nam pulvinar fringilla egestas. Donec nulla quam, condimentum at metus ut, semper luctus massa. Proin sit amet magna non augue bibendum iaculis nec nec lorem.
-                </p>
-          </div></a>
+          <?php $news = get_records('item',array("type"=>"News",'sort_field' => 'added', 'sort_dir' => 'd'),3);?>
+          <?php foreach($news as $record):?>
+            <a href="<?php echo record_url($record);?>"><div class="news-item">
+                  <h3><?php echo metadata($record, array('Dublin Core', 'Title'));?></h3>
+                  <p class="datum"><?php echo metadata($record, array('Dublin Core', 'Date'));?></p>
+                  <p class="description">
+                    <?php echo metadata($record, array('Dublin Core', 'Description'));?>
+                  </p>
+            </div></a>
+          <?php endforeach;?>
 
           <div class="more-news">
-                <a href="">More news</a>
+                <a href="<?php echo url('news');?>">More news</a>
           </div>
         </div>
       </div>
