@@ -71,7 +71,8 @@
         <!-- spotlight -->
         <div class="col-md-7 news-home spotlight">
           <h2>Spotlight</h2>
-          <?php $spotlights = get_records('item',array("featured"=>"1",'sort_field' => 'added', 'sort_dir' => 'd'),3);?>
+          <?php $spotlights = get_records('Item',array("featured"=>"1",'sort_field' => 'added', 'sort_dir' => 'd'),3);?>
+
           <?php foreach($spotlights as $record):?>
             <a href="<?php echo record_url($record);?>">
               <div class="news-item">
@@ -82,7 +83,7 @@
                   <div class="col-md-8">
                     <h3><?php echo metadata($record, array('Dublin Core', 'Title'));?></h3>
                     <p class="description">
-                      <?php echo metadata($record, array('Dublin Core', 'Description'));?>
+                      <?php echo metadata($record, array('Dublin Core', 'Description'), array('snippet' => 200));?>
                     </p>
                   </div>
                 </div>
@@ -96,13 +97,13 @@
 
         <div class="col-md-5 news-home news-container">
           <h2>News</h2>
-          <?php $news = get_records('item',array("type"=>"News",'sort_field' => 'added', 'sort_dir' => 'd'),3);?>
+          <?php $news = get_records('Item',array("type"=>"News",'sort_field' => 'added', 'sort_dir' => 'd'),3);?>
           <?php foreach($news as $record):?>
             <a href="<?php echo record_url($record);?>"><div class="news-item">
                   <h3><?php echo metadata($record, array('Dublin Core', 'Title'));?></h3>
                   <p class="datum"><?php echo metadata($record, array('Dublin Core', 'Date'));?></p>
                   <p class="description">
-                    <?php echo metadata($record, array('Dublin Core', 'Description'));?>
+                    <?php echo metadata($record, array('Dublin Core', 'Description'), array('snippet' => 200));?>
                   </p>
             </div></a>
           <?php endforeach;?>
