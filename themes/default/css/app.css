@@ -3525,6 +3525,7 @@ section.news .item-container .news-container .news-item .datum {
   font-size: 1rem;
   color: rgba(51, 51, 51, 0.8);
   margin-bottom: 1.5rem;
+  line-height: 1.5;
   font-family: "Open Sans", sans-serif;
 }
 
