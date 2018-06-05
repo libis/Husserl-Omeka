@@ -3,10 +3,22 @@ $title = metadata('exhibit', 'title');
 echo head(array('title' => $title, 'bodyclass'=>'exhibits summary')); ?>
 
 <section class="exhibit-section exhibit-show-section">
+  <style>
+  .jumbotron {
+      background: #F4F5F8 url("<?php echo WEB_PUBLIC_THEME.'/default/images/exhibits/'.metadata('exhibit', 'slug').'.jpg';?>") no-repeat center center/cover;
+  }
+  </style>
+  <div class="jumbotron">
+    <section class="overlay">
+      <div class='container'>
+        <h1><span><?php echo metadata('exhibit', 'title'); ?></span></h1>
+      </div>
+    </section>
+  </div>
   <div class='container'>
       <div class='row'>
         <div class='col-md-9 col-12'>
-          <h1><?php echo metadata('exhibit', 'title'); ?></h1>
+
           <div class="row">
           <?php if ($exhibit->cover_image_file_id): ?>
               <div class="col-12 col-sm-6 col-lg-7">

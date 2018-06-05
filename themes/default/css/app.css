@@ -2967,6 +2967,47 @@ section.news .item-container .news-container .news-item .datum {
   }
 }
 
+.content-section .jumbotron,
+.exhibit-show-section .jumbotron,
+.simple-page-section .jumbotron {
+  margin-bottom: 2rem;
+}
+
+.content-section .jumbotron .overlay,
+.exhibit-show-section .jumbotron .overlay,
+.simple-page-section .jumbotron .overlay {
+  background: rgba(102, 102, 102, 0.2);
+  padding: 10rem 0rem 3rem 0rem;
+}
+
+.content-section .jumbotron h1,
+.exhibit-show-section .jumbotron h1,
+.simple-page-section .jumbotron h1 {
+  margin-bottom: 0;
+  font-size: 2.4rem;
+  font-weight: 100;
+  color: white;
+}
+
+.content-section .jumbotron span,
+.exhibit-show-section .jumbotron span,
+.simple-page-section .jumbotron span {
+  border-bottom: 2px solid white;
+}
+
+@media (max-width: 768px) {
+  .content-section .jumbotron .overlay,
+  .exhibit-show-section .jumbotron .overlay,
+  .simple-page-section .jumbotron .overlay {
+    padding: 5rem 0rem 2rem 0rem;
+  }
+  .content-section .jumbotron h1,
+  .exhibit-show-section .jumbotron h1,
+  .simple-page-section .jumbotron h1 {
+    font-size: 1.6rem;
+  }
+}
+
 .content-section .breadcrumbs,
 .exhibit-show-section .breadcrumbs,
 .simple-page-section .breadcrumbs {
@@ -3123,7 +3164,7 @@ section.news .item-container .news-container .news-item .datum {
 .simple-page-section .nav {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
-  padding: 2rem 1rem;
+  padding: 0rem 1rem 2rem 1rem;
   background: rgba(36, 36, 36, 0.08);
 }
 
@@ -3176,10 +3217,9 @@ section.news .item-container .news-container .news-item .datum {
 .exhibit-section h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 100;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: rgba(51, 51, 51, 0.9);
-  margin-bottom: 2rem;
-  padding-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .exhibit-section .tile {
@@ -3294,8 +3334,8 @@ section.news .item-container .news-container .news-item .datum {
 }
 
 .exhibit-section #exhibit-blocks .exhibit-block {
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid #eee;
 }
 
