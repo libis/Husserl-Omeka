@@ -22,7 +22,7 @@
     <!-- Stylesheets -->
     <?php
     queue_js_file("lightgallery-all.min");
-    queue_css_file(array('iconfonts', 'app','lightgallery.min'));
+    queue_css_file(array('iconfonts', 'app.min','lightgallery.min'));
     queue_css_url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,700,900|Open+Sans:300,400,700');
     echo head_css();
     echo head_js();
