@@ -3238,6 +3238,7 @@ section.news .item-container .news-container .news-item .datum {
 .exhibit-section .tile .text h2 {
   font-family: "Open Sans", sans-serif;
   margin-bottom: 0.8rem;
+  line-height: 1.5;
 }
 
 .exhibit-section .tile .text h2 a {
