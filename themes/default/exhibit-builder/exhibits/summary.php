@@ -11,7 +11,7 @@ echo head(array('title' => $title, 'bodyclass'=>'exhibits summary')); ?>
   <div class="jumbotron">
     <section class="overlay">
       <div class='container'>
-        <h1><span><?php echo metadata('exhibit', 'title'); ?></span></h1>
+        <h1><span><a href="<?php $exhibit->getRecordUrl();?>"><?php echo metadata('exhibit', 'title'); ?></a></span></h1>
       </div>
     </section>
   </div>
@@ -20,7 +20,7 @@ echo head(array('title' => $title, 'bodyclass'=>'exhibits summary')); ?>
         <div class='col-md-9 col-12'>
 
           <div class="row">
-          <?php if ($exhibit->cover_image_file_id): ?>
+          <?php if ($exhibit->cover_image_file_id):?>
               <div class="col-12 col-sm-6 col-lg-7">
           <?php else:?>
               <div class="col-12 col-sm-12">

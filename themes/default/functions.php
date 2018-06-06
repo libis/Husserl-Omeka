@@ -107,8 +107,6 @@ function get_hierarchy($relations){
     endif;
 }
 
-
-
 function related_html($items){
   $html = "";
   $relation_array = array();
@@ -119,4 +117,32 @@ function related_html($items){
   endforeach;
 
   return $relation_array;
+}
+
+function libis_link_to_related_exhibits($item) {
+
+    $db = get_db();
+    $html="";
+
+    $select = "
+    SELECT e.* FROM {$db->prefix}exhibits AS e
+    INNER JOIN {$db->prefix}exhibit_pages AS ep on ep.exhibit_id = e.id
+    INNER JOIN {$db->prefix}exhibit_page_blocks AS epb ON epb.page_id = ep.id
+    INNER JOIN {$db->prefix}exhibit_block_attachments AS epba ON epba.block_id = epb.id
+    WHERE epba.item_id = ? group by e.id";
+
+    $exhibits = $db->getTable("Exhibit")->fetchObjects($select,array($item->id));
+
+    if(!empty($exhibits)) {
+        foreach($exhibits as $exhibit) {
+                $html .= '<li><a href="'.exhibit_builder_exhibit_uri($exhibit).'">'.$exhibit->title.'</a></li>';
+        }
+
+        if($html):
+          $html = '<div class="element in-exhibit"><h3>In <span class="lowercase">'.__("Exhibit").'</span></h3><div class="element-text"><ul>'.$html;
+          $html .= "</ul></div></div>";
+        endif;
+
+        return $html;
+    }
 }

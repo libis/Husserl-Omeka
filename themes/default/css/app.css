@@ -2138,6 +2138,8 @@ body {
   background: #eee;
   font-size: 1.0rem;
   line-height: 1.3;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 a {
@@ -2723,6 +2725,12 @@ section.news .item-container .news-container .news-item .datum {
   font-family: "Open Sans", sans-serif;
 }
 
+@media (max-width: 544px) {
+  .metadata-section h1 {
+    margin-bottom: 1.5rem;
+  }
+}
+
 .metadata-section h2 {
   font-family: "Open Sans", sans-serif;
   color: rgba(102, 102, 102, 0.1);
@@ -2772,8 +2780,14 @@ section.news .item-container .news-container .news-item .datum {
   background: white;
 }
 
+@media (max-width: 544px) {
+  .metadata-section .metadata .metadata-bg {
+    padding: 1rem;
+  }
+}
+
 .metadata-section .element {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   clear: both;
 }
 
@@ -2791,6 +2805,7 @@ section.news .item-container .news-container .news-item .datum {
   font-family: "Open Sans", sans-serif;
   margin-bottom: 0.5rem;
   font-size: 1rem;
+  line-height: 1.5;
   font-weight: 100;
   color: #666;
 }
@@ -2807,9 +2822,13 @@ section.news .item-container .news-container .news-item .datum {
   text-transform: lowercase;
 }
 
+.metadata-section .element ul {
+  line-height: 1.5;
+}
+
 .metadata-section .element .text {
   color: rgba(36, 36, 36, 0.9);
-  line-height: 1.3;
+  line-height: 1.5;
 }
 
 .metadata-section .element .text a {
@@ -2853,8 +2872,15 @@ section.news .item-container .news-container .news-item .datum {
   color: rgba(36, 36, 36, 0.9);
 }
 
+@media (max-width: 544px) {
+  .metadata-section .highlight .text {
+    padding: 1rem;
+  }
+}
+
 .metadata-section .highlight .text .item {
   border-bottom: 1px solid rgba(102, 102, 102, 0.1);
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -2987,6 +3013,12 @@ section.news .item-container .news-container .news-item .datum {
   margin-bottom: 0;
   font-size: 2.4rem;
   font-weight: 100;
+  color: white;
+}
+
+.content-section .jumbotron h1 a,
+.exhibit-show-section .jumbotron h1 a,
+.simple-page-section .jumbotron h1 a {
   color: white;
 }
 
@@ -3211,6 +3243,10 @@ section.news .item-container .news-container .news-item .datum {
   }
 }
 
+.browse .exhibit-section h1 {
+  padding-top: 2rem;
+}
+
 .exhibit-section {
   padding-bottom: 4rem;
 }
@@ -3254,6 +3290,25 @@ section.news .item-container .news-container .news-item .datum {
   font-family: "Open Sans", sans-serif;
   color: #666;
   font-size: 0.9rem;
+}
+
+.exhibit-section .featured {
+  background: rgba(102, 102, 102, 0.9);
+}
+
+.exhibit-section .featured .featured-label {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.7rem;
+}
+
+.exhibit-section .featured .text h2 a {
+  color: white;
+}
+
+.exhibit-section .featured .text .credits {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .exhibit-section .summary-text {
@@ -3369,10 +3424,14 @@ section.news .item-container .news-container .news-item .datum {
   border-bottom: 1px solid #eee;
 }
 
+.exhibit-section #exhibit-blocks .layout-gallery img {
+  width: 100%;
+}
+
 @media (min-width: 544px) {
   .exhibit-section #exhibit-blocks .card-columns {
     column-count: 3;
-    column-gap: 25px;
+    column-gap: 2rem;
   }
   .exhibit-section #exhibit-blocks .card-columns .card {
     display: inline-block;
@@ -3381,6 +3440,37 @@ section.news .item-container .news-container .news-item .datum {
   .exhibit-section #exhibit-blocks .card-columns .card img {
     width: 100%;
   }
+}
+
+.exhibit-section #abs-exhibit-nav-prev, .exhibit-section #abs-exhibit-nav-next {
+  line-height: 1;
+  position: fixed;
+  top: 50%;
+  background: rgba(102, 102, 102, 0.05);
+}
+
+.exhibit-section #abs-exhibit-nav-prev i, .exhibit-section #abs-exhibit-nav-next i {
+  font-size: 5rem;
+}
+
+@media (max-width: 1200px) {
+  .exhibit-section #abs-exhibit-nav-prev i, .exhibit-section #abs-exhibit-nav-next i {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .exhibit-section #abs-exhibit-nav-prev, .exhibit-section #abs-exhibit-nav-next {
+    display: none;
+  }
+}
+
+.exhibit-section #abs-exhibit-nav-prev {
+  left: 0rem;
+}
+
+.exhibit-section #abs-exhibit-nav-next {
+  right: 0rem;
 }
 
 .exhibit-section #exhibit-page-navigation {
@@ -3415,6 +3505,19 @@ section.news .item-container .news-container .news-item .datum {
 
 .exhibit-section #exhibit-page-navigation #exhibit-nav-next {
   float: right;
+}
+
+.lg-sub-html p {
+  font-size: 1rem !important;
+  font-family: "Open Sans", sans-serif;
+}
+
+.lg-sub-html .exhibit-item-link {
+  margin-top: 0.6rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
 .solr-section-search {

@@ -12,7 +12,7 @@
             </div>
             <div class="col-sm-8 col-md-9 col-xs-12">
         <?php else:?>
-            <div class="col-sm-8 col-md-9 col-xs-12">
+            <div class="col-sm-12 col-md-8 col-xs-12">
         <?php endif; ?>
         <?php if ($type != ''): ?>
           <!--<h3 class="type-title"><?php echo $type;?></h3>-->
@@ -195,11 +195,15 @@
               endif;
             endif;
 
+            echo libis_link_to_related_exhibits($item);
+
             if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
               <div class="element">
                 <h3><i class="material-icons">&#xE3B6;</i><a href="http://resolver.libis.be/<?php echo $metadata[$type.' Item Type Metadata']["Representation"][0];?>/representation">View online</a></h3>
               </div>
             <?php endif;?>
+
+
           </div>
 
             <!-- Transcription -->
@@ -288,10 +292,10 @@
               <p class="description"><?php echo metadata('item', array('Dublin Core', 'Description')); ?></p>
           <?php endif; ?>
       </div>
-      <div class="col-sm-4 col-md-3 col-xs-12 image-col">
+      <div class="col-sm-12 col-md-4 col-xs-12 image-col">
         <?php if (metadata('item', 'has files')): ?>
             <div id="itemfiles">
-                <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'image  lightgallery')),'thumbnail'); ?></div>
+                <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'image  lightgallery')),'fullsize'); ?></div>
             </div>
             <?php if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
               <div class="view-link">

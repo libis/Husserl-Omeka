@@ -14,7 +14,7 @@ echo head(array(
   <div class="jumbotron">
     <section class="overlay">
       <div class='container'>
-          <h1><span><?php echo metadata('exhibit', 'title'); ?></span></h1>
+          <h1><span><a href="<?php $exhibit->getRecordUrl();?>"><?php echo metadata('exhibit', 'title'); ?></a></span></h1>
       </div>
     </section>
   </div>
@@ -24,14 +24,14 @@ echo head(array(
     </div>-->
 
     <div class="row">
-      <div class="col-12 col-md-9">
+      <div class="col-12">
         <h1 class="exhibit-page"><span ><?php echo metadata('exhibit_page', 'title'); ?></span></h1>
 
         <div id="exhibit-blocks">
           <?php exhibit_builder_render_exhibit_page(); ?>
         </div>
 
-        <!--<?php if ($prevLink = exhibit_builder_link_to_previous_page('<i class="material-icons">&#xE314;</i>')): ?>
+        <?php if ($prevLink = exhibit_builder_link_to_previous_page('<i class="material-icons">&#xE314;</i>')): ?>
         <div id="abs-exhibit-nav-prev">
         <?php echo $prevLink; ?>
         </div>
@@ -40,7 +40,7 @@ echo head(array(
         <div id="abs-exhibit-nav-next">
         <?php echo $nextLink; ?>
         </div>
-        <?php endif; ?>-->
+        <?php endif; ?>
 
         <div id="exhibit-page-navigation">
             <?php if ($prevLink = exhibit_builder_link_to_previous_page()): ?>
@@ -55,7 +55,7 @@ echo head(array(
             <?php endif; ?>
         </div>
       </div>
-      <div class='col-md-3 col-12 nav'>
+      <!--<div class='col-md-3 col-12 nav'>
             <h4><?php echo __("Table of contents");?></h4>
             <?php
             $pageTree = exhibit_builder_page_tree();
@@ -72,7 +72,7 @@ echo head(array(
             $description = strip_formatting(metadata($exhibit, 'description', array('no_escape' => true)));
           ?>
         </div>
-      </div>
+      </div>-->
   </div>
   </div>
 </section>
