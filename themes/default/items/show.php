@@ -277,7 +277,7 @@
                       <div class="sub-metadata">
                         <h4><?php echo link_to_item(metadata($record, array("Dublin Core","Title")),array(),"show",$record);?></h4>
                         <h5>Transcription</h5>
-                        <p><?php echo metadata($record, array("Item Type Metadata","Transcription"));?></p>
+                        <p><?php echo implode('<br>',metadata($record, array("Item Type Metadata","Transcription"),array("all"=>"true")));?></p>
                         <p class="more-info"><?php echo link_to_item("More info",array(),"show",$record);?></p>
                       </div>
                     </div>
