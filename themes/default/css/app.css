@@ -2715,6 +2715,10 @@ section.news .item-container .news-container .news-item .datum {
   padding: 3rem 0;
 }
 
+.metadata-section img {
+  width: 100%;
+}
+
 .metadata-section h1 {
   font-weight: 100;
   margin-bottom: 2.5rem;
