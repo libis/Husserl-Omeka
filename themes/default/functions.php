@@ -61,18 +61,29 @@ function get_related($relations){
                     'terms' => $relation,
                 )
             )
-        )
+        ),9999
       );
       foreach($result as $item):
-          $items[]=$item;
+          $items[$item->added]=$item;
       endforeach;
+
     endforeach;
 
     if(sizeof($items)> 0):
+      $item = natksort($items);
       return related_html($items);
     else:
       return false;
     endif;
+}
+
+function natksort($array) {
+  // Like ksort but uses natural sort instead
+  $keys = array_keys($array);
+  natsort($keys);
+  foreach ($keys as $k)
+    $new_array[$k] = $array[$k];
+  return $new_array;
 }
 
 function get_hierarchy($relations){
