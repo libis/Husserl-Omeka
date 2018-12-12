@@ -93,13 +93,6 @@
             </div>
           <?php endif;?>
 
-          <?php if(isset($metadata[$type.' Item Type Metadata']["Wikipedia"])):?>
-            <div class="element">
-              <h3>Wikipedia</h3>
-              <div class="text"><?php echo make_links_clickable(implode(", ",$metadata[$type.' Item Type Metadata']["Wikipedia"]));?></div>
-            </div>
-          <?php endif;?>
-
           <?php
             foreach($metadata[$type.' Item Type Metadata'] as $label=>$meta):
               if(!in_array($label,$dontshow)):?>
@@ -210,6 +203,12 @@
               </div>
             <?php endif;?>
 
+            <?php if(isset($metadata[$type.' Item Type Metadata']["Wikipedia"])):?>
+              <div class="element">
+                <h3>Wikipedia</h3>
+                <div class="text"><?php echo make_links_clickable(implode(", ",$metadata[$type.' Item Type Metadata']["Wikipedia"]));?></div>
+              </div>
+            <?php endif;?>
 
           </div>
 
