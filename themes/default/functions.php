@@ -64,13 +64,13 @@ function get_related($relations){
         ),9999
       );
       foreach($result as $item):
-          $items[$item->added]=$item;
+          $items[$item->id]=$item;
       endforeach;
 
     endforeach;
 
     if(sizeof($items)> 0):
-      $item = natksort($items);
+      ksort($items);
       return related_html($items);
     else:
       return false;
@@ -104,7 +104,7 @@ function get_hierarchy($relations){
         )
       );
       foreach($result as $item):
-          $items[]=$item;
+          $items[metadata($item, array('Dublin Core', 'Identifier'))]=$item;
       endforeach;
     endforeach;
 
