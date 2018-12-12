@@ -25,7 +25,7 @@
           <div class="metadata-bg">
           <?php
             $metadata = all_element_texts('item',array("return_type"=>"array"));
-            $dontshow = array("Title","Hierarchy","Transcription","Participants in lecture", "Contributors","Authors","Depicted persons","CA","Relation","Representation","Secondary notes","Transcriber");
+            $dontshow = array("Title","Hierarchy","Transcription","Participants in lecture", "Contributors","Authors","Depicted persons","CA","Relation","Representation","Secondary notes","Transcriber","Wikipedia");
             if($type == "Archival folder"):
               $dontshow[] = "Manuscript collection";
             endif;
@@ -90,6 +90,13 @@
             <div class="element">
               <h3>Physical description</h3>
               <div class="text"><?php echo implode(", ",$metadata['Dublin Core']["Format"]);?></div>
+            </div>
+          <?php endif;?>
+
+          <?php if(isset($metadata[$type.' Item Type Metadata']["Wikipedia"])):?>
+            <div class="element">
+              <h3>Wikipedia</h3>
+              <div class="text"><?php echo make_links_clickable(implode(", ",$metadata[$type.' Item Type Metadata']["Wikipedia"]));?></div>
             </div>
           <?php endif;?>
 

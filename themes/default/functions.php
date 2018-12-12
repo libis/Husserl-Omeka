@@ -42,6 +42,10 @@ function libis_get_simple_page_content($title) {
     endif;
 }
 
+function make_links_clickable($text){
+    return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $text);
+}
+
 function get_related($relations){
     $element = get_db()->getTable('Element')->findByElementSetNameAndElementName('Dublin Core', 'Identifier');
     $id = $element->id;
