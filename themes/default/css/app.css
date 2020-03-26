@@ -2898,8 +2898,8 @@ section.news .item-container .news-container .news-item .datum {
 
 @media (min-width: 992px) {
   .metadata-section .highlight .text .item .sub-image {
-    width: 140px;
-    margin-right: 1rem;
+    width: 400px;
+    margin-right: 2rem;
     flex: none;
   }
 }

@@ -212,6 +212,7 @@
 
           </div>
 
+
             <!-- Transcription -->
             <?php if(isset($metadata[$type.' Item Type Metadata']["Transcription"])):?>
               <div class="highlight">
@@ -233,7 +234,8 @@
                 </div>
               </div>
             <?php endif;?>
-
+          </div>
+          <div class="col-sm-12 col-md-10 col-xs-12">
             <!-- Manuscript collection -->
             <?php if(isset($relations["Manuscript collection"]) && $type == "Archival folder"):?>
               <div class="highlight">
@@ -273,7 +275,7 @@
                       <div class="sub-image">
                       <?php
                         echo link_to_item(
-                            item_image('thumbnail', array(), 0, $record),
+                            item_image('fullsize', array(), 0, $record),
                             array(),
                             'show',
                             $record
