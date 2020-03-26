@@ -235,7 +235,8 @@
               </div>
             <?php endif;?>
           </div>
-          <div class="col-sm-12 col-md-10 col-xs-12">
+        </div>
+        <div class="col-sm-12 col-md-10 col-xs-12">
             <!-- Manuscript collection -->
             <?php if(isset($relations["Manuscript collection"]) && $type == "Archival folder"):?>
               <div class="highlight">
