@@ -2780,6 +2780,7 @@ section.news .item-container .news-container .news-item .datum {
   padding: 2rem;
   margin-bottom: 1rem;
   background: white;
+  min-height: 400px;
 }
 
 @media (max-width: 544px) {
@@ -2847,6 +2848,12 @@ section.news .item-container .news-container .news-item .datum {
 
 .metadata-section .highlight {
   background: rgba(238, 238, 238, 0.8);
+}
+
+@media (min-width: 992px) {
+  .metadata-section .highlight {
+    margin-left: 1rem;
+  }
 }
 
 .metadata-section .highlight h3 {

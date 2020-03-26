@@ -196,23 +196,45 @@
             endif;
 
             echo libis_link_to_related_exhibits($item);
+          ?>
+        </div>
+      </div>
 
-            if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
-              <div class="element">
-                <h3><i class="material-icons">&#xE3B6;</i><a href="http://resolver.libis.be/<?php echo $metadata[$type.' Item Type Metadata']["Representation"][0];?>/representation">View online</a></h3>
-              </div>
-            <?php endif;?>
-
-            <?php if(isset($metadata[$type.' Item Type Metadata']["Wikipedia"])):?>
-              <div class="element">
-                <h3>Wikipedia</h3>
-                <div class="text"><?php echo make_links_clickable(implode(", ",$metadata[$type.' Item Type Metadata']["Wikipedia"]));?></div>
-              </div>
-            <?php endif;?>
-
+      <?php
+        if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
+          <div class="element">
+            <h3><i class="material-icons">&#xE3B6;</i><a href="http://resolver.libis.be/<?php echo $metadata[$type.' Item Type Metadata']["Representation"][0];?>/representation">View online</a></h3>
           </div>
+        <?php endif;?>
+
+        <?php if(isset($metadata[$type.' Item Type Metadata']["Wikipedia"])):?>
+          <div class="element">
+            <h3>Wikipedia</h3>
+            <div class="text"><?php echo make_links_clickable(implode(", ",$metadata[$type.' Item Type Metadata']["Wikipedia"]));?></div>
+          </div>
+        <?php endif;?>
+
+      </div>
 
 
+      <?php if($type != "News"):?>
+        <div class="col-sm-12 col-md-4 col-xs-12 image-col">
+          <?php if (metadata('item', 'has files')): ?>
+              <div id="itemfiles">
+                  <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'image  lightgallery')),'fullsize'); ?></div>
+              </div>
+              <?php if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
+                <div class="view-link">
+                  <h3><i class="material-icons">&#xE3B6;</i><a href="http://resolver.libis.be/<?php echo $metadata[$type.' Item Type Metadata']["Representation"][0];?>/representation">View online</a></h3>
+                </div>
+              <?php endif;?>
+          <?php endif;?>
+        </div>
+      <?php endif;?>
+        </div>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-10 col-xs-12">
             <!-- Transcription -->
             <?php if(isset($metadata[$type.' Item Type Metadata']["Transcription"])):?>
               <div class="highlight">
@@ -235,8 +257,7 @@
               </div>
             <?php endif;?>
           </div>
-        </div>
-        <div class="col-sm-12 col-md-10 col-xs-12">
+
             <!-- Manuscript collection -->
             <?php if(isset($relations["Manuscript collection"]) && $type == "Archival folder"):?>
               <div class="highlight">
@@ -301,27 +322,13 @@
               <p class="description"><?php echo metadata('item', array('Dublin Core', 'Description')); ?></p>
           <?php endif; ?>
       </div>
-      <?php if($type != "News"):?>
-        <div class="col-sm-12 col-md-4 col-xs-12 image-col">
-          <?php if (metadata('item', 'has files')): ?>
-              <div id="itemfiles">
-                  <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'image  lightgallery')),'fullsize'); ?></div>
-              </div>
-              <?php if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
-                <div class="view-link">
-                  <h3><i class="material-icons">&#xE3B6;</i><a href="http://resolver.libis.be/<?php echo $metadata[$type.' Item Type Metadata']["Representation"][0];?>/representation">View online</a></h3>
-                </div>
-              <?php endif;?>
-          <?php endif;?>
-        </div>
-      <?php endif;?>
-  </div>
-  <nav>
-      <ul class="item-pagination navigation">
-          <li id="previous-item" class="previous"><?php echo link_to_previous_item_show("&#8249; Previous"); ?></li>
-          <li id="next-item" class="next"><?php echo link_to_next_item_show('Next &#8250;'); ?></li>
-      </ul>
-  </nav>
-</div>
+
+      <nav>
+          <ul class="item-pagination navigation">
+              <li id="previous-item" class="previous"><?php echo link_to_previous_item_show("&#8249; Previous"); ?></li>
+              <li id="next-item" class="next"><?php echo link_to_next_item_show('Next &#8250;'); ?></li>
+          </ul>
+      </nav>
+    </div>
 </section>
 <?php echo foot(); ?>
