@@ -196,7 +196,16 @@
             endif;
 
             echo libis_link_to_related_exhibits($item);
+
+            if(isset($metadata['Dublin Core']["Is Referenced By"])):?>
+              <div class="element">
+                <h3><a class="images-link" href="<?php echo $metadata['Dublin Core']["Format"][0];?>"><i class="material-icons">&#xE3B6;</i> Images</a></h3>
+              </div>
+            <?php endif;
           ?>
+          <div class="element">
+            <h3><a class="images-link" href=""><i class="material-icons">&#xE3B6;</i> Images</a></h3>
+          </div>
         </div>
       </div>
 
@@ -222,8 +231,12 @@
           <?php if (metadata('item', 'has files')): ?>
               <div id="itemfiles">
                   <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'image  lightgallery')),'fullsize'); ?></div>
-              </div>
-              <?php if(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
+              </div>            
+              <?php if(isset($metadata['Dublin Core']["Is Referenced By"])):?>
+                <div class="view-link">
+                  <h3><i class="material-icons">&#xE3B6;</i><a href="<?php echo $metadata['Dublin Core']["Is Referenced By"][0];?>">View all images</a></h3>
+                </div>
+              <?php elseif(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
                 <div class="view-link">
                   <h3><i class="material-icons">&#xE3B6;</i><a href="http://resolver.libis.be/<?php echo $metadata[$type.' Item Type Metadata']["Representation"][0];?>/representation">View online</a></h3>
                 </div>

@@ -3893,6 +3893,12 @@ footer .copyright {
   margin-bottom: 1rem;
 }
 
+.images-link {
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: none !important;
+}
+
 @media (min-width: 544px) {
   .card-columns .card {
     display: inline-block;
