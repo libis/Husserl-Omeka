@@ -70,7 +70,7 @@ function get_related($relations){
     endforeach;
 
     if(sizeof($items)> 0):
-      ksort($items);
+      //ksort($items);
       return related_html($items);
     else:
       return false;
