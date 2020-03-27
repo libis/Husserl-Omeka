@@ -196,16 +196,8 @@
             endif;
 
             echo libis_link_to_related_exhibits($item);
+            ?>
 
-            if(isset($metadata['Dublin Core']["Is Referenced By"])):?>
-              <div class="element">
-                <h3><a class="images-link" href="<?php echo $metadata['Dublin Core']["Format"][0];?>"><i class="material-icons">&#xE3B6;</i> Images</a></h3>
-              </div>
-            <?php endif;
-          ?>
-          <div class="element">
-            <h3><a class="images-link" href=""><i class="material-icons">&#xE3B6;</i> Images</a></h3>
-          </div>
         </div>
       </div>
 
@@ -229,16 +221,23 @@
       <?php if($type != "News"):?>
         <div class="col-sm-12 col-md-4 col-xs-12 image-col">
           <?php if (metadata('item', 'has files')): ?>
-              <div id="itemfiles">
+              <!--<div id="itemfiles">
                   <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'image  lightgallery')),'fullsize'); ?></div>
-              </div>            
+              </div>-->
+              <div id="lightgallery">
+                <?php
+                  $files = get_current_record('item')->getFiles();
+                  foreach($files as $file):
+                ?>
+                    <a href="<?php echo $file->getWebPath('fullsize');?>">
+                        <img src="<?php echo $file->getWebPath('fullsize');?>" />
+                    </a>
+                <?php endforeach;?>
+              </div>
+
               <?php if(isset($metadata['Dublin Core']["Is Referenced By"])):?>
                 <div class="view-link">
                   <h3><i class="material-icons">&#xE3B6;</i><a href="<?php echo $metadata['Dublin Core']["Is Referenced By"][0];?>">View all images</a></h3>
-                </div>
-              <?php elseif(isset($metadata[$type.' Item Type Metadata']["Representation"])):?>
-                <div class="view-link">
-                  <h3><i class="material-icons">&#xE3B6;</i><a href="http://resolver.libis.be/<?php echo $metadata[$type.' Item Type Metadata']["Representation"][0];?>/representation">View online</a></h3>
                 </div>
               <?php endif;?>
           <?php endif;?>
@@ -344,4 +343,41 @@
       </nav>
     </div>
 </section>
+<script>
+    //image control
+    var divs = jQuery('div[id^="map-"]').hide(),
+
+    N = divs.length,
+    C = 0;
+
+    if(N > 1){
+      jQuery("#prev").fadeIn();
+      jQuery("#next").fadeIn();
+    }
+
+    divs.hide().eq( C ).show();
+
+    jQuery("#next, #prev").click(function(){
+        jQuery("#prev").hide();
+        jQuery("#next").hide();
+
+        divs.stop().hide().fadeOut(1000).eq( (this.id=='next'? ++C : --C) %N ).fadeIn(800);
+        jQuery("#prev").delay( 800 ).fadeIn();
+        jQuery("#next").delay( 800 ).fadeIn();
+    });
+
+    jQuery('#lightgallery').slick({
+      dots: false,
+      speed: 300,
+      slidesToShow: 1,
+      adaptiveHeight: true,
+      infinite: false
+    });
+
+    jQuery("#lightgallery").lightGallery(
+      {
+        selector:'a'
+      }
+    );
+</script>
 <?php echo foot(); ?>
