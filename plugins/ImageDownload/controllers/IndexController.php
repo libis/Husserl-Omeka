@@ -19,8 +19,7 @@ class ImageDownload_IndexController extends Omeka_Controller_AbstractActionContr
             $options = array('process_type' => $this->getParam('process_type'),);
             Zend_Registry::get('bootstrap')->getResource('jobs')
                 ->sendLongRunning('ImageDownloadJob', $options);
-            $this->_helper->flashMessenger(__('Processing files. This may take a while. You may continue administering your site.'), 'success');*/
-            
+            $this->_helper->flashMessenger(__('Processing files. This may take a while. You may continue administering your site.'), 'success');
         }
 
         /*$db = $this->_helper->db->getDb();
