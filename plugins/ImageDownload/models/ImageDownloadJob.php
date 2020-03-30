@@ -61,7 +61,7 @@ class ImageDownloadJob extends Omeka_Job_AbstractJob
             'advanced' => array(
                 array(
 
-                    'element_id' => '84',
+                    'element_id' => '145',
                     'type' => 'is not empty'
                 )
             )
@@ -86,29 +86,32 @@ class ImageDownloadJob extends Omeka_Job_AbstractJob
             $name = uniqid();
 
             $obj = rosetta_talk_resolver($url);
-            //var_dump($obj);exit;
-            file_put_contents('/tmp/'.$name.'.jp2',$obj);
 
-            //check if file exists
-            $current_files = $item->getFiles();
-            $hasfiles = array();
-            foreach($current_files as $c_file):
-              $hasfiles[] = $c_file->original_filename;
-            endforeach;
-            set_time_limit(100);
-            if(!in_array($ie,$hasfiles)):
-              echo $url;
-              //create file
-              $file = new File();
-              $file->item_id = $item->id;
-              $file->filename = $name.'.jp2';
-              $file->has_derivative_image = 1;
-              //$file->mime_type = rosetta_get_mime_type($obj);
-              $file->mime_type ='image/jp2';
-              $file->original_filename = $ie;
-              $file->metadata = "";
-              $file->save();
-              release_object($file);
+            //var_dump($obj);exit;
+            if($obj != '{"status":404,"body":"not found "}'):
+              var_dump($obj);
+              file_put_contents('/tmp/'.$name.'.jp2',$obj);
+              //check if file exists
+              $current_files = $item->getFiles();
+              $hasfiles = array();
+              foreach($current_files as $c_file):
+                $hasfiles[] = $c_file->original_filename;
+              endforeach;
+              set_time_limit(100);
+              if(!in_array($ie,$hasfiles)):
+                echo $url;
+                //create file
+                $file = new File();
+                $file->item_id = $item->id;
+                $file->filename = $name.'.jp2';
+                $file->has_derivative_image = 1;
+                //$file->mime_type = rosetta_get_mime_type($obj);
+                $file->mime_type ='image/jp2';
+                $file->original_filename = $ie;
+                $file->metadata = "";
+                $file->save();
+                release_object($file);
+              endif;
             endif;
           endif;
         endforeach;

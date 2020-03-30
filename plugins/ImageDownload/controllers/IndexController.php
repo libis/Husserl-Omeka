@@ -20,10 +20,7 @@ class ImageDownload_IndexController extends Omeka_Controller_AbstractActionContr
             Zend_Registry::get('bootstrap')->getResource('jobs')
                 ->sendLongRunning('ImageDownloadJob', $options);
             $this->_helper->flashMessenger(__('Processing files. This may take a while. You may continue administering your site.'), 'success');
-        }
 
-        /*$db = $this->_helper->db->getDb();
-        $sql = "SELECT mime_type FROM $db->File GROUP BY mime_type";
-        $this->view->mime_types = $db->fetchCol($sql);*/
+        }
     }
 }
