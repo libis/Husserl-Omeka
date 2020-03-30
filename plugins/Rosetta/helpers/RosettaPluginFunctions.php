@@ -24,7 +24,7 @@ function rosetta_talk_resolver($url){
         );
         $http_client->setConfig($config);
     else:
-        $http_client->setConfig(['timeout' => 60]);
+        $http_client->setConfig(array('timeout' => 60]));
     endif;
 
 
