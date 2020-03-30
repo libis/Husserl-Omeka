@@ -21,13 +21,14 @@ class ImageDownload_IndexController extends Omeka_Controller_AbstractActionContr
                 ->sendLongRunning('ImageDownloadJob', $options);
             $this->_helper->flashMessenger(__('Processing files. This may take a while. You may continue administering your site.'), 'success');*/
             // Fetch file IDs according to the passed options.
-
+            //  'element_id' => '84',
             $items = get_records(
               'Item',
               array(
                   'advanced' => array(
                       array(
-                          'element_id' => '84',
+
+                          'element_id' => '145',
                           'type' => 'is not empty'
                       )
                   )
@@ -44,12 +45,15 @@ class ImageDownload_IndexController extends Omeka_Controller_AbstractActionContr
                 $url = strip_tags($url);
 
                 if (strpos($url, '/representation') !== false):
-                  $url = str_replace("representaton",'stream?quality=HIGH',$url);
+                  $url = str_replace("representation",'stream?quality=HIGH',$url);
 
                   $temp = explode('/',$url);
                   $ie = $temp[3];
 
                   $obj = rosetta_download_image($url);
+                  echo $url;
+                  echo rosetta_get_mime_type($obj);
+                  exit;
                   $name = uniqid();
                   file_put_contents('/tmp/'.$name,$obj);
 
