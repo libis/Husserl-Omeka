@@ -53,6 +53,8 @@ class ImageDownloadJob extends Omeka_Job_AbstractJob
      */
     public function perform()
     {
+      // Fetch file IDs according to the passed options.
+      //  'element_id' => '84',
       $items = get_records(
         'Item',
         array(
@@ -81,11 +83,10 @@ class ImageDownloadJob extends Omeka_Job_AbstractJob
             $temp = explode('/',$url);
             $ie = $temp[3];
 
-            $obj = rosetta_download_image($url);
-            echo $url;
-            echo rosetta_get_mime_type($obj);
-            exit;
             $name = uniqid();
+
+            $obj = rosetta_talk_resolver($url);
+            //var_dump($obj);exit;
             file_put_contents('/tmp/'.$name.'.jp2',$obj);
 
             //check if file exists
@@ -94,15 +95,16 @@ class ImageDownloadJob extends Omeka_Job_AbstractJob
             foreach($current_files as $c_file):
               $hasfiles[] = $c_file->original_filename;
             endforeach;
-
+            set_time_limit(100);
             if(!in_array($ie,$hasfiles)):
-
+              echo $url;
               //create file
               $file = new File();
               $file->item_id = $item->id;
-              $file->filename = $name;
+              $file->filename = $name.'.jp2';
               $file->has_derivative_image = 1;
-              $file->mime_type = rosetta_get_mime_type($obj);
+              //$file->mime_type = rosetta_get_mime_type($obj);
+              $file->mime_type ='image/jp2';
               $file->original_filename = $ie;
               $file->metadata = "";
               $file->save();
