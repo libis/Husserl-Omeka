@@ -20,10 +20,14 @@ function rosetta_talk_resolver($url){
                         'adapter'    => 'Zend_Http_Client_Adapter_Proxy',
                         'proxy_host' => get_option('rosetta_proxy'),
                         'proxy_port' => 8080,
-                        'timeout' => 30
+                        'timeout' => 60
         );
         $http_client->setConfig($config);
+    else:
+        $http_client->setConfig(['timeout' => 60]);
     endif;
+
+
 
     $http_client->setUri($url);
 

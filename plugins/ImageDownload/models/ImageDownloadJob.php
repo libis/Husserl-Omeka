@@ -53,51 +53,54 @@ class ImageDownloadJob extends Omeka_Job_AbstractJob
      */
     public function perform()
     {
-        // Fetch file IDs according to the passed options.
-        $items = get_records(
-          'Item',
-          array(
-              'advanced' => array(
-                  array(
-                      'element_id' => '145',
-                      'type' => 'is not empty'
-                  )
-              )
-          ),9999
-        );
+      // Fetch file IDs according to the passed options.
+      //  'element_id' => '84',
+      $items = get_records(
+        'Item',
+        array(
+            'advanced' => array(
+                array(
 
-        foreach($items as $item):
-          //get 'referenced by'
-          $urls = metadata($item, array('Dublin Core','Is Referenced By'),array('all' => true));
+                    'element_id' => '145',
+                    'type' => 'is not empty'
+                )
+            )
+        ),9999
+      );
 
-          foreach($urls as $url):
-            //check if url correct
-            if (strpos($url, '/representation') !== false):
-              $url = str_replace("representaton",'stream?quality=HIGH',$url);
-              echo $url;
+      foreach($items as $item):
+        //get 'referenced by'
+        $urls = metadata($item, array('Dublin Core','Is Referenced By'),array('all' => true));
 
-              $temp = explode('/',$url);
-              $ie = $temp[3];
+        foreach($urls as $url):
+          //check if url correct
+          $url = strip_tags($url);
 
-              $obj = rosetta_download_image($url);
-              $name = uniqid();
-              file_put_contents('/tmp/'.$name,$obj);
+          if (strpos($url, '/representation') !== false):
+            $url = str_replace("representation",'stream?quality=HIGH',$url);
+            $temp = explode('/',$url);
 
-              //check if file exists
+            //check if file exists
+            $current_files = $item->getFiles();
+            $hasfiles = array();
+            foreach($current_files as $c_file):
+              $hasfiles[] = $c_file->original_filename;
+            endforeach;
+            set_time_limit(100);
+            if(!in_array('stream.jp2',$hasfiles)):
+              echo $url.' - imported';
+              $files = insert_files_for_item($item,
+                'Url',
+                array('source' => $url,'name' => 'stream.jp2'),
+                array('ignore_invalid_files' => true));
 
-              //create file
-              $file = new File();
-              $file->item_id = $item->id;
-              $file->filename = $name;
-              $file->has_derivative_image = 1;
-              $file->mime_type = rosetta_get_mime_type($obj);
-              $file->original_filename = $ie;
-              $file->metadata = "";
-              $file->save();
-              release_object($file);
+              release_object($files);
+            else:
+                echo $url.' - was already imported';
             endif;
-          endforeach;
-          release_object($item);
+          endif;
         endforeach;
+        release_object($item);
+      endforeach;
     }
 }
