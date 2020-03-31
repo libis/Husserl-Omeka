@@ -275,7 +275,14 @@
                   <?php foreach($relations["Manuscript collection"]["records"] as $record):?>
                     <div class="item">
                       <div class="sub-image lightgallery">
-                        <a href=""><?php echo item_image('thumbnail', array(), 0, $record);?></a>
+                        <?php
+                          $url = '';
+                          $files = $record->getFiles();
+                          if($files):
+                            $url = $files[0]->getWebPath('fullsize');
+                          endif;
+                        ?>
+                        <a href="<?php echo $url;?>"><?php echo item_image('thumbnail', array(), 0, $record);?></a>
                       </div>
                       <div class="sub-metadata">
                         <h4><?php echo link_to_item(metadata($record, array("Dublin Core","Title")),array(),"show",$record);?></h4>
@@ -297,7 +304,14 @@
                   <?php foreach($relations["Document"]["records"] as $record):?>
                     <div class="item">
                       <div class="sub-image lightgallery">
-                        <a href=""><?php echo item_image('fullsize', array(), 0, $record);?></a>
+                        <?php
+                          $url = '';
+                          $files = $record->getFiles();
+                          if($files):
+                            $url = $files[0]->getWebPath('fullsize');
+                          endif;
+                        ?>
+                        <a href="<?php echo $url;?>"><?php echo item_image('fullsize', array(), 0, $record);?></a>
                       </div>
                       <div class="sub-metadata">
                         <h4><?php echo link_to_item(metadata($record, array("Dublin Core","Title")),array(),"show",$record);?></h4>
