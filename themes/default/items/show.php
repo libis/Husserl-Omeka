@@ -221,10 +221,7 @@
       <?php if($type != "News"):?>
         <div class="col-sm-12 col-md-4 col-xs-12 image-col">
           <?php if (metadata('item', 'has files')): ?>
-              <!--<div id="itemfiles">
-                  <div class="element-text"><?php echo item_image_gallery(array('linkWrapper' => array('wrapper' => null,'class' => 'image  lightgallery')),'fullsize'); ?></div>
-              </div>-->
-              <div id="lightgallery">
+              <div id="lightgallery" class="lightgallery">
                 <?php
                   $files = get_current_record('item')->getFiles();
                   foreach($files as $file):
@@ -277,14 +274,9 @@
                 <div class="text">
                   <?php foreach($relations["Manuscript collection"]["records"] as $record):?>
                     <div class="item">
-                      <div class="sub-image">
+                      <div class="sub-image lightgallery">
                       <?php
-                        echo link_to_item(
-                            item_image('thumbnail', array(), 0, $record),
-                            array(),
-                            'show',
-                            $record
-                        );
+                        echo item_image('thumbnail', array(), 0, $record);
                       ?>
                       </div>
                       <div class="sub-metadata">
@@ -306,14 +298,9 @@
                 <div class="text">
                   <?php foreach($relations["Document"]["records"] as $record):?>
                     <div class="item">
-                      <div class="sub-image">
+                      <div class="sub-image lightgallery">
                       <?php
-                        echo link_to_item(
-                            item_image('fullsize', array(), 0, $record),
-                            array(),
-                            'show',
-                            $record
-                        );
+                        echo item_image('fullsize', array(), 0, $record);
                       ?>
                       </div>
                       <div class="sub-metadata">
@@ -374,7 +361,7 @@
       infinite: false
     });
 
-    jQuery("#lightgallery").lightGallery(
+    jQuery(".lightgallery").lightGallery(
       {
         selector:'a'
       }
