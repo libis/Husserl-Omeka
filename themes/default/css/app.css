@@ -3687,7 +3687,7 @@ section.news .item-container .news-container .news-item .datum {
   border-bottom: 2px solid #FFCF0D;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 544px) {
   .solr-section-results .no-image {
     display: none;
   }

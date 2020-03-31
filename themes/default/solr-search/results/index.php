@@ -80,12 +80,13 @@
                               $item
                           );?>
                     <?php else:?>
-                        <div class="no-image" style="width:100%;height:200px;background:#666;"></div>
+                        <div class="no-image" style="width:100%;height:200px;background:#ddd;"></div>
                     <?php endif;?>
                 <?php else:?>
-                    <div class="no-image" style="width:100%;height:200px;background:#666;"></div>
+                    <div class="no-image" style="width:100%;height:200px;background:#ddd;"></div>
                 <?php endif;?>
-
+                </div>
+                <div class="col-12 col-sm-9 col-md-9">
                 <!-- Header. -->
                 <!-- Record URL. -->
                 <?php $url = SolrSearch_Helpers_View::getDocumentUrl($doc); ?>
