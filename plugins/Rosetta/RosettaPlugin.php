@@ -115,22 +115,19 @@ class RosettaPlugin extends Omeka_Plugin_AbstractPlugin
 
             if(!empty($pids)):
                 foreach($pids as $pid):
-                    $obj = rosetta_download_image(get_option('rosetta_resolver').'/'.$pid.'/stream?quality=low&from_cache=0');
+                    $obj = rosetta_talk_resolver(get_option('rosetta_resolver').'/'.$pid.'/stream?quality=HIGH&from_cache=0');
 
                     $name = uniqid();
-                    file_put_contents('/tmp/'.$name,$obj);
+                    file_put_contents('/tmp/'.$name.'.jp2',$obj);
 
                     $file = new File();
                     $file->item_id = $item->id;
-                    $file->filename = $name;//$pid.'_resolver';
+                    $file->filename = $name.'.jp2';//$pid.'_resolver';
                     $file->has_derivative_image = 1;
-                    $file->mime_type = rosetta_get_mime_type($obj);
+                    $file->mime_type = 'image/jp2';
                     $file->original_filename = $pid;
                     $file->metadata = "";
                     $file->save();
-
-                    //delete the tmp file
-                    //unlink('/tmp/'.$pid.'_resolver');
                 endforeach;
             else:
                 return false;
