@@ -237,7 +237,7 @@
 
               <?php if(isset($metadata['Dublin Core']["Is Referenced By"])):?>
                 <div class="view-link">
-                  <h3><i class="material-icons">&#xE3B6;</i><a href="<?php echo $metadata['Dublin Core']["Is Referenced By"][0];?>">View all images</a></h3>
+                  <h3><i class="material-icons">&#xE3B6;</i><a href="<?php echo $metadata['Dublin Core']['Is Referenced By'][0];?>">View all images</a></h3>
                 </div>
               <?php endif;?>
           <?php endif;?>

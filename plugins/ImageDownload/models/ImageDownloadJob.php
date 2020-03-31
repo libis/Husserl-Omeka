@@ -73,6 +73,12 @@ class ImageDownloadJob extends Omeka_Job_AbstractJob
         //get 'referenced by'
         $urls = metadata($item, array('Dublin Core','Is Referenced By'),array('all' => true));
 
+        $current_files = $item->getFiles();
+        $hasfiles = array();
+        foreach($current_files as $c_file):
+          $hasfiles[] = $c_file->original_filename;
+        endforeach;
+
         foreach($urls as $url):
           //check if url correct
           $url = strip_tags($url);
@@ -83,22 +89,17 @@ class ImageDownloadJob extends Omeka_Job_AbstractJob
             $temp = explode('/',$url);
             $ie = $temp[3];
 
-            $name = uniqid();
+            if(!in_array($ie,$hasfiles)):
+              $name = uniqid();
+              $obj = rosetta_talk_resolver($url);
 
-            $obj = rosetta_talk_resolver($url);
+              //var_dump($obj);exit;
+              if($obj != '{"status":404,"body":"not found "}'):
+                var_dump($obj);
+                file_put_contents('/tmp/'.$name.'.jp2',$obj);
+                //check if file exists
+                set_time_limit(100);
 
-            //var_dump($obj);exit;
-            if($obj != '{"status":404,"body":"not found "}'):
-              var_dump($obj);
-              file_put_contents('/tmp/'.$name.'.jp2',$obj);
-              //check if file exists
-              $current_files = $item->getFiles();
-              $hasfiles = array();
-              foreach($current_files as $c_file):
-                $hasfiles[] = $c_file->original_filename;
-              endforeach;
-              set_time_limit(100);
-              if(!in_array($ie,$hasfiles)):
                 echo $url;
                 //create file
                 $file = new File();
