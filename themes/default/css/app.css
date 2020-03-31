@@ -3687,6 +3687,12 @@ section.news .item-container .news-container .news-item .datum {
   border-bottom: 2px solid #FFCF0D;
 }
 
+@media (max-width: 768px) {
+  .solr-section-results .no-image {
+    display: none;
+  }
+}
+
 .solr-section-results .result {
   padding-bottom: 1.5rem;
 }
@@ -3694,6 +3700,7 @@ section.news .item-container .news-container .news-item .datum {
 .solr-section-results .result .text-block {
   background: white;
   padding: 1.5rem;
+  min-height: 200px;
 }
 
 .solr-section-results .result h3 {

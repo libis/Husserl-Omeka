@@ -69,23 +69,21 @@
             <?php foreach ($results->response->docs as $doc) : ?>
               <!-- Document. -->
               <div class="row result">
+                <div class="col-12 col-sm-3 col-md-3 img-column">
                 <?php if ($doc->resulttype == 'Item') :?>
                     <?php $item = get_db()->getTable($doc->model)->find($doc->modelid);?>
                     <?php if (metadata($item, 'has files')): ?>
-                        <div class="col-12 col-sm-3 col-md-3 img-column">
                           <?php echo link_to_item(
                               item_image('thumbnail', array('alt' => $doc->title), 0, $item),
                               array(),
                               'show',
                               $item
                           );?>
-                        </div>
-                        <div class="col-12 col-sm-9">
                     <?php else:?>
-                        <div class="col-12">
+                        <div class="no-image" style="width:100%;height:200px;background:#666;"></div>
                     <?php endif;?>
                 <?php else:?>
-                    <div class="col-12">
+                    <div class="no-image" style="width:100%;height:200px;background:#666;"></div>
                 <?php endif;?>
 
                 <!-- Header. -->
