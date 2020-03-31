@@ -3700,7 +3700,12 @@ section.news .item-container .news-container .news-item .datum {
 .solr-section-results .result .text-block {
   background: white;
   padding: 1.5rem;
-  min-height: 200px;
+}
+
+@media (max-width: 544px) {
+  .solr-section-results .result .text-block {
+    min-height: 0;
+  }
 }
 
 .solr-section-results .result h3 {
