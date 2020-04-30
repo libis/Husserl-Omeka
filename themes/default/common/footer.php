@@ -3,7 +3,7 @@
             <div id="footer-text">
                 <?php echo get_theme_option('Footer Text'); ?>
                 <div>
-                    <a href="http://kuleuven.be"><img src="<?php echo img("KULEUVEN.png");?>"></a>
+                    <a href="https://kuleuven.be"><img src="<?php echo img("KULEUVEN.png");?>"></a>
                     <a href="http://libis.be"><img src="<?php echo img("libis_gray.png");?>"></a>
                 </div>
                 <div class="footer-brand">
@@ -29,7 +29,7 @@ jQuery(".toggle").on("click", function() {
   jQuery(".toggle").parent().toggleClass('active');
 });
 jQuery(document).ready(function() {
-    jQuery(".lightgallery").lightGallery(); 
+    jQuery(".lightgallery").lightGallery();
 });
 
 </script>
