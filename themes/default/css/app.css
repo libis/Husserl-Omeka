@@ -2172,6 +2172,15 @@ h1 {
   font-size: 2.5rem;
 }
 
+strong {
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 1rem;
+  list-style: circle;
+}
+
 header {
   margin-left: auto;
   margin-right: auto;
@@ -2400,6 +2409,10 @@ header {
 
 .jumbotron {
   background: #f6f6f6;
+  font-family: "Open Sans",sans-serif;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  color: rgba(36, 36, 36, 0.9);
 }
 
 .jumbotron p {
