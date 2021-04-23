@@ -30,7 +30,7 @@
               $dontshow[] = "Manuscript collection";
             endif;
             if($type == "Manuscript collection"):
-              $dontshow[] = "Document";
+              $dontshow[] = "Manuscript page";
             endif;
             if($type == "Lecture event"):
               $dontshow[] = "Creator";
@@ -297,11 +297,11 @@
             <?php endif;?>
 
             <!-- Lecture pages -->
-            <?php if(isset($relations["Document"]) && $type == "Manuscript collection"):?>
+            <?php if(isset($relations["Manuscript page"]) && $type == "Manuscript collection"):?>
               <div class="highlight">
-                <h3>Related documents</h3>
+                <h3>Related manuscript pages</h3>
                 <div class="text">
-                  <?php foreach($relations["Document"]["records"] as $record):?>
+                  <?php foreach($relations["Manuscript page"]["records"] as $record):?>
                     <div class="item">
                       <div class="sub-image lightgallery">
                         <?php
