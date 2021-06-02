@@ -14,7 +14,7 @@
       <div  class="row">
         <!-- Search form. -->
         <div class="solr-top col-md-7 col-xs-12">
-            <h1>Overview of Husserl’s lectures</h1>
+            <h1>Search</h1>
 
             <form id="solr-search-form">
               <div class="inputs">

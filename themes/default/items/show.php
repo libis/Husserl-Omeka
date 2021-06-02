@@ -221,6 +221,7 @@
       <?php if($type != "News"):?>
         <div class="col-sm-12 col-md-4 col-xs-12 image-col">
           <?php if (metadata('item', 'has files')): ?>
+              <?php if(!isset($metadata['Dublin Core']["Is Referenced By"])):?>
               <div id="lightgallery" class="lightgallery">
                 <?php
                   $files = get_current_record('item')->getFiles();
@@ -232,9 +233,26 @@
                 <?php endforeach;?>
               </div>
 
-              <?php if(isset($metadata['Dublin Core']["Is Referenced By"])):?>
+              <?php else:?>
+                <div>
+                  <?php
+                    $files = get_current_record('item')->getFiles();
+                    foreach($files as $file):
+                  ?>
+                      <a target="_blank" href="<?php echo strip_tags($metadata['Dublin Core']['Is Referenced By'][0]);?>">
+                          <img src="<?php echo $file->getWebPath('fullsize');?>" />
+                      </a>
+                  <?php endforeach;?>
+                </div>
+
                 <div class="view-link">
-                  <h3><i class="material-icons">&#xE3B6;</i><a href="<?php echo strip_tags($metadata['Dublin Core']['Is Referenced By'][0]);?>">View all images</a></h3>
+                  <h3><i class="material-icons">&#xE3B6;</i><a target="_blank" href="<?php echo strip_tags($metadata['Dublin Core']['Is Referenced By'][0]);?>">
+                  <?php if($type == 'Manuscript page'):?>
+                  Open full image
+                  <?php else:?>
+                  View all images
+                  <?php endif;?>
+				          </a></h3>
                 </div>
               <?php endif;?>
           <?php endif;?>

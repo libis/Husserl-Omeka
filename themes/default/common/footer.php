@@ -9,11 +9,11 @@
                 <div class="footer-brand">
                   <div class="footer-content">
                     <!--<p><a class="footer-logo" href="<?php echo url("/");?>">digital<span>Husserl</span></a> Straatstraat 22 | 3000 Leuven | +3216222222</p>-->
-                    <ul>
+                    <!--<ul>
                         <li><a href="http://hiw.kuleuven.be/hua/about/">Husserl Archives</a></li>
                         <li><a href="http://hiw.kuleuven.be/hua/manuscript/">Manuscript Index</a></li>
                         <li><a href="http://hiw.kuleuven.be/hua/editionspublications/">Publications & editions</a></li>
-                    </ul>
+                    </ul>-->
                   </div>
                 </div>
                 <div class="copyright">

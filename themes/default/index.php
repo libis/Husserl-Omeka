@@ -7,7 +7,7 @@
               <div class="col-md-8 col-lg-7">
                 <div class="intro-text">
                   <?php echo libis_get_simple_page_content("homepage-info");?>
-                  <p class="more"><i class="material-icons">&#xE5C8;</i><a href="<?php echo url("about");?>">More about digital Husserl</a></p>
+                  <p class="more"><i class="material-icons">&#xE5C8;</i><a href="<?php echo url("about");?>">More about digitalHusserl</a></p>
                 </div>
               </div>
               <div class="col-md-4 col-lg-3">
